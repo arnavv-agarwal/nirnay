@@ -71,7 +71,10 @@ with sync_playwright() as p:
     pg.locator("[aria-label='Active filters'] >> text=Clear all").click()
     # S10 distress
     open_ticket("dev-12"); use.click() if use.count() else None
-    print("   S10 distress draft:", reply.input_value()[:260].replace("\n", " "))
+    if reply.count():   # to read, not scored; skipped if another test already answered it
+        print("   S10 distress draft:", reply.input_value()[:260].replace("\n", " "))
+    else:
+        print("   S10 skipped: dev-12 was already answered")
     # S7 new ticket with AI
     search.fill("")
     pg.get_by_role("button", name="New ticket").click()
