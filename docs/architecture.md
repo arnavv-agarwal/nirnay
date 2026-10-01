@@ -64,7 +64,7 @@ Two of the seven steps use an AI model. The rest is plain, testable code: maskin
 | `data/` | 156 labelled tickets (`tickets.jsonl`: 56 tuning, 100 held-out) and the labelling guide written *before* the tickets (`LABELING.md`) |
 | `eval/` | `run_eval.py` scores any model on any split and saves every prediction; `metrics.py`; `robustness.py` (hostile inputs); `reply_quality.py` (a second model checks drafts against their sources) |
 | `tests/` | Unit tests for the plain-code parts and the API (`pytest`); `tests/e2e/` browser tests against the running app |
-| `deploy/`, `Dockerfile`, `DEPLOY.md` | Hugging Face Space image and push script; deployment steps |
+| `Dockerfile`, `render.yaml`, `.github/workflows/keep-awake.yml`, `DEPLOY.md`, `deploy/` | The API image; one-click Render setup; a ping that keeps the free API awake; deployment steps (Hugging Face push script as a paid alternative) |
 
 ## Models and APIs, and why
 

@@ -1,0 +1,19 @@
+# One-click setup on Render (render.com → New → Blueprint → this repo).
+# The API runs from the Dockerfile on the free plan. Render asks for the two values
+# marked sync: false when you create it; they are never stored in the repo.
+services:
+  - type: web
+    name: nirnay-api
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /api/settings
+    autoDeploy: true
+    envVars:
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: NIRNAY_WEB_ORIGINS        # the web app's address, e.g. https://nirnay.vercel.app
+        sync: false
+      - key: NIRNAY_DAILY_AI_CALLS     # AI triages a day on the public demo, then keyword mode
+        value: "100"

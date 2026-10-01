@@ -111,7 +111,7 @@ uv pip install --python .venv/bin/python -r requirements-dev.txt
 .venv/bin/python -m playwright install chromium && .venv/bin/python tests/e2e/flows.py
 ```
 
-Deployment (Hugging Face Spaces for the API, Vercel for the web app): [DEPLOY.md](DEPLOY.md).
+Deployment (Render for the API, Vercel for the web app, both free): [DEPLOY.md](DEPLOY.md).
 
 ## What I'd do next
 
