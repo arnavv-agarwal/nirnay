@@ -187,7 +187,8 @@ export const api = {
   liveStats: () => request<LiveStats>("/api/live-stats"),
   correctionsExportUrl: `${API_URL}/api/corrections.jsonl`,
   sendReply: (id: string, reply: string) =>
-    request<Ticket>(`/api/tickets/${id}/send`, { method: "POST", body: JSON.stringify({ reply }) }),
+    // keepalive: a reply sent as the page closes (see the inbox page) still reaches the server
+    request<Ticket>(`/api/tickets/${id}/send`, { method: "POST", body: JSON.stringify({ reply }), keepalive: true }),
   kb: () => request<Section[]>("/api/kb"),
   evalRuns: () => request<EvalRunSummary[]>("/api/eval/runs"),
   evalRun: (name: string) => request<EvalRun>(`/api/eval/runs/${encodeURIComponent(name)}`),

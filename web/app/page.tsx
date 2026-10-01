@@ -98,13 +98,28 @@ export default function InboxPage() {
     return () => clearTimeout(timer);
   }, [notice]);
 
-  // Leaving the page while a reply is waiting asks first: nothing is lost silently.
+  // Leaving the page while a reply is waiting: closing the tab asks first, and if the page is
+  // hidden anyway (switching apps or locking a phone pauses timers) the reply goes at once.
+  // Nothing is lost silently.
   useEffect(() => {
     if (!pending) return;
     const warn = (e: BeforeUnloadEvent) => e.preventDefault();
+    const sendNow = () => {
+      if (!pendingTimer.current) return;
+      window.clearTimeout(pendingTimer.current);
+      pendingTimer.current = null;
+      void deliver(pending);
+    };
+    const onHide = () => { if (document.visibilityState === "hidden") sendNow(); };
     window.addEventListener("beforeunload", warn);
-    return () => window.removeEventListener("beforeunload", warn);
-  }, [pending]);
+    document.addEventListener("visibilitychange", onHide);
+    window.addEventListener("pagehide", sendNow);
+    return () => {
+      window.removeEventListener("beforeunload", warn);
+      document.removeEventListener("visibilitychange", onHide);
+      window.removeEventListener("pagehide", sendNow);
+    };
+  }, [pending]);  // eslint-disable-line react-hooks/exhaustive-deps -- deliver only uses state setters
 
   async function deliver(p: PendingSend) {
     try {
@@ -134,6 +149,7 @@ export default function InboxPage() {
     pendingTimer.current = window.setTimeout(() => { pendingTimer.current = null; void deliver(p); }, UNDO_MS);
     setNotice({ tone: "pending", text: `Sending to ${firstName(p.student)}…` });
     if (next && !query.trim()) setSelectedId(next.id);
+    setMobileDetail(false);   // phone: back to the list, where "Sending… Undo" and "Reply sent" show
   }
 
   function undo() {
@@ -141,6 +157,7 @@ export default function InboxPage() {
     window.clearTimeout(pendingTimer.current);
     pendingTimer.current = null;
     setSelectedId(pending.id);
+    setMobileDetail(true);    // phone: straight back to the ticket and its reply
     setPending(null);
     setNotice({ tone: "info", text: "Not sent. The reply is back in the composer." });
   }
