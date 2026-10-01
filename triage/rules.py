@@ -30,6 +30,25 @@ def citation_problems(reply: str, allowed_ids: Set[str]) -> List[str]:
     return []
 
 
+# "A support agent will follow up", in English, Hinglish or Hindi. Checked against every saved
+# automatic reply (three models, every ticket set): it matches the promises and nothing else.
+FOLLOW_UP_PROMISE = re.compile(
+    r"\bfollow(s|ed|ing)?[ -]?up\b"
+    r"|\b(will|would|shall)\s+(personally\s+)?(contact|call|reach out|get back|get in touch|be in touch)\b"
+    r"|\b(sampark|contact|call|baat|follow up)\s+kar(ega|egi|enge)\b"
+    r"|(संपर्क|बात)\s*कर(ेगा|ेगी|ेंगे)", re.IGNORECASE)
+
+
+def without_follow_up_promises(reply: str) -> str:
+    """An automatic reply minus every sentence that says a person will follow up: no person sees
+    the ticket. Catches sentences citing the takeover article (config.TAKEOVER_ARTICLE) and
+    uncited promises alike."""
+    parts = re.split(r"(?<=[.!?।])(\s+)", reply) + [""]   # sentence, spacing, sentence, spacing...
+    kept = [parts[i] + parts[i + 1] for i in range(0, len(parts) - 1, 2)
+            if f"[{config.TAKEOVER_ARTICLE}]" not in parts[i] and not FOLLOW_UP_PROMISE.search(parts[i])]
+    return "".join(kept).strip()
+
+
 def decide(c: Classification, citation_issues: List[str],
            threshold: float = config.CONFIDENCE_THRESHOLD, prior_contacts: int = 0) -> Decision:
     """prior_contacts = how many other tickets this student sent in the repeat window.

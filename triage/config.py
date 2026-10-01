@@ -36,6 +36,10 @@ CONFIDENCE_THRESHOLD = 0.8
 # Categories that always go to a person because the knowledge base can't resolve them.
 ALWAYS_ESCALATE_CATEGORIES = {"other"}
 
+# The help article on when a person takes over. An automatic reply never cites it, nor says
+# a person will follow up: no person sees that ticket (rules.without_follow_up_promises).
+TAKEOVER_ARTICLE = "CT-3"
+
 # A student writing again within this many days counts as a repeat contact:
 # the 2nd message goes to a person, the 3rd is urgent.
 REPEAT_WINDOW_DAYS = 7

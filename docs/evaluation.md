@@ -81,7 +81,7 @@ Routing accuracy and the citation check don't say whether a reply is *right*. `e
 
 The 8 unsupported facts are small inventions such as "your Full Stack course is Premium" or "support has noted your UTR". A second check by a person (Arnav hand-grading 20 of these replies) measures how far the judge can be trusted: _results to be added_.
 
-**One real flaw it found:** 4 of the 33 automatic replies (12%) tell the student "a support agent will follow up", but an automatic reply never reaches an agent, so that follow-up never happens. It was found after the prompts were frozen and is left unfixed so the held-out score stays honest. The fix: the drafter flags when it promises a follow-up, and code sends those tickets to a person.
+**One real flaw it found:** 4 of the 33 automatic replies (12%) tell the student "a support agent will follow up", but an automatic reply never reaches an agent, so that follow-up never happens. It was found after the prompts were frozen, and it then happened on the live demo. Fixed in plain code without touching the prompts, so the held-out routing score is unchanged: before an automatic reply is sent, `rules.without_follow_up_promises` drops every sentence that cites the "When a support agent takes over" article or promises a follow-up (English, Hinglish, Hindi). Checked on the saved drafts: held-out 4 → 0, blind 2 → 0, tuning 6 → 0; the phrase pattern matched nothing else in any saved automatic reply from the three models. The cost: a dropped sentence sometimes also carried a "Contact us" tip.
 
 **How much rests on assumed articles:** 76% of held-out drafts cite at least one article that is an assumed procedure rather than PW's published policy; the most-cited article of all (CT-3, "When a support agent takes over") is one. The UI flags these, but if an assumption is wrong it is wrong in many replies at once.
 
@@ -96,7 +96,7 @@ Opus's self-reported confidence clusters between 0.85 and 0.97, and only 2 of 10
 - **A certificate that won't generate after the requirements are met** (Sonnet, Opus) and **a lost Vidyapeeth ID card** (Sonnet) were treated as self-help.
 - **"When does my batch start?" after buying** went to a person on every model, where the blind author expected an auto-reply. Start dates are deliberately not in the knowledge base, so this is the safe direction.
 - **Two invoice questions** went to a person unnecessarily on Haiku (labelled "other").
-- **Auto-replies that promise a follow-up** (4 of 33), and replies leaning on assumed articles: see Reply quality above.
+- **Replies leaning on assumed articles**: see Reply quality above. (Auto-replies promising a follow-up: fixed after the evaluation, see there.)
 
 ## Known limitations, in full
 

@@ -51,8 +51,10 @@ def finalize(result: TriageResult, threshold: float = config.CONFIDENCE_THRESHOL
         articles = kb.load_kb()
         chosen = [articles[i] for i in result.sections if i in articles]
         result.sections = [x.id for x in kb.rank(chosen, f"{result.cleaned}\n{result.classification.summary}")]
-    # What the student receives: numbered sources instead of [IDs], then the footer.
-    result.student_reply = "\n\n".join(part for part in (sources.for_student(result.reply, language), result.footer) if part) \
+    # What the student receives: no promise that a person will follow up (no person will see
+    # it), numbered sources instead of [IDs], then the footer.
+    sent = rules.without_follow_up_promises(result.reply)
+    result.student_reply = "\n\n".join(part for part in (sources.for_student(sent, language), result.footer) if part) \
         if result.reply and not result.decision.escalate else ""
     return result
 

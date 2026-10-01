@@ -88,7 +88,7 @@ Prompts were tuned only on 56 tuning tickets, then frozen; the 100 held-out tick
 
 **Read the two lines together: 96% on our own tickets, 73% on someone else's.** Most of the gap is one disagreement about what "upset" means: our guide means anger, threats, repeated complaints or distress; the blind author also counts urgency and pleading.
 
-**Reply quality** (a second model checking Opus's 100 held-out drafts against their sources): 93% of factual claims supported, 1.5% unsupported, 100% in the student's language, no reply promising money. It also found that 4 of 33 automatic replies promise "an agent will follow up" when no agent will see them (documented, not yet fixed).
+**Reply quality** (a second model checking Opus's 100 held-out drafts against their sources): 93% of factual claims supported, 1.5% unsupported, 100% in the student's language, no reply promising money. It also found that 4 of 33 automatic replies promised "an agent will follow up" when no agent will see them; the same happened on the live demo. Fixed after the evaluation in plain code, without touching the frozen prompts: an automatic reply loses any sentence promising a follow-up before it is sent (4 → 0 held-out, 2 → 0 blind; routing unchanged).
 
 **The threshold (0.80) is a safety net, not the main lever:** model confidence clusters at 0.85–0.97, and only 2 of 100 held-out tickets went to a person for low confidence alone; the written rules do the work.
 
@@ -106,7 +106,7 @@ Full results, per-topic scores and every failure: [docs/evaluation.md](docs/eval
 - **Synthetic data, one author.** The tuning and held-out tickets, prompts and keyword lists come from the same source, so those scores flatter the system; the blind set shows by how much. Real PW tickets are the true test.
 - **The knowledge base is partly assumed.** 57 of 81 articles are PW's published policy; 18 are plausible procedures PW doesn't publish, labelled in the UI. **76% of held-out drafts cite at least one assumed article**, so a wrong assumption affects many replies.
 - **Confidence is self-reported** and poorly spread; it is not calibrated.
-- **Known misses:** pausing a PW Skills course (the prompt never says it needs a person), the "upset" definition, and automatic replies that promise a follow-up.
+- **Known misses:** pausing a PW Skills course (the prompt never says it needs a person), and the "upset" definition.
 - **Repeat contacts are matched by name**, and order IDs, batches and centres by fixed patterns.
 - **Prototype scope:** sending is simulated (`POST /api/triage` is the integration point); no login or agent assignment; SQLite; on the public demo anyone can send replies or change the threshold, and the inbox resets on restart.
 
@@ -133,7 +133,7 @@ Deployment (Render for the API, Vercel for the web app, both free): [DEPLOY.md](
 ## What I'd do next
 
 1. Test on real (anonymised) PW tickets, and re-score monthly with agent corrections and reopened replies as new labels.
-2. Fix the known misses (pause requests, follow-up promises) and agree the definition of "upset" with PW's support leads; re-test on fresh tickets.
+2. Fix the known misses (pause requests) and agree the definition of "upset" with PW's support leads; re-test on fresh tickets.
 3. Haiku first, Opus only when Haiku is unsure: most of Opus's accuracy at a fraction of the cost.
 4. Replace assumed articles with PW's internal procedures, and calibrate confidence (for example, agreement between two models).
 5. WhatsApp and email integration, agent login and assignment, SLA timers, a "waiting on student" status, and live batch details from PW's catalogue.

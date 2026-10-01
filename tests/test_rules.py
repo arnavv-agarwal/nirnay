@@ -58,3 +58,15 @@ def test_citation_check():
     assert rules.citation_problems("Refunds are not available.", allowed)            # no citation
     assert rules.citation_problems("You'll get a refund [RF-9].", allowed)           # invented article
     assert rules.citation_problems("   ", allowed)                                    # empty
+
+
+def test_automatic_replies_never_promise_that_a_person_will_follow_up():
+    reply = ("Try another payment method [PY-1]. An agent will follow up with you [CT-3] [CT-1]. "
+             "Failed payments come back in 5-7 days [PY-2].\n\nThanks.")
+    assert rules.without_follow_up_promises(reply) == "Try another payment method [PY-1]. Failed payments come back in 5-7 days [PY-2].\n\nThanks."
+    assert rules.without_follow_up_promises("पहला वाक्य [ST-1]। एजेंट संपर्क करेगा [CT-3]। धन्यवाद।") == "पहला वाक्य [ST-1]। धन्यवाद।"
+    assert rules.without_follow_up_promises("Nothing to remove [PY-1].") == "Nothing to remove [PY-1]."
+    # uncited promises too, in each language
+    assert rules.without_follow_up_promises("Use AI Guru [AD-1]. A support agent will follow up to help you.") == "Use AI Guru [AD-1]."
+    assert rules.without_follow_up_promises("App update karo [TS-3]. Hamari team aapse sampark karegi.") == "App update karo [TS-3]."
+    assert rules.without_follow_up_promises("ऐप अपडेट करें [TS-3]। हमारी टीम आपसे संपर्क करेगी।") == "ऐप अपडेट करें [TS-3]।"
