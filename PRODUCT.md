@@ -43,7 +43,7 @@ The decision is the product. Nirnay never hides behind a chatbot: every ticket s
 - Public demo limits: 10 new tickets a minute per visitor; 100 AI triages a day, then keyword mode.
 - Terminology: "ticket", "escalate", "auto-reply", "at risk", "needs action", "help article", "citation", "confidence threshold".
 - Batch schedules (start dates, timings, prices) are deliberately not in the knowledge base: they change with every launch. Articles point students to the batch page; live details would come from PW's batch catalogue.
-- Hosting: web app on Vercel, API on Hugging Face Spaces (Docker); steps in DEPLOY.md.
+- Hosting: web app on Vercel, API on Render (Docker, free plan, kept awake by an UptimeRobot ping); steps in DEPLOY.md.
 
 ## Brand Commitments
 

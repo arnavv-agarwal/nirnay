@@ -23,7 +23,7 @@ _day = {"date": date.today(), "used": 0}
 
 
 def visitor(request: Request) -> str:
-    # Behind a host's proxy (Hugging Face, Vercel) the real address is the first forwarded one.
+    # Behind a host's proxy (Render, Vercel) the real address is the first forwarded one.
     forwarded = request.headers.get("x-forwarded-for", "")
     return forwarded.split(",")[0].strip() or (request.client.host if request.client else "unknown")
 
