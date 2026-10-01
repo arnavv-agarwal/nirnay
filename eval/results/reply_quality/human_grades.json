@@ -1,0 +1,146 @@
+{
+ "grader": "Arnav Agarwal (as a support agent), 1 Oct 2026",
+ "instructions": "Facts: yes = every fact is in the cited articles, partly = a detail added or changed, no = made up or wrong; 'a support agent will follow up' lines don't count. Answers: does it deal with what the student asked. Send: as is / with edits / no.",
+ "grades": {
+  "test-84": {
+   "facts": "yes",
+   "answers": "yes",
+   "language": "yes",
+   "send": "as is",
+   "note": ""
+  },
+  "test-17": {
+   "facts": "yes",
+   "answers": "yes",
+   "language": "yes",
+   "send": "with edits",
+   "note": "[TS-2] is useless in this case."
+  },
+  "test-09": {
+   "facts": "yes",
+   "answers": "yes",
+   "language": "yes",
+   "send": "as is",
+   "note": ""
+  },
+  "test-54": {
+   "facts": "yes",
+   "answers": "yes",
+   "language": "yes",
+   "send": "with edits",
+   "note": ""
+  },
+  "test-61": {
+   "facts": "yes",
+   "answers": "yes",
+   "language": "yes",
+   "send": "as is",
+   "note": ""
+  },
+  "test-26": {
+   "facts": "yes",
+   "answers": "yes",
+   "language": "yes",
+   "send": "as is",
+   "note": ""
+  },
+  "test-05": {
+   "facts": "yes",
+   "answers": "yes",
+   "language": "yes",
+   "send": "as is",
+   "note": ""
+  },
+  "test-02": {
+   "facts": "yes",
+   "answers": "yes",
+   "language": "yes",
+   "send": "as is",
+   "note": ""
+  },
+  "test-96": {
+   "facts": "yes",
+   "answers": "yes",
+   "language": "yes",
+   "send": "as is",
+   "note": ""
+  },
+  "test-81": {
+   "facts": "yes",
+   "answers": "yes",
+   "language": "yes",
+   "send": "as is",
+   "note": ""
+  },
+  "test-10": {
+   "facts": "yes",
+   "answers": "yes",
+   "language": "yes",
+   "send": "as is",
+   "note": ""
+  },
+  "test-72": {
+   "facts": "yes",
+   "answers": "yes",
+   "language": "yes",
+   "send": "as is",
+   "note": "[SK-6] is useless here."
+  },
+  "test-15": {
+   "facts": "yes",
+   "answers": "yes",
+   "language": "yes",
+   "send": "as is",
+   "note": ""
+  },
+  "test-57": {
+   "facts": "yes",
+   "answers": "yes",
+   "language": "yes",
+   "send": "as is",
+   "note": ""
+  },
+  "test-11": {
+   "facts": "yes",
+   "answers": "yes",
+   "language": "yes",
+   "send": "as is",
+   "note": ""
+  },
+  "test-23": {
+   "facts": "yes",
+   "answers": "yes",
+   "language": "yes",
+   "send": "as is",
+   "note": ""
+  },
+  "test-29": {
+   "facts": "yes",
+   "answers": "yes",
+   "language": "yes",
+   "send": "as is",
+   "note": ""
+  },
+  "test-27": {
+   "facts": "yes",
+   "answers": "yes",
+   "language": "yes",
+   "send": "as is",
+   "note": ""
+  },
+  "test-100": {
+   "facts": "yes",
+   "answers": "yes",
+   "language": "yes",
+   "send": "as is",
+   "note": ""
+  },
+  "test-95": {
+   "facts": "yes",
+   "answers": "yes",
+   "language": "yes",
+   "send": "as is",
+   "note": ""
+  }
+ }
+}

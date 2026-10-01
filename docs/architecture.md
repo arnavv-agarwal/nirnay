@@ -62,7 +62,7 @@ Two of the seven steps use an AI model. The rest is plain, testable code: maskin
 | `web/` | Next.js front end in PW's design language: **Inbox** (agents), **Quality** (team lead), **Knowledge base**. Batch patterns are `web/lib/trends.ts`; queue sort and filters are `web/lib/queue.ts` |
 | `kb/` | 13 help documents, 81 articles covering online refunds, batch access, joining a batch (before buying, or late), payments, technical, doubts, account and privacy, PW Store orders, offline centres, scholarships, PW Skills, PW OnlyIAS, and contact. **57 are PW's official policies**, each linked to the PW page it came from; the rest are labelled (`kb/SOURCES.md`) |
 | `data/` | 156 labelled tickets (`tickets.jsonl`: 56 tuning, 100 held-out) and the labelling guide written *before* the tickets (`LABELING.md`) |
-| `eval/` | `run_eval.py` scores any model on any split and saves every prediction; `metrics.py`; `robustness.py` (hostile inputs); `reply_quality.py` (a second model checks drafts against their sources) |
+| `eval/` | `run_eval.py` scores any model on any split and saves every prediction; `metrics.py`; `robustness.py` (hostile inputs); `reply_quality.py` (a second model checks drafts against their sources); `judge_agreement.py` (that judge against a person's grades) |
 | `tests/` | Unit tests for the plain-code parts and the API (`pytest`); `tests/e2e/` browser tests against the running app |
 | `Dockerfile`, `render.yaml`, `.github/workflows/keep-awake.yml`, `DEPLOY.md`, `deploy/` | The API image; one-click Render setup; a ping that keeps the free API awake; deployment steps (Hugging Face push script as a paid alternative) |
 

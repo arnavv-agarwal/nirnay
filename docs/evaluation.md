@@ -79,7 +79,15 @@ Routing accuracy and the citation check don't say whether a reply is *right*. `e
 | Promises a refund, extension or exception the articles don't state | **0** |
 | "A support agent will follow up" lines (instructed by the prompt when articles don't answer) | 76 of 612 claims; the strict judge counts them unsupported, which is why "every claim supported" is only 45% of replies |
 
-The 8 unsupported facts are small inventions such as "your Full Stack course is Premium" or "support has noted your UTR". A second check by a person (Arnav hand-grading 20 of these replies) measures how far the judge can be trusted: _results to be added_.
+The 8 unsupported facts are small inventions such as "your Full Stack course is Premium" or "support has noted your UTR". **Checking the judge against a person.** Arnav graded 20 of these replies by hand (automatic replies and drafts, including three with follow-up promises), independently of the judge, as a support agent would: do the facts match the cited articles, does it answer the student, right language, would you send it. `python -m eval.judge_agreement` compares the two (grades in `eval/results/reply_quality/human_grades.json`):
+
+| | Same verdict | Where they differ |
+|---|---|---|
+| Facts match the articles | 13 of 20 | the judge is stricter every time |
+| Answers the student | 13 of 20 | the judge is stricter every time |
+| Right language | 20 of 20 | |
+
+The judge was stricter on 11 replies and **never more lenient** than the person, so its 93% is a cautious figure: the true share of supported facts is likely higher. Each side catches something the other misses: the judge flags small added details a person reading at speed lets through (test-95's "support has noted your UTR", which nobody did); the person flags a cited article that is beside the point (TS-2 in test-17, SK-6 in test-72), which the judge doesn't count against the reply. As an agent, Arnav would send 18 of the 20 as written and 2 after edits, none not at all.
 
 **One real flaw it found:** 4 of the 33 automatic replies (12%) tell the student "a support agent will follow up", but an automatic reply never reaches an agent, so that follow-up never happens. It was found after the prompts were frozen, and it then happened on the live demo. Fixed in plain code without touching the prompts, so the held-out routing score is unchanged: before an automatic reply is sent, `rules.without_follow_up_promises` drops every sentence that cites the "When a support agent takes over" article or promises a follow-up (English, Hinglish, Hindi). Checked on the saved drafts: held-out 4 → 0, blind 2 → 0, tuning 6 → 0; the phrase pattern matched nothing else in any saved automatic reply from the three models. The cost: a dropped sentence sometimes also carried a "Contact us" tip.
 
