@@ -7,7 +7,7 @@ reply into factual claims and checks each against the text of the articles it ci
 
     python -m eval.reply_quality --run claude-opus-5-5_test --judge claude-sonnet-5-5
 
-Reads the saved run, writes eval/results/reply_quality_<run>.json. Cost: about $0.01 a reply.
+Reads the saved run, writes eval/results/reply_quality/<run>.json. Cost: about $0.01 a reply.
 """
 
 import argparse
@@ -111,7 +111,9 @@ def main() -> None:
         judged = list(pool.map(lambda r: judge(r, args.judge), drafts))
 
     s = summarise(judged)
-    (RESULTS / f"reply_quality_{args.run}.json").write_text(json.dumps(
+    out = RESULTS / "reply_quality"
+    out.mkdir(exist_ok=True)
+    (out / f"{args.run}.json").write_text(json.dumps(
         {"run": args.run, "judge": args.judge, "summary": s, "rows": judged}, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"=== Reply quality: {args.run}, judged by {args.judge} ===")
     print(f"Replies judged:            {s['judged']} of {s['replies']}")

@@ -228,6 +228,8 @@ def eval_runs() -> list:
     runs = []
     for path in sorted(RESULTS_DIR.glob("*.json")):
         data = json.loads(path.read_text(encoding="utf-8"))
+        if not {"model", "split", "summary"} <= data.keys():  # not an evaluation run: skip, never crash
+            continue
         runs.append({"name": path.stem, "model": data["model"],
                      "model_name": MODEL_NAMES.get(data["model"], data["model"]),
                      "split": data["split"], "summary": data["summary"]})

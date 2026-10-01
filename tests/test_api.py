@@ -70,3 +70,11 @@ def test_reopening_an_automatic_reply_sends_it_to_a_person_and_records_it(client
     assert any(c["id"] == auto["id"] and c["reopened_at"] for c in client.get("/api/corrections").json())
     assert '"should_escalate": true' in client.get("/api/corrections.jsonl").text
     assert client.post(f"/api/tickets/{auto['id']}/reopen").status_code == 400   # only once, only auto replies
+
+
+def test_evaluation_runs_list_skips_files_that_are_not_runs(client, tmp_path, monkeypatch):
+    from server import app as app_module
+    (tmp_path / "notes.json").write_text('{"judge": "x"}')
+    (tmp_path / "m_test.json").write_text('{"model": "m", "split": "test", "summary": {}, "rows": []}')
+    monkeypatch.setattr(app_module, "RESULTS_DIR", tmp_path)
+    assert [r["name"] for r in client.get("/api/eval/runs").json()] == ["m_test"]
