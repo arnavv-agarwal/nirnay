@@ -2,16 +2,18 @@
 
     python tests/e2e/flows.py      # with the API (port 8000) and web app (port 3000) running
 
-Start from a fresh demo inbox (delete data/nirnay.db, restart the API): the flows send
-replies and create tickets. The first flow triages a new ticket, so with an API key it
-makes one real AI call (about 3 cents).
+The flows send replies and create tickets, each run under its own student name, so they can
+run again on a used inbox (for a fresh one, delete data/nirnay.db and restart the API). The
+first flow triages a new ticket, so with an API key it makes one real AI call (about 3 cents).
 """
 import os
 import sys
+import time
 
 from playwright.sync_api import expect, sync_playwright
 
 BASE = os.environ.get("NIRNAY_WEB", "http://localhost:3000")
+NAME = f"Test Student {time.strftime('%H%M%S')}"   # unique, so the flows can run again on a used inbox
 CHROME = os.environ.get("CHROME_PATH")  # optional; by default Playwright's own Chromium
 
 
@@ -39,10 +41,10 @@ with sync_playwright() as p:
 
     def new_ticket():
         page.get_by_role("button", name="New ticket").click()
-        page.get_by_label("Student name").fill("Test Student")
+        page.get_by_label("Student name").fill(NAME)
         page.get_by_label("Message").fill("mera account block ho gaya hai, 3 baar mail kiya koi reply nahi. bahut pareshan hu")
         page.get_by_role("button", name="Triage ticket").click()
-        expect(page.get_by_role("heading", name="Test Student")).to_be_visible(timeout=40000)  # the AI takes ~10s
+        expect(page.get_by_role("heading", name=NAME)).to_be_visible(timeout=40000)  # the AI takes ~10s
         expect(page.locator("aside").get_by_text("Urgent: why this needs you")).to_be_visible()
     check("New ticket is triaged, lands urgent, opens with reasons", new_ticket)
 
@@ -58,23 +60,23 @@ with sync_playwright() as p:
         expect(page.get_by_text("Logging in on more than one device").first).to_be_visible()
         reply = page.get_by_label("Reply", exact=True).input_value()
         page.get_by_role("button", name="Send reply").click()
-        expect(page.get_by_role("status").filter(has_text="Sending to Test Student")).to_be_visible()
-        assert page.locator("#conv-title").inner_text() != "Test Student", "did not move to the next ticket"
+        expect(page.get_by_role("status").filter(has_text=f"Sending to {NAME}")).to_be_visible()
+        assert page.locator("#conv-title").inner_text() != NAME, "did not move to the next ticket"
         page.get_by_role("button", name="Undo").click()                       # undo inside the window
-        expect(page.locator("#conv-title")).to_have_text("Test Student")
+        expect(page.locator("#conv-title")).to_have_text(NAME)
         assert page.get_by_label("Reply", exact=True).input_value() == reply, "reply lost on undo"
         page.get_by_role("button", name="Send reply").click()                 # send for real
-        expect(page.get_by_role("status").filter(has_text="Reply sent to Test Student.")).to_be_visible(timeout=10000)
-        page.get_by_placeholder("Search name, ticket or message").fill("Test Student")
-        page.locator("ol li button", has_text="Test Student").click()
+        expect(page.get_by_role("status").filter(has_text=f"Reply sent to {NAME}.")).to_be_visible(timeout=10000)
+        page.get_by_placeholder("Search name, ticket or message").fill(NAME)
+        page.locator("ol li button", has_text=NAME).click()
         expect(page.get_by_text("Sent by an agent")).to_be_visible()
         page.get_by_placeholder("Search name, ticket or message").fill("")
     check("Send: next ticket opens; Undo restores the reply; it really sends after 5s", send)
 
     def search():
-        page.get_by_placeholder("Search name, ticket or message").fill("Test Student")
+        page.get_by_placeholder("Search name, ticket or message").fill(NAME)
         expect(page.get_by_text("Searching all")).to_be_visible()
-        expect(page.locator("ol li button", has_text="Test Student")).to_have_count(1)
+        expect(page.locator("ol li button", has_text=NAME)).to_have_count(1)
         page.get_by_placeholder("Search name, ticket or message").fill("")
     check("Search looks across every queue (finds the resolved ticket)", search)
 
@@ -106,7 +108,7 @@ with sync_playwright() as p:
     def quality():
         page.get_by_role("link", name="Quality").click()
         expect(page.get_by_role("heading", name="Confidence threshold")).to_be_visible()
-        expect(page.get_by_text("Test Student").or_(page.get_by_text("live-001"))).to_be_visible()  # correction listed
+        expect(page.locator("ul[class*=corrections] li").first).to_contain_text("Payment")  # newest correction first
         slider = page.get_by_role("slider")
         badge_before = page.locator("aside em").first.inner_text()
         slider.fill("0.9")
