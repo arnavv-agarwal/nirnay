@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ArrowLeft } from "lucide-react";
-import { api, cached, remember, type Category, type Channel, type Section, type Ticket } from "@/lib/api";
+import { api, ApiError, cached, remember, type Category, type Channel, type Section, type Ticket } from "@/lib/api";
 import { preview } from "@/lib/labels";
 import { isOpen, trends as findTrends } from "@/lib/trends";
 import { useSettings } from "@/components/SettingsProvider";
@@ -15,6 +15,7 @@ import styles from "./inbox.module.css";
 
 interface PendingSend { id: string; reply: string; student: string }
 const UNDO_MS = 5000;
+const POLL_MS = 15000;   // how often an open inbox checks for new tickets
 const firstName = (name: string) => name.replace(/\.$/, "");
 
 export default function InboxPage() {
@@ -35,6 +36,7 @@ export default function InboxPage() {
   // A reply waits UNDO_MS before it really goes, as in Gmail: a student can't un-receive a message.
   const [pending, setPending] = useState<PendingSend | null>(null);
   const pendingTimer = useRef<number | null>(null);
+  const changedAt = useRef(0);   // when this agent last changed a ticket: older checks are stale
   const [sortChoice, setSortChoice] = useState<Sort | null>(null);   // null: the queue's own default
   const [filters, setFilters] = useState<Filters>(NO_FILTERS);
 
@@ -57,6 +59,24 @@ export default function InboxPage() {
   // Reload when the threshold changes: tickets may have moved queue.
   useEffect(() => { void load(); }, [load, settings?.threshold]);
 
+  // Tickets from other agents and devices: check every POLL_MS while the inbox is on screen,
+  // and as soon as the agent comes back to it. A failed check stays quiet; the next one retries.
+  useEffect(() => {
+    const check = () => {
+      if (document.visibilityState !== "visible" || pendingTimer.current) return;
+      const asked = Date.now();
+      api.tickets().then((ts) => {
+        if (asked < changedAt.current) return;
+        setSelectedId((id) => id ?? shown.current);   // a new ticket at the top doesn't swap the open one
+        setTickets(ts);
+      }, () => {});
+      void refresh();                                  // sidebar queue counts
+    };
+    const timer = window.setInterval(check, POLL_MS);
+    document.addEventListener("visibilitychange", check);
+    return () => { window.clearInterval(timer); document.removeEventListener("visibilitychange", check); };
+  }, [refresh]);
+
   // Batches or centres with 3+ tickets in a day (lib/trends.ts), and every batch named, for the filter.
   const patterns = useMemo(() => (tickets ? findTrends(tickets) : []), [tickets]);
   const batches = useMemo(() => batchOptions(tickets ?? [], patterns.map((p) => p.key)), [tickets, patterns]);
@@ -77,6 +97,8 @@ export default function InboxPage() {
 
   // The open ticket: the one picked, else the first in the current view.
   const selected = tickets?.find((t) => t.id === selectedId) ?? visible[0] ?? null;
+  const shown = useRef<string | null>(null);   // the ticket on screen, for the background check
+  useEffect(() => { shown.current = selected?.id ?? null; }, [selected]);
 
   // j / k move through the list, as in most helpdesks.
   useEffect(() => {
@@ -122,12 +144,18 @@ export default function InboxPage() {
   }, [pending]);  // eslint-disable-line react-hooks/exhaustive-deps -- deliver only uses state setters
 
   async function deliver(p: PendingSend) {
+    changedAt.current = Date.now();
     try {
       replace(await api.sendReply(p.id, p.reply));
       setNotice({ tone: "ok", text: `Reply sent to ${firstName(p.student)}.` });
     } catch (e) {
-      setNotice({ tone: "error", text: `Couldn't send to ${firstName(p.student)}: ${(e as Error).message} The reply is still in the composer.` });
-      setSelectedId(p.id);
+      if (e instanceof ApiError && e.status === 409) {   // another agent or device answered it first
+        setNotice({ tone: "error", text: `Not sent: ${firstName(p.student)}'s ticket was already answered.` });
+        void load();
+      } else {
+        setNotice({ tone: "error", text: `Couldn't send to ${firstName(p.student)}: ${(e as Error).message} The reply is still in the composer.` });
+        setSelectedId(p.id);
+      }
     } finally {
       setPending((current) => (current?.id === p.id ? null : current));
     }
@@ -174,6 +202,7 @@ export default function InboxPage() {
   }
 
   function replace(updated: Ticket) {
+    changedAt.current = Date.now();
     setTickets((prev) => prev?.map((t) => (t.id === updated.id ? updated : t)) ?? null);
     void refresh(); // sidebar queue counts
   }
@@ -208,6 +237,7 @@ export default function InboxPage() {
 
   async function createTicket(text: string, channel: Channel, student: string) {
     const ticket = await api.createTicket(text, channel, student);
+    changedAt.current = Date.now();
     setTickets((prev) => [ticket, ...(prev ?? [])]);
     void refresh();
     setView(inView("needs_you", ticket.status) ? "needs_you" : "auto_sent");

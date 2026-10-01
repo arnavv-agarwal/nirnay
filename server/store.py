@@ -132,10 +132,14 @@ def get(ticket_id: str) -> Optional[dict]:
     return _row_to_dict(row) if row else None
 
 
-def resolve(ticket_id: str, reply: str) -> None:
+def resolve(ticket_id: str, reply: str) -> bool:
+    """Records an agent's reply. Only a ticket still waiting for a person can be answered, so
+    two agents (or two devices) can't both reply; False means someone got there first."""
     with connect() as conn:
-        conn.execute("UPDATE tickets SET status = 'resolved', final_reply = ?, resolved_at = ? "
-                     "WHERE id = ?", (reply, now_iso(), ticket_id))
+        changed = conn.execute("UPDATE tickets SET status = 'resolved', final_reply = ?, resolved_at = ? "
+                               "WHERE id = ? AND status IN ('urgent', 'needs_review')",
+                               (reply, now_iso(), ticket_id)).rowcount
+    return changed == 1
 
 
 def correct(ticket_id: str, categories: List[str]) -> None:

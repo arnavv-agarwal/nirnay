@@ -144,7 +144,9 @@ export interface EvalRow {
 export interface EvalRunSummary { name: string; model: string; model_name: string; split: string; summary: EvalSummary }
 export interface EvalRun extends EvalRunSummary { rows: EvalRow[] }
 
-export class ApiError extends Error {}
+export class ApiError extends Error {
+  constructor(message: string, readonly status = 0) { super(message); }   // status: the HTTP code, 0 = unreachable
+}
 
 // The last answer to each read, kept in memory, so a page you come back to shows at once
 // and then refreshes quietly in the background (no loading screen on every tab switch).
@@ -166,7 +168,7 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
   if (!res.ok) {
     const body = await res.json().catch(() => null);
     const detail = typeof body?.detail === "string" ? body.detail : `Request failed (${res.status})`;
-    throw new ApiError(detail);
+    throw new ApiError(detail, res.status);
   }
   const data = (await res.json()) as T;
   if (!init?.method) remember(path, data);   // reads only

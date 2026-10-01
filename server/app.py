@@ -145,7 +145,8 @@ def send_reply(ticket_id: str, body: SendReply) -> dict:
     """An agent approves (possibly after editing) the reply. Sending is simulated."""
     if not store.get(ticket_id):
         raise HTTPException(404, f"No ticket '{ticket_id}'")
-    store.resolve(ticket_id, body.reply)
+    if not store.resolve(ticket_id, body.reply):
+        raise HTTPException(409, "This ticket was already answered, so this reply wasn't sent.")
     return store.get(ticket_id)
 
 
