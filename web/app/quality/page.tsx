@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { Download } from "lucide-react";
-import { api, type CorrectionRow, type EvalRun, type EvalRunSummary, type LiveStats } from "@/lib/api";
+import { api, cached, type CorrectionRow, type EvalRun, type EvalRunSummary, type LiveStats } from "@/lib/api";
 import { useSettings } from "@/components/SettingsProvider";
 import { ThresholdChart } from "@/components/quality/ThresholdChart";
 import { ResultsTable } from "@/components/quality/ResultsTable";
@@ -15,19 +15,21 @@ const SETS = [
   { id: "dev", label: "Tuning set", note: "Tickets used to tune prompts" },
   { id: "blind", label: "Blind set", note: "Written by someone who never saw the prompts" },
 ];
+const runPath = (name: string) => `/api/eval/runs/${encodeURIComponent(name)}`;
 const SET_NAME: Record<string, string> = { test: "held-out test set", dev: "tuning set", blind: "blind set" };
 
 export default function QualityPage() {
   const { settings, update } = useSettings();
-  const [runs, setRuns] = useState<EvalRunSummary[] | null>(null);
+  // Start from what was last loaded, so coming back to this tab is instant; refresh in the background.
+  const [runs, setRuns] = useState<EvalRunSummary[] | null>(() => cached<EvalRunSummary[]>("/api/eval/runs") ?? null);
   const [set, setSet] = useState("test");
   const [runName, setRunName] = useState<string | null>(null);
   const [loaded, setLoaded] = useState<EvalRun | null>(null);
   const [threshold, setThreshold] = useState<number | null>(null);
   const [onlyMistakes, setOnlyMistakes] = useState(false);
   const [applyNote, setApplyNote] = useState<string | null>(null);
-  const [corrections, setCorrections] = useState<CorrectionRow[] | null>(null);
-  const [live, setLive] = useState<LiveStats | null>(null);
+  const [corrections, setCorrections] = useState<CorrectionRow[] | null>(() => cached<CorrectionRow[]>("/api/corrections") ?? null);
+  const [live, setLive] = useState<LiveStats | null>(() => cached<LiveStats>("/api/live-stats") ?? null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -43,10 +45,16 @@ export default function QualityPage() {
     : (runsForSet.find((r) => r.model === settings?.model) ?? runsForSet.find((r) => r.model !== "baseline") ?? runsForSet[0])?.name ?? null;
 
   useEffect(() => {
-    if (activeName) api.evalRun(activeName).then(setLoaded, (e: Error) => setError(e.message));
+    if (activeName && !cached(runPath(activeName))) api.evalRun(activeName).then(setLoaded, (e: Error) => setError(e.message));
   }, [activeName]);
 
-  const run = loaded?.name === activeName ? loaded : null;
+  const run = loaded?.name === activeName ? loaded : activeName ? cached<EvalRun>(runPath(activeName)) ?? null : null;
+
+  // Don't wait for the list of runs: fetch the live model's run straight away.
+  useEffect(() => {
+    const name = settings?.model ? `${settings.model}_${set}` : null;
+    if (name && !cached(runPath(name))) api.evalRun(name).then(setLoaded, () => { /* not run yet: the list decides */ });
+  }, [settings?.model, set]);
   const t = threshold ?? settings?.threshold ?? 0.8;
   const points = useMemo(() => (run ? sweep(run.rows) : []), [run]);
   const marks = useMemo(() => (run ? markAt(run.rows, t) : null), [run, t]);
@@ -95,6 +103,13 @@ export default function QualityPage() {
         <p className={styles.banner}>
           These results are the <strong>keyword baseline</strong> (no AI): the bar the AI models have to beat. Pick a Claude model above to compare.
         </p>
+      )}
+
+      {!run && !error && (runs === null || runsForSet.length > 0) && (
+        <div className={styles.loading} aria-label="Loading results">
+          <div className={styles.loadingKpis}>{Array.from({ length: 5 }, (_, i) => <span key={i} className="skeleton" />)}</div>
+          <div className={styles.loadingPanels}><span className="skeleton" /><span className="skeleton" /></div>
+        </div>
       )}
 
       {run && s && marks && (

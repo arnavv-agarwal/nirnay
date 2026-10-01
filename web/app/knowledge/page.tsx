@@ -4,7 +4,7 @@
 // policy (with its pw.live source) or assumed for this prototype.
 import { useEffect, useMemo, useState } from "react";
 import { ExternalLink, Search } from "lucide-react";
-import { api, type Section } from "@/lib/api";
+import { api, cached, type Section } from "@/lib/api";
 import { Tag } from "@/components/Tag";
 import { KB_DOCS as DOCS, sourceOf as source } from "@/lib/labels";
 import styles from "./knowledge.module.css";
@@ -12,7 +12,7 @@ import styles from "./knowledge.module.css";
 const TONE = { official: "success", product: "primary", reports: "warning", assumed: "neutral" } as const;
 
 export default function KnowledgePage() {
-  const [sections, setSections] = useState<Section[] | null>(null);
+  const [sections, setSections] = useState<Section[] | null>(() => cached<Section[]>("/api/kb") ?? null);  // instant when already loaded
   const [error, setError] = useState<string | null>(null);
   const [query, setQuery] = useState("");
   const [doc, setDoc] = useState<string>("all");

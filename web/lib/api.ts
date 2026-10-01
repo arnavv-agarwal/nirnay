@@ -146,6 +146,12 @@ export interface EvalRun extends EvalRunSummary { rows: EvalRow[] }
 
 export class ApiError extends Error {}
 
+// The last answer to each read, kept in memory, so a page you come back to shows at once
+// and then refreshes quietly in the background (no loading screen on every tab switch).
+const lastSeen = new Map<string, unknown>();
+export const cached = <T,>(path: string) => lastSeen.get(path) as T | undefined;
+export const remember = (path: string, value: unknown) => { lastSeen.set(path, value); };
+
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
   let res: Response;
   try {
@@ -162,7 +168,9 @@ async function request<T>(path: string, init?: RequestInit): Promise<T> {
     const detail = typeof body?.detail === "string" ? body.detail : `Request failed (${res.status})`;
     throw new ApiError(detail);
   }
-  return res.json() as Promise<T>;
+  const data = (await res.json()) as T;
+  if (!init?.method) remember(path, data);   // reads only
+  return data;
 }
 
 export const api = {

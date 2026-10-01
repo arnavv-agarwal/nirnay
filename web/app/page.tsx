@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ArrowLeft } from "lucide-react";
-import { api, type Category, type Channel, type Section, type Ticket } from "@/lib/api";
+import { api, cached, remember, type Category, type Channel, type Section, type Ticket } from "@/lib/api";
 import { preview } from "@/lib/labels";
 import { isOpen, trends as findTrends } from "@/lib/trends";
 import { useSettings } from "@/components/SettingsProvider";
@@ -19,8 +19,10 @@ const firstName = (name: string) => name.replace(/\.$/, "");
 
 export default function InboxPage() {
   const { settings, error: settingsError, refresh } = useSettings();
-  const [tickets, setTickets] = useState<Ticket[] | null>(null);
-  const [sections, setSections] = useState<Record<string, Section>>({});
+  // Start from what was last loaded (instant when coming back from another tab), then refresh.
+  const [tickets, setTickets] = useState<Ticket[] | null>(() => cached<Ticket[]>("/api/tickets") ?? null);
+  const [sections, setSections] = useState<Record<string, Section>>(
+    () => Object.fromEntries((cached<Section[]>("/api/kb") ?? []).map((s) => [s.id, s])));
   const [loadError, setLoadError] = useState<string | null>(null);
   const [view, setView] = useState<View>("needs_you");
   const [query, setQuery] = useState("");
@@ -48,6 +50,9 @@ export default function InboxPage() {
       ),
     [],
   );
+
+  // Keep the remembered list in step with what the agent changed (sent, corrected, reopened).
+  useEffect(() => { if (tickets) remember("/api/tickets", tickets); }, [tickets]);
 
   // Reload when the threshold changes: tickets may have moved queue.
   useEffect(() => { void load(); }, [load, settings?.threshold]);
