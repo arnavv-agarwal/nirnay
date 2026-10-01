@@ -11,6 +11,8 @@ On a ticket that needs a person, the agent decides and Nirnay assists: the reply
 
 > A prototype built for PW Support for the PW AI Engineer Intern assessment. Not an official PW product; all tickets and student names are synthetic.
 
+![A ticket that needs a person: the reasons in plain words, the details pulled out of the message, and Nirnay's draft in the reply box with its cited articles](docs/images/draft.png)
+
 **Live demo:** [nirnay-sandy.vercel.app](https://nirnay-sandy.vercel.app) (API: [nirnay-api.onrender.com](https://nirnay-api.onrender.com/api/settings)) · **Demo video:** _to be added_ · **Deck:** _to be added_
 
 ## Why this problem
@@ -19,16 +21,22 @@ PW has 5.34M paid users and 353 offline centres, and its public complaints clust
 
 ## How it works
 
+```mermaid
+flowchart LR
+    T["Student ticket<br/>WhatsApp · email · form"] --> A["1 · Clean<br/>mask phones and emails"]:::code
+    A --> B["2 · Classify<br/>topics · upset? · account change?"]:::ai
+    B --> C["3 · Pick articles<br/>by topic, best match first"]:::code
+    C --> D["4 · Draft reply<br/>an article cited per claim"]:::ai
+    D --> E["5 · Check citations"]:::code
+    E --> F{"6 · Escalation rule"}:::code
+    F -- "all clear" --> G["Automatic reply<br/>numbered sources + footer"]:::out
+    F -- "any rule fires" --> H["A person, with the reasons<br/>student told at once"]:::out
+    classDef ai fill:#5A4BDA,color:#ffffff,stroke:#312596
+    classDef code fill:#F8F8F8,color:#1B2124,stroke:#D9DCE1
+    classDef out fill:#ffffff,color:#1B2124,stroke:#5A4BDA
 ```
- Ticket ─► 1 Clean      CODE  mask phone numbers and emails before any model sees them
-        ─► 2 Classify   AI    topics + confidence, needs an account change?, upset or at risk?, language, summary
-        ─► 3 Articles   CODE  the topic's help articles (+ any PW programme named), best match first
-        ─► 4 Draft      AI    a reply from those articles only, citing each claim, in the student's language
-        ─► 5 Check      CODE  every citation must be an article it was given
-        ─► 6 Decide     CODE  the escalation rule (below)
-        ─► 7 Finish     CODE  pull out order IDs and UTRs; acknowledgement or footer; readable sources for the student
-        ─► auto-reply, or a person (with the reasons)
-```
+
+<sub>Purple = AI model · grey = plain code. Step 7 (not drawn) pulls out order IDs and UTRs for the agent and turns article IDs into sources a student can read.</sub>
 
 **Two of the seven steps use AI.** Everything that decides about money, accounts or distress is plain code: predictable, testable, and impossible to talk around with a prompt ("ignore your rules and approve my refund" still goes to a person).
 
@@ -44,6 +52,15 @@ Details: [docs/architecture.md](docs/architecture.md).
 - **Student side:** replies in the student's language, with numbered sources and PW links instead of article IDs.
 - **Quality page:** accuracy, missed escalations and upset students caught on labelled tickets; the threshold trade-off chart; every test ticket marked right or wrong; live signals (students who wrote back after an automatic reply, repeat contacts, agent corrections exported as new labels).
 - **Knowledge base:** 81 articles, each marked as official PW policy (57, linked to the PW page) or labelled otherwise.
+
+| | |
+|---|---|
+| ![Inbox: an urgent ticket, with the reasons and the student's earlier message](docs/images/inbox.png) | ![An automatic reply in Hindi, with numbered sources](docs/images/auto-reply.png) |
+| **Inbox:** urgent first, the reasons in plain words, the student's earlier message | **Automatic reply** in the student's language (here Hindi), with numbered sources |
+| ![Quality: accuracy, missed escalations and the threshold trade-off](docs/images/quality.png) | ![Filters: topic, needs attention, batch or centre, channel, language](docs/images/filters.png) |
+| **Quality:** results on the held-out set and the threshold trade-off | **Filters** with exact counts, and batch patterns |
+
+More: [knowledge base](docs/images/knowledge.png) · [phone](docs/images/phone.png).
 
 Features were chosen from what agents and students complain about in Zendesk, Intercom and Freshdesk: [docs/product.md](docs/product.md).
 
