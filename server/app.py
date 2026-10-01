@@ -66,7 +66,8 @@ class SettingsUpdate(BaseModel):
     model: Optional[str] = None
 
 
-@app.get("/api/settings")
+# HEAD too: uptime monitors (UptimeRobot) check with HEAD, and a 405 reads as "down"
+@app.api_route("/api/settings", methods=["GET", "HEAD"])
 def get_settings() -> dict:
     return {
         "threshold": store.threshold(),
