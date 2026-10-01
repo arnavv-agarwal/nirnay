@@ -1,0 +1,732 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-01T06:02:10.216356+00:00",
+  "title": "Design System: Nirnay",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "PW Purple",
+        "canonical": "#5a4bda",
+        "tonalRamp": [
+          "#312596",
+          "#4437b8",
+          "#5a4bda",
+          "#8a7ee8",
+          "#b2a9ff",
+          "#d2ccff",
+          "#f1efff",
+          "#f8f7ff"
+        ]
+      },
+      "primary-600": {
+        "role": "primary",
+        "displayName": "Deep Purple",
+        "canonical": "#4437b8",
+        "tonalRamp": [
+          "#312596",
+          "#4437b8",
+          "#5a4bda",
+          "#8a7ee8",
+          "#b2a9ff",
+          "#d2ccff",
+          "#f1efff",
+          "#f8f7ff"
+        ]
+      },
+      "primary-700": {
+        "role": "primary",
+        "displayName": "Darkest Purple",
+        "canonical": "#312596",
+        "tonalRamp": [
+          "#312596",
+          "#4437b8",
+          "#5a4bda",
+          "#8a7ee8",
+          "#b2a9ff",
+          "#d2ccff",
+          "#f1efff",
+          "#f8f7ff"
+        ]
+      },
+      "primary-200": {
+        "role": "primary",
+        "displayName": "Lilac",
+        "canonical": "#b2a9ff",
+        "tonalRamp": [
+          "#312596",
+          "#4437b8",
+          "#5a4bda",
+          "#8a7ee8",
+          "#b2a9ff",
+          "#d2ccff",
+          "#f1efff",
+          "#f8f7ff"
+        ]
+      },
+      "primary-100": {
+        "role": "primary",
+        "displayName": "Lavender Line",
+        "canonical": "#d2ccff",
+        "tonalRamp": [
+          "#312596",
+          "#4437b8",
+          "#5a4bda",
+          "#8a7ee8",
+          "#b2a9ff",
+          "#d2ccff",
+          "#f1efff",
+          "#f8f7ff"
+        ]
+      },
+      "primary-50": {
+        "role": "primary",
+        "displayName": "Lavender Wash",
+        "canonical": "#f1efff",
+        "tonalRamp": [
+          "#312596",
+          "#4437b8",
+          "#5a4bda",
+          "#8a7ee8",
+          "#b2a9ff",
+          "#d2ccff",
+          "#f1efff",
+          "#f8f7ff"
+        ]
+      },
+      "primary-25": {
+        "role": "primary",
+        "displayName": "Lavender Mist",
+        "canonical": "#f8f7ff",
+        "tonalRamp": [
+          "#312596",
+          "#4437b8",
+          "#5a4bda",
+          "#8a7ee8",
+          "#b2a9ff",
+          "#d2ccff",
+          "#f1efff",
+          "#f8f7ff"
+        ]
+      },
+      "text": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#1b2124",
+        "tonalRamp": [
+          "#21282c",
+          "#39454c",
+          "#51636c",
+          "#69808c",
+          "#8a9ea8",
+          "#adbbc2",
+          "#d0d8dc",
+          "#f0f3f4"
+        ]
+      },
+      "text-2": {
+        "role": "neutral",
+        "displayName": "Graphite",
+        "canonical": "#3d3d3d",
+        "tonalRamp": [
+          "#262626",
+          "#424242",
+          "#5e5e5e",
+          "#7a7a7a",
+          "#999999",
+          "#b8b8b8",
+          "#d6d6d6",
+          "#f2f2f2"
+        ]
+      },
+      "text-3": {
+        "role": "neutral",
+        "displayName": "Slate",
+        "canonical": "#5e6166",
+        "tonalRamp": [
+          "#252628",
+          "#404245",
+          "#5a5d62",
+          "#75797f",
+          "#95989d",
+          "#b5b7bb",
+          "#d5d6d8",
+          "#f2f2f3"
+        ]
+      },
+      "border": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#eaecef",
+        "tonalRamp": [
+          "#21252b",
+          "#39414b",
+          "#525c6b",
+          "#6a778b",
+          "#8b96a7",
+          "#aeb6c1",
+          "#d1d5dc",
+          "#f1f2f4"
+        ]
+      },
+      "border-strong": {
+        "role": "neutral",
+        "displayName": "Strong Hairline",
+        "canonical": "#d9dce1",
+        "tonalRamp": [
+          "#22252b",
+          "#3b404a",
+          "#535c69",
+          "#6c7789",
+          "#8d96a5",
+          "#afb6c0",
+          "#d1d5db",
+          "#f1f2f4"
+        ]
+      },
+      "border-hover": {
+        "role": "neutral",
+        "displayName": "Hover Hairline",
+        "canonical": "#b5bbc5",
+        "tonalRamp": [
+          "#22252b",
+          "#3a404a",
+          "#535b6a",
+          "#6c7789",
+          "#8d96a5",
+          "#afb5c0",
+          "#d1d5db",
+          "#f1f2f4"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Surface",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#262626",
+          "#424242",
+          "#5e5e5e",
+          "#7a7a7a",
+          "#999999",
+          "#b8b8b8",
+          "#d6d6d6",
+          "#f2f2f2"
+        ]
+      },
+      "canvas": {
+        "role": "neutral",
+        "displayName": "Canvas",
+        "canonical": "#f8f8f8",
+        "tonalRamp": [
+          "#262626",
+          "#424242",
+          "#5e5e5e",
+          "#7a7a7a",
+          "#999999",
+          "#b8b8b8",
+          "#d6d6d6",
+          "#f2f2f2"
+        ]
+      },
+      "hover": {
+        "role": "neutral",
+        "displayName": "Hover Grey",
+        "canonical": "#f4f5f7",
+        "tonalRamp": [
+          "#20242c",
+          "#383f4d",
+          "#4f596d",
+          "#67748e",
+          "#8994a9",
+          "#acb4c3",
+          "#d0d4dd",
+          "#f0f2f4"
+        ]
+      },
+      "error": {
+        "role": "semantic",
+        "displayName": "Urgent Red",
+        "canonical": "#bf2734",
+        "tonalRamp": [
+          "#400d11",
+          "#6e161e",
+          "#9d202b",
+          "#cb2a37",
+          "#dc5661",
+          "#e78890",
+          "#f1bbc0",
+          "#fbeaeb"
+        ]
+      },
+      "error-bg": {
+        "role": "semantic",
+        "displayName": "Urgent Wash",
+        "canonical": "#fee7e9",
+        "tonalRamp": [
+          "#490309",
+          "#7f0510",
+          "#b50817",
+          "#eb0a1d",
+          "#f73b4b",
+          "#f97681",
+          "#fcb1b7",
+          "#fee7e9"
+        ]
+      },
+      "error-border": {
+        "role": "semantic",
+        "displayName": "Urgent Line",
+        "canonical": "#f3c4c8",
+        "tonalRamp": [
+          "#400d11",
+          "#6e161e",
+          "#9d202b",
+          "#cb2937",
+          "#dd5561",
+          "#e78890",
+          "#f1bbc0",
+          "#fbeaeb"
+        ]
+      },
+      "warning": {
+        "role": "semantic",
+        "displayName": "Needs-You Amber",
+        "canonical": "#9f741f",
+        "tonalRamp": [
+          "#402f0c",
+          "#6f5116",
+          "#9e731f",
+          "#cd9528",
+          "#deb054",
+          "#e8c787",
+          "#f2dfbb",
+          "#fbf5ea"
+        ]
+      },
+      "warning-bg": {
+        "role": "semantic",
+        "displayName": "Amber Wash",
+        "canonical": "#fff6e5",
+        "tonalRamp": [
+          "#4c3200",
+          "#855700",
+          "#bd7b00",
+          "#f5a000",
+          "#ffb833",
+          "#ffce70",
+          "#ffe3ad",
+          "#fff6e5"
+        ]
+      },
+      "warning-border": {
+        "role": "semantic",
+        "displayName": "Amber Line",
+        "canonical": "#f4d392",
+        "tonalRamp": [
+          "#453007",
+          "#78540c",
+          "#ab7811",
+          "#de9b16",
+          "#ecb446",
+          "#f2cb7d",
+          "#f8e1b5",
+          "#fdf6e8"
+        ]
+      },
+      "success": {
+        "role": "semantic",
+        "displayName": "Resolved Green",
+        "canonical": "#1b7938",
+        "tonalRamp": [
+          "#0e3f1d",
+          "#186c32",
+          "#229a47",
+          "#2dc85d",
+          "#58da80",
+          "#8ae5a6",
+          "#bcf0cc",
+          "#eafaef"
+        ]
+      },
+      "success-bg": {
+        "role": "semantic",
+        "displayName": "Green Wash",
+        "canonical": "#dff1e4",
+        "tonalRamp": [
+          "#173520",
+          "#285c37",
+          "#39834e",
+          "#4baa65",
+          "#71c187",
+          "#9cd4ab",
+          "#c6e6cf",
+          "#edf7f0"
+        ]
+      },
+      "success-border": {
+        "role": "semantic",
+        "displayName": "Green Line",
+        "canonical": "#adcfb7",
+        "tonalRamp": [
+          "#1c3022",
+          "#31543b",
+          "#467754",
+          "#5a9a6d",
+          "#7eb48e",
+          "#a5cab0",
+          "#cce1d2",
+          "#eff6f1"
+        ]
+      },
+      "info": {
+        "role": "secondary",
+        "displayName": "PW Info Blue",
+        "canonical": "#037cbf",
+        "tonalRamp": [
+          "#01314b",
+          "#025583",
+          "#0379ba",
+          "#049cf1",
+          "#36b5fc",
+          "#72cbfd",
+          "#afe2fe",
+          "#e6f6ff"
+        ]
+      },
+      "info-bg": {
+        "role": "secondary",
+        "displayName": "Info Wash",
+        "canonical": "#f1f5fe",
+        "tonalRamp": [
+          "#051a47",
+          "#092c7c",
+          "#0d3fb0",
+          "#1052e4",
+          "#4177f1",
+          "#7aa0f5",
+          "#b3c9fa",
+          "#e7eefd"
+        ]
+      },
+      "series-1": {
+        "role": "tertiary",
+        "displayName": "Series Purple",
+        "canonical": "#5a4bda",
+        "tonalRamp": [
+          "#312596",
+          "#4437b8",
+          "#5a4bda",
+          "#8a7ee8",
+          "#b2a9ff",
+          "#d2ccff",
+          "#f1efff",
+          "#f8f7ff"
+        ]
+      },
+      "series-2": {
+        "role": "tertiary",
+        "displayName": "Series Blue",
+        "canonical": "#037cbf",
+        "tonalRamp": [
+          "#01314b",
+          "#025583",
+          "#0379ba",
+          "#049cf1",
+          "#36b5fc",
+          "#72cbfd",
+          "#afe2fe",
+          "#e6f6ff"
+        ]
+      },
+      "series-3": {
+        "role": "tertiary",
+        "displayName": "Series Orange",
+        "canonical": "#ec4a0a",
+        "tonalRamp": [
+          "#491703",
+          "#7f2805",
+          "#b53908",
+          "#eb4a0a",
+          "#f7703b",
+          "#f99b76",
+          "#fcc6b1",
+          "#feede7"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Page titles on Quality and Knowledge."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Inbox list title, New-ticket card title."
+      },
+      "title-sm": {
+        "displayName": "Title small",
+        "purpose": "Conversation header name, panel and card titles, wordmark."
+      },
+      "reading": {
+        "displayName": "Reading",
+        "purpose": "Student messages, drafts, composer."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Dense tool default with tabular numerals."
+      },
+      "body-sm": {
+        "displayName": "Body small",
+        "purpose": "Previews, facts, tables, buttons."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Tags, chips, meta, captions."
+      },
+      "section-label": {
+        "displayName": "Section label",
+        "purpose": "Uppercase headings of triage-panel blocks; never above another title."
+      },
+      "kpi": {
+        "displayName": "KPI",
+        "purpose": "Quality page figures."
+      }
+    },
+    "shadows": [
+      {
+        "name": "shadow-1",
+        "value": "0 1px 2px rgba(27, 33, 36, 0.06)",
+        "purpose": "Rest: message bubbles, selected segment."
+      },
+      {
+        "name": "shadow-2",
+        "value": "0 4px 16px -4px rgba(27, 33, 36, 0.12), 0 1px 3px rgba(27, 33, 36, 0.06)",
+        "purpose": "Float: composer, New-ticket card, chart tooltip."
+      },
+      {
+        "name": "focus-halo",
+        "value": "0 0 0 3px #f1efff",
+        "purpose": "Focused inputs and a targeted knowledge card, with a purple border."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+        "purpose": "All state transitions, 120-150ms on background, border and colour."
+      },
+      {
+        "name": "shimmer",
+        "value": "1.4s linear infinite",
+        "purpose": "Skeleton loading; disabled under prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "phone",
+        "value": "760px"
+      },
+      {
+        "name": "stack",
+        "value": "1100px"
+      },
+      {
+        "name": "rail",
+        "value": "1320px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one main action in a view: Send reply, Apply threshold.",
+      "html": "<button class=\"ds-btn ds-btn-primary\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m22 2-7 20-4-9-9-4Z\"/><path d=\"M22 2 11 13\"/></svg>Send reply</button>",
+      "css": ".ds-btn { display:inline-flex; align-items:center; gap:8px; height:36px; padding:0 16px; border:1px solid #d9dce1; border-radius:8px; background:#fff; color:#1b2124; font-family: var(--font, 'Reddit Sans', system-ui, sans-serif); font-weight:600; font-size:0.8125rem; cursor:pointer; transition: background 150ms cubic-bezier(0.2,0.8,0.2,1), border-color 150ms cubic-bezier(0.2,0.8,0.2,1); } .ds-btn-primary { background:#5a4bda; border-color:#5a4bda; color:#fff; } .ds-btn-primary:hover { background:#4437b8; border-color:#4437b8; } .ds-btn:focus-visible { outline:2px solid #5a4bda; outline-offset:2px; }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary action in PW's vocabulary: purple outline on white.",
+      "html": "<button class=\"ds-btn-outline\">Correct topic</button>",
+      "css": ".ds-btn-outline { display:inline-flex; align-items:center; height:36px; padding:0 16px; border:1px solid #5a4bda; border-radius:8px; background:#fff; color:#5a4bda; font-family: var(--font, 'Reddit Sans', system-ui, sans-serif); font-weight:600; font-size:0.8125rem; cursor:pointer; transition: background 150ms cubic-bezier(0.2,0.8,0.2,1); } .ds-btn-outline:hover { background:#f1efff; } .ds-btn-outline:focus-visible { outline:2px solid #5a4bda; outline-offset:2px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Low-emphasis action: Cancel, Back.",
+      "html": "<button class=\"ds-btn-ghost\">Cancel</button>",
+      "css": ".ds-btn-ghost { display:inline-flex; align-items:center; height:36px; padding:0 16px; border:1px solid transparent; border-radius:8px; background:transparent; color:#3d3d3d; font-family: var(--font, 'Reddit Sans', system-ui, sans-serif); font-weight:600; font-size:0.8125rem; cursor:pointer; } .ds-btn-ghost:hover { background:#f4f5f7; } .ds-btn-ghost:focus-visible { outline:2px solid #5a4bda; outline-offset:2px; }"
+    },
+    {
+      "name": "Status Tags",
+      "kind": "chip",
+      "refersTo": "tag-urgent",
+      "description": "Ticket status pills: always icon plus words, Status Trio colours only.",
+      "html": "<div class=\"ds-tags\"><span class=\"ds-tag ds-tag-urgent\"><svg width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z\"/></svg>Urgent</span><span class=\"ds-tag ds-tag-review\"><svg width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M12 6v6l4 2\"/></svg>Needs you</span><span class=\"ds-tag ds-tag-ok\"><svg width=\"12\" height=\"12\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"m9 12 2 2 4-4\"/></svg>Auto-resolved</span></div>",
+      "css": ".ds-tags { display:flex; gap:6px; flex-wrap:wrap; } .ds-tag { display:inline-flex; align-items:center; gap:4px; height:22px; padding:0 8px; border-radius:9999px; border:1px solid transparent; font-family: var(--font, 'Reddit Sans', system-ui, sans-serif); font-size:0.75rem; font-weight:600; line-height:1; } .ds-tag-urgent { background:#fee7e9; color:#bf2734; border-color:#f3c4c8; } .ds-tag-review { background:#fff6e5; color:#9f741f; border-color:#f4d392; } .ds-tag-ok { background:#dff1e4; color:#1b7938; border-color:#adcfb7; }"
+    },
+    {
+      "name": "Confidence Word",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Confidence in neutral ink with signal bars; never coloured, never a number.",
+      "html": "<span class=\"ds-conf\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\"><path d=\"M2 20h.01\"/><path d=\"M7 20v-4\"/><path d=\"M12 20v-8\"/></svg>Medium</span>",
+      "css": ".ds-conf { display:inline-flex; align-items:center; gap:4px; font-family: var(--font, 'Reddit Sans', system-ui, sans-serif); font-size:0.75rem; font-weight:600; color:#3d3d3d; }"
+    },
+    {
+      "name": "Filter Chip",
+      "kind": "chip",
+      "refersTo": "filter-chip",
+      "description": "Queue views and knowledge filters; selected takes the lavender wash.",
+      "html": "<div class=\"ds-chips\"><button class=\"ds-chip ds-chip-on\">Needs you <span>12</span></button><button class=\"ds-chip\">All <span>40</span></button></div>",
+      "css": ".ds-chips { display:flex; gap:6px; } .ds-chip { height:32px; padding:0 12px; border:1px solid #eaecef; border-radius:9999px; background:#fff; color:#3d3d3d; font-family: var(--font, 'Reddit Sans', system-ui, sans-serif); font-size:0.8125rem; font-weight:600; cursor:pointer; transition: background 150ms cubic-bezier(0.2,0.8,0.2,1); } .ds-chip span { font-weight:500; opacity:0.75; } .ds-chip:hover { background:#f4f5f7; } .ds-chip-on, .ds-chip-on:hover { background:#f1efff; border-color:#d2ccff; color:#4437b8; } .ds-chip:focus-visible { outline:2px solid #5a4bda; outline-offset:2px; }"
+    },
+    {
+      "name": "Search Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Search and text fields: strong hairline, purple border and lavender halo on focus.",
+      "html": "<label class=\"ds-search\"><svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.3-4.3\"/></svg><input placeholder=\"Search tickets\" /></label>",
+      "css": ".ds-search { display:flex; align-items:center; gap:8px; height:36px; padding:0 12px; border:1px solid #d9dce1; border-radius:8px; background:#fff; color:#5e6166; transition: border-color 150ms cubic-bezier(0.2,0.8,0.2,1), box-shadow 150ms cubic-bezier(0.2,0.8,0.2,1); } .ds-search:hover { border-color:#b5bbc5; } .ds-search:focus-within { border-color:#5a4bda; box-shadow:0 0 0 3px #f1efff; } .ds-search input { flex:1; border:0; outline:none; background:transparent; color:#1b2124; font-family: var(--font, 'Reddit Sans', system-ui, sans-serif); font-size:0.8125rem; } .ds-search input::placeholder { color:#5e6166; }"
+    },
+    {
+      "name": "Sidebar Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Sidebar links with the purple count badge; active is lavender wash.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link ds-nav-on\" href=\"#\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M22 12h-6l-2 3h-4l-2-3H2\"/><path d=\"M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z\"/></svg><span>Inbox</span><i>12</i></a><a class=\"ds-nav-link\" href=\"#\"><svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M3 3v18h18\"/><path d=\"m19 9-5 5-4-4-3 3\"/></svg><span>Quality</span></a></nav>",
+      "css": ".ds-nav { display:grid; gap:2px; width:208px; } .ds-nav-link { display:flex; align-items:center; gap:10px; height:38px; padding:0 12px; border-radius:8px; color:#3d3d3d; font-family: var(--font, 'Reddit Sans', system-ui, sans-serif); font-weight:600; font-size:0.875rem; text-decoration:none; transition: background 150ms cubic-bezier(0.2,0.8,0.2,1), color 150ms cubic-bezier(0.2,0.8,0.2,1); } .ds-nav-link:hover { background:#f4f5f7; color:#1b2124; } .ds-nav-on, .ds-nav-on:hover { background:#f1efff; color:#5a4bda; } .ds-nav-link i { margin-left:auto; min-width:22px; height:20px; padding:0 6px; display:grid; place-items:center; border-radius:9999px; background:#5a4bda; color:#fff; font-style:normal; font-size:11px; font-weight:700; } .ds-nav-link:focus-visible { outline:2px solid #5a4bda; outline-offset:2px; }"
+    },
+    {
+      "name": "Why It Needs You",
+      "kind": "card",
+      "refersTo": "",
+      "description": "Triage-panel callout: reasons in plain words, washed in the ticket's status colour, no score.",
+      "html": "<div class=\"ds-why\"><strong class=\"ds-why-title\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M12 6v6l4 2\"/></svg>Why this needs you</strong><ul><li><strong>Asks to change the registered phone number</strong><span>Account changes always go to a person.</span></li></ul></div>",
+      "css": ".ds-why { padding:12px 16px; border-radius:8px; border:1px solid #f4d392; background:#fff6e5; font-family: var(--font, 'Reddit Sans', system-ui, sans-serif); font-size:0.8125rem; } .ds-why-title { display:flex; align-items:center; gap:6px; color:#9f741f; margin-bottom:8px; } .ds-why ul { margin:0; padding:0; list-style:none; display:grid; gap:12px; } .ds-why li { display:grid; gap:2px; } .ds-why li strong { color:#1b2124; } .ds-why li span { color:#3d3d3d; }"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Flat panel on the canvas: 12px corners, hairline border, no shadow.",
+      "html": "<article class=\"ds-card\"><h3>Refund window for batch courses</h3><p>Refunds are available within 7 days of purchase if fewer than 10% of lectures have been watched.</p><footer><span class=\"ds-id\">KB-07</span></footer></article>",
+      "css": ".ds-card { max-width:360px; padding:20px; display:grid; gap:8px; background:#fff; border:1px solid #eaecef; border-radius:12px; font-family: var(--font, 'Reddit Sans', system-ui, sans-serif); } .ds-card h3 { margin:0; font-size:1.0625rem; font-weight:700; letter-spacing:-0.01em; color:#1b2124; } .ds-card p { margin:0; color:#3d3d3d; line-height:1.6; font-size:0.875rem; } .ds-id { padding:1px 7px; border-radius:4px; background:#f1efff; color:#4437b8; font-size:0.75rem; font-weight:700; }"
+    },
+    {
+      "name": "Sort and Filter",
+      "kind": "control",
+      "refersTo": "queue-controls",
+      "description": "One quiet row under the inbox search: a borderless sort select on the left, a Filter button on the right that turns lavender with a count badge when filters are on. The floating panel groups toggle pills (Topic, Needs attention, Batch or centre, Channel, Language), each with the exact count it would leave; active filters show as removable lavender chips.",
+      "html": "<div class=\"ds-qc\"><span class=\"ds-qc-sort\">Most urgent first</span><button class=\"ds-qc-btn ds-qc-on\">Filter <b>2</b></button></div><div class=\"ds-qc-pills\"><button class=\"ds-qc-pill ds-qc-pill-on\">Payment <span>10</span></button><button class=\"ds-qc-pill\">Hinglish <span>4</span></button><button class=\"ds-qc-pill\" disabled>Academic doubt <span>0</span></button></div>",
+      "css": ".ds-qc { display:flex; justify-content:space-between; align-items:center; font-family: var(--font, 'Reddit Sans', system-ui, sans-serif); } .ds-qc-sort { font-size:0.75rem; font-weight:600; color:#3d3d3d; } .ds-qc-btn { height:30px; padding:0 10px; border:1px solid #d9dce1; border-radius:8px; background:#fff; color:#3d3d3d; font-size:0.75rem; font-weight:600; font-family: var(--font, 'Reddit Sans', system-ui, sans-serif); } .ds-qc-on { background:#f1efff; border-color:#d2ccff; color:#4437b8; } .ds-qc-btn b { margin-left:6px; padding:0 5px; border-radius:9999px; background:#5a4bda; color:#fff; font-size:11px; } .ds-qc-pills { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; } .ds-qc-pill { height:28px; padding:0 10px; border:1px solid #d9dce1; border-radius:9999px; background:#fff; color:#1b2124; font-size:0.75rem; font-weight:600; font-family: var(--font, 'Reddit Sans', system-ui, sans-serif); } .ds-qc-pill span { font-weight:500; opacity:0.7; } .ds-qc-pill-on { background:#f1efff; border-color:#d2ccff; color:#4437b8; } .ds-qc-pill:disabled { opacity:0.45; }"
+    },
+    {
+      "name": "Batch Pattern",
+      "kind": "notice",
+      "refersTo": "batch-pattern",
+      "description": "A batch or centre with 3+ tickets in a day (possible common cause): an Info Blue layers icon on its filter pill, and in the triage panel an Info Blue notice with a ghost button that applies the filter. Informational, never amber or red.",
+      "html": "<div class=\"ds-bp\"><p><strong>2 other students wrote about Lakshya NEET</strong> in the same day. It may be one cause.</p><button>Show Lakshya NEET tickets</button></div>",
+      "css": ".ds-bp { padding:8px 12px; border-radius:6px; background:#f1f5fe; color:#037cbf; font-family: var(--font, 'Reddit Sans', system-ui, sans-serif); font-size:0.8125rem; } .ds-bp p { margin:0 0 4px; color:#3d3d3d; } .ds-bp strong { color:#1b2124; } .ds-bp button { border:0; background:none; padding:0; color:#037cbf; font-weight:600; font-size:0.75rem; font-family: var(--font, 'Reddit Sans', system-ui, sans-serif); }"
+    },
+    {
+      "name": "Help Article",
+      "kind": "list-item",
+      "refersTo": "help-article",
+      "description": "A bordered row with a lavender ID badge, title and chevron that opens in place to show the article, its source label and an outline Insert into reply button; a small outline Cite button sits beside the row. Six show, best match first, then Show all.",
+      "html": "<div class=\"ds-ha\"><div class=\"ds-ha-row\"><span class=\"ds-ha-id\">TS-1</span> OTP not received</div><button class=\"ds-ha-cite\">+ Cite</button></div>",
+      "css": ".ds-ha { display:flex; gap:6px; align-items:flex-start; font-family: var(--font, 'Reddit Sans', system-ui, sans-serif); } .ds-ha-row { flex:1; padding:8px 10px; border:1px solid #eaecef; border-radius:8px; font-size:0.8125rem; font-weight:600; color:#1b2124; } .ds-ha-id { margin-right:6px; padding:1px 5px; border-radius:4px; background:#f1efff; color:#4437b8; font-size:11px; } .ds-ha-cite { height:30px; padding:0 10px; border:1px solid #d2ccff; border-radius:8px; background:#fff; color:#5a4bda; font-size:0.75rem; font-weight:600; font-family: var(--font, 'Reddit Sans', system-ui, sans-serif); }"
+    },
+    {
+      "name": "Undo Send Notice",
+      "kind": "notice",
+      "refersTo": "undo-notice",
+      "description": "One line under the inbox search for the five seconds before a reply really goes: Graphite text with a send icon and a default-style Undo button; then Resolved Green 'Reply sent to …', which clears itself. Announced politely to screen readers.",
+      "html": "<p class=\"ds-un\"><span>Sending to Yash P…</span><button>Undo</button></p>",
+      "css": ".ds-un { display:flex; align-items:center; gap:6px; margin:0; font-size:0.75rem; font-weight:600; color:#3d3d3d; font-family: var(--font, 'Reddit Sans', system-ui, sans-serif); } .ds-un span { flex:1; } .ds-un button { height:26px; padding:0 12px; border:1px solid #d9dce1; border-radius:8px; background:#fff; color:#1b2124; font-weight:700; font-size:0.75rem; font-family: var(--font, 'Reddit Sans', system-ui, sans-serif); }"
+    },
+    {
+      "name": "Reply Composer",
+      "kind": "form",
+      "refersTo": "reply-composer",
+      "description": "Floating card pinned under the conversation. Starts empty on tickets that need a person, with an outline 'Use Nirnay's draft' button in its header; after use, a Deep Purple label says whether the draft is untouched or edited. Source chips, an amber note for assumed articles, and the primary Send reply button.",
+      "html": "<div class=\"ds-rc\"><div class=\"ds-rc-head\"><b>Reply to Kunal</b><button>✦ Use Nirnay's draft</button></div><textarea placeholder=\"Write your reply, or start from Nirnay's draft.\"></textarea><button class=\"ds-rc-send\">Send reply</button></div>",
+      "css": ".ds-rc { display:grid; gap:8px; padding:16px; border:1px solid #eaecef; border-radius:12px; background:#fff; box-shadow:0 4px 16px -4px rgba(27,33,36,.12),0 1px 3px rgba(27,33,36,.06); font-family: var(--font, 'Reddit Sans', system-ui, sans-serif); } .ds-rc-head { display:flex; justify-content:space-between; align-items:center; font-size:.8125rem; } .ds-rc-head button { height:30px; padding:0 12px; border:1px solid #d2ccff; border-radius:8px; background:#fff; color:#5a4bda; font-weight:600; font-size:.75rem; font-family: var(--font, 'Reddit Sans', system-ui, sans-serif); } .ds-rc textarea { min-height:96px; border:0; font-size:.9375rem; font-family: var(--font, 'Reddit Sans', system-ui, sans-serif); } .ds-rc-send { justify-self:end; height:36px; padding:0 16px; border:0; border-radius:8px; background:#5a4bda; color:#fff; font-weight:600; font-family: var(--font, 'Reddit Sans', system-ui, sans-serif); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The PW Agent Desk",
+    "overview": "Nirnay looks like a tool PW's own support floor could ship tomorrow: PW's production tokens (Reddit Sans, PW purple, white surfaces on a pale grey canvas, hairline borders, 8px corners, pill tags) set into the helpdesk pattern agents already know from Zendesk, Intercom and Freshdesk. Nothing is themed or metaphorical. The design's work is clarity at density: an agent clears a mixed queue all shift, so every pane is quiet by default and colour appears only when it means something.\n\nThe system is built on two separations. Purple means \"you can act here or you have selected this\"; red, amber and green mean ticket state and nothing else. Confidence, which a model would express as a number, is shown to agents as a word with signal bars in neutral ink; the numbers, and the 0.80 threshold, live only on the Quality page where the team lead tunes them.\n\nLight theme only: this is office daytime work. PW's logo is never used; the shell carries Nirnay's own mark and a small \"Built for PW Support · Prototype\" line.",
+    "keyCharacteristics": [
+      "PW's production palette and Reddit Sans, with Noto Sans Devanagari for Hindi tickets.",
+      "Flat white panes on a #F8F8F8 canvas, separated by 1px hairlines; shadow only on floating things.",
+      "8px default corners, 12px for cards, full pills for tags and chips.",
+      "Colour is semantic: purple for action and selection, red/amber/green for status only.",
+      "Plain words over model numbers in the agent's view.",
+      "Three-pane helpdesk that degrades to rail, stacked panel, and separate phone screens."
+    ],
+    "rules": [
+      {
+        "name": "The Purple Means Act Rule",
+        "body": "Full-strength PW purple is for primary actions, selection, links and the nav badge. It is never used for status, never for decoration, and never for a chart line that means status.",
+        "section": "colors"
+      },
+      {
+        "name": "The Status Trio Rule",
+        "body": "Red, amber and green are reserved for ticket status (urgent / needs you / auto-resolved) and the upset and account-change flags. No other element may borrow them.",
+        "section": "colors"
+      },
+      {
+        "name": "The Colourless Confidence Rule",
+        "body": "Confidence is never coloured. It is rendered in Graphite ink with a signal-bar icon (High / Medium / Low), so a low-confidence ticket never reads as an alarm.",
+        "section": "colors"
+      },
+      {
+        "name": "The Chart Palette Rule",
+        "body": "Series colours exist only inside charts and are never reused as status; status colours never appear as series.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Family Rule",
+        "body": "Reddit Sans everywhere; weight carries hierarchy. Do not introduce a display face.",
+        "section": "typography"
+      },
+      {
+        "name": "The No Eyebrow Rule",
+        "body": "Nothing sits above a title as a kicker or category line. Identifiers such as a knowledge article's ID go in the card footer.",
+        "section": "typography"
+      },
+      {
+        "name": "The Hairline First Rule",
+        "body": "Separate with a 1px Hairline before reaching for a shadow. Cards, KPI tiles and panels rest flat.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** use PW purple (#5A4BDA) only for primary actions, selection, links, focus and the nav badge.",
+      "**Do** give every status tag an icon and words, never colour alone.",
+      "**Do** show confidence as High / Medium / Low with signal bars in Graphite (#3D3D3D).",
+      "**Do** state why a ticket needs a person in plain words, first in the triage panel.",
+      "**Do** keep numbers and the threshold (written 0.80) on the Quality page.",
+      "**Do** separate panes with 1px Hairlines (#EAECEF) on the #F8F8F8 canvas.",
+      "**Do** keep the composer pinned so \"Send reply\" is always visible.",
+      "**Do** keep \"Built for PW Support · Prototype\" in the shell.",
+      "**Do** give every filter option the exact number of tickets it would leave, and disable one that would leave none.",
+      "**Do** hold every reply for five seconds with an Undo button before it goes; a student can't un-receive a message."
+    ],
+    "donts": [
+      "**Don't** show percentages, scores or the threshold anywhere in the Inbox.",
+      "**Don't** colour confidence, and don't use red, amber or green for anything except ticket status and the upset / account-change flags.",
+      "**Don't** reuse chart series colours (#5A4BDA / #037CBF / #EC4A0A) as status.",
+      "**Don't** put an eyebrow or kicker line above a title.",
+      "**Don't** use PW's logo or imply this is an official PW product.",
+      "**Don't** add a dark theme; this is light-only daytime office work.",
+      "**Don't** add themed or metaphorical decoration; the bar is Zendesk, Intercom and Freshdesk."
+    ]
+  }
+}
