@@ -9,7 +9,7 @@
 
 On a ticket that needs a person, the agent decides and Nirnay assists: the reply box starts empty, with **Use Nirnay's draft** one click away.
 
-> A prototype built for PW Support for the PW AI Engineer Intern assessment. Not an official PW product; all tickets and student names are synthetic.
+> A prototype built for PW Support for the PW AI Engineer assessment. Not an official PW product; all tickets and student names are synthetic.
 
 ![A ticket that needs a person: the reasons in plain words, the details pulled out of the message, and Nirnay's draft in the reply box with its cited articles](docs/images/draft.png)
 
@@ -99,7 +99,7 @@ Full results, per-topic scores and every failure: [docs/evaluation.md](docs/eval
 - **Test data:** 156 synthetic tickets modelled on PW's public complaint themes (English, Hinglish, Hindi; WhatsApp, email, forms; typos, wrong form fields, multi-issue, upset students), split 56 tuning / 100 held-out, labelled by a guide written *before* the tickets ([data/LABELING.md](data/LABELING.md)). Plus 15 blind tickets written by me without seeing the prompts.
 - **Evaluation:** `python -m eval.run_eval --model <model> --split <dev|test|blind>` (routing, escalation precision/recall, per-topic precision/recall, upset and needs-action detection, citation pass rate, cost, latency, threshold sweep); `eval/robustness.py` (9 hostile inputs); `eval/reply_quality.py` (drafts checked against their sources).
 - **Unit tests:** `python -m pytest`: 27 tests, under a second, no API key (escalation rule, citations, masking, extraction, routing, API).
-- **Browser tests:** `tests/e2e/flows.py` (10 flows: triage, correct, send and undo, search, filters, threshold, reopen, Quality, Knowledge base) and `tests/e2e/reply_box.py` (13 checks of the reply box), against the running app.
+- **Browser tests:** `tests/e2e/flows.py` (10 flows: triage, correct, send and undo, search, filters, threshold, reopen, Quality, Knowledge base) `tests/e2e/reply_box.py` (13 checks of the reply box) and `tests/e2e/phone.py` (sending on a phone: confirmation, Undo, switching apps inside the undo window), against the running app.
 
 ## Known limitations
 

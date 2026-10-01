@@ -15,7 +15,7 @@ Both are free and need no card. Deploy the API first, because the web app needs 
 
 Optional settings (Environment tab): `NIRNAY_DAILY_AI_CALLS` (default 100) and `NIRNAY_PER_MINUTE` (default 10), see `server/limits.py`.
 
-**Keeping it awake.** Render's free plan sleeps after 15 idle minutes, and waking takes about a minute. `.github/workflows/keep-awake.yml` pings `/api/settings` (no AI call) every 10 minutes. Turn it on by adding a repository variable: GitHub → Settings → Secrets and variables → Actions → Variables → `NIRNAY_API_URL` = the API address.
+**Keeping it awake.** Render's free plan sleeps after 15 idle minutes, and waking takes about a minute. A free UptimeRobot HTTP monitor pings `/api/settings` (no AI call) every 5 minutes. GitHub's scheduled workflows are best-effort and were often skipped, so `.github/workflows/keep-awake.yml` (every 10 minutes) is only a backup. Turn it on by adding a repository variable: GitHub → Settings → Secrets and variables → Actions → Variables → `NIRNAY_API_URL` = the API address.
 
 **The inbox resets** to the demo tickets whenever the service restarts (the database lives in `/tmp`), which is what a public demo wants.
 
