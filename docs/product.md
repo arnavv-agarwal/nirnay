@@ -17,7 +17,7 @@ The front page is the [README](../README.md).
   - **the student's other messages this week**, above the conversation, so nobody asks them to repeat themselves;
   - **details in the message** (order ID, UPI/UTR reference, amount, batch, centre) with one-click copy for the admin panel;
   - the suggested help articles, best match first (show all if needed). Click one to read it, then **Insert into reply** (its text, already cited, as a starting point to edit) or **Cite** (just the reference, after the agent's own sentence). A draft that cites nothing is flagged before sending;
-  - **what the student actually receives**: inside Nirnay replies cite articles by ID (`[BA-1]`), which the citation check needs; the student gets numbered references and a "Sources" list with PW's link for official policies (`triage/sources.py`), and the conversation shows that version;
+  - **what the student actually receives**: inside Nirnay replies cite articles by ID (`[BA-1]`), which the citation check needs; the student gets numbered references and a "Sources" list of PW pages they can open; citations of articles PW doesn't publish are dropped from the student's copy, since a title they can't tap tells them nothing (`triage/sources.py`), and the conversation shows that version;
   - **Topic wrong? Correct it**: each correction is saved as a new labelled example and can be exported (as with Freshdesk's Freddy);
   - **Should a person handle this? Reopen it**, on an automatic reply: the ticket goes back to Needs you for a follow-up (the sent reply stays visible), and it is recorded as "should have come to a person", the most important label for the next evaluation.
 - **Quality (team lead).** Routing accuracy, missed escalations, auto-reply rate, topic accuracy and upset students caught, plus:
@@ -44,7 +44,7 @@ Before adding features I read what agents and students complain about in the big
 | Agents retype order numbers and UTRs from the message into the admin panel | Observed in the test tickets | Order IDs, UTRs, amounts, batch and centre are pulled out by regex, with a copy button | Product sense |
 | A reply sent by mistake can't be recalled | [Zendesk community idea](https://community.zendesk.com/ideas/add-an-undo-and-recall-button-to-agent-workspace-3869) | Every reply waits 5 seconds with an Undo button before it goes; Undo puts the ticket and the reply back | Product sense |
 | Suggested articles unrelated to the ticket | Found in my own screenshots | Articles are chosen by topic, plus only the PW programmes the student actually names, and ranked by the words they share with the ticket | Product sense |
-| Citations that mean nothing to the customer | Found while testing: a reply would have reached WhatsApp as "…[TS-1]" | The student gets numbered references and a "Sources" list with PW's link for official policies; the agent keeps the exact IDs | Product sense |
+| Citations that mean nothing to the customer | Found while testing: a reply would have reached WhatsApp as "…[TS-1]" | The student gets numbered links to PW's pages (bare titles of unpublished articles were dropped after a test on the live demo); the agent keeps the exact IDs | Product sense |
 | Related tickets from one cause (a batch that didn't sync) are handled one by one; linking them is manual | [DevRev on AI triage](https://devrev.ai/blog/ai-support-ticket-triaging) | Every batch or centre named is a filter option; 3+ tickets about one in a day (including ones Nirnay auto-answered) are marked as a possible common cause | Product sense |
 
 ---

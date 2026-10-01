@@ -44,17 +44,19 @@ def test_every_article_has_a_source_line_and_a_unique_id():
     assert all(s.source != "unknown" for s in sections.values())
 
 
-def test_students_get_numbered_sources_not_article_ids():
-    text = for_student("Wait 2 hours [BA-1]. Then log out and in again [BA-1]. Refunds are reviewed by an agent [RF-4].")
-    assert "[BA-1]" not in text and "[RF-4]" not in text
-    assert "hours [1]." in text and "again [1]." in text and "agent [2]." in text
-    assert "Sources:\n1. Purchased batch not showing in the app" in text
-    assert "2. How refund and batch-change requests are handled" in text
+def test_students_get_numbered_sources_they_can_open_not_article_ids():
+    text = for_student("Online batches are not refundable [RF-1]. Refunds are reviewed by an agent [RF-4]. "
+                       "Write to us any time [CT-2] [RF-1].")
+    assert "[RF-1]" not in text and "[RF-4]" not in text and "[CT-2]" not in text
+    assert "refundable [1]." in text and "by an agent." in text and "any time [2] [1]." in text
+    assert "Sources:\n1. Refund policy for online batches: https://www.pw.live/terms-and-conditions" in text
+    assert "\n2. Talking to a counsellor: https://www.pw.live/faqs" in text
 
 
-def test_official_sources_carry_their_pw_link_and_invented_ids_are_dropped():
-    text = for_student("Online batches are not refundable [RF-1]. See [ZZ-9].", "hi")
-    assert "स्रोत:" in text and "https://www.pw.live/terms-and-conditions" in text and "ZZ-9" not in text
+def test_articles_without_a_pw_page_and_invented_ids_are_not_shown_to_students():
+    assert for_student("Wait 2 hours [BA-1]. Then log out and in again [BA-1]. See [ZZ-9].", "hi") == \
+        "Wait 2 hours. Then log out and in again. See."
+    assert "स्रोत:" in for_student("Online batches are not refundable [RF-1].", "hi")
 
 
 def test_suggestions_lead_with_the_article_that_matches_the_ticket():

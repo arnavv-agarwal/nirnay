@@ -173,7 +173,7 @@ export function Conversation({ ticket, sections, draft, onDraft, onSend, pending
                       <strong>{id}</strong> {sections[id]?.title ?? "Unknown article"}
                     </span>
                   ))}
-                  <span className={styles.hint}>The student sees these as numbered sources.</span>
+                  <span className={styles.hint}>The student sees the ones with a PW page as numbered links.</span>
                 </>
               ) : (
                 <span className={styles.hint}>No help article cited yet. Insert or cite one from the suggested help articles.</span>

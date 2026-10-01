@@ -1,13 +1,16 @@
 """Turns the agent's citations into sources a student can read. Plain code.
 
-Inside Nirnay a reply cites articles by ID ("... within 2 hours [BA-1]."), which the citation
-check and the agent need. On WhatsApp "[BA-1]" means nothing, so the student gets numbered
-references and a short source list instead, with PW's link when the article is official policy:
+Inside Nirnay a reply cites articles by ID ("... within 7 days [RF-4]."), which the citation
+check and the agent need. On WhatsApp "[RF-4]" means nothing, so the student gets numbered
+references and a short source list instead, but only for articles with a PW page to open:
 
-    ... within 2 hours [1].
+    ... not refundable [1].
 
     Sources:
-    1. Purchased batch not showing in the app
+    1. Refund policy for online batches: https://www.pw.live/terms-and-conditions
+
+A title the student can't tap tells them nothing, so citations of articles without a PW page
+(assumed procedures) are dropped from the student's copy. The agent still sees every citation.
 """
 
 import re
@@ -25,18 +28,22 @@ def for_student(reply: str, language: str = "en") -> str:
 
     def number(match: re.Match) -> str:
         sid = match.group(1)
-        if sid not in sections:  # an invented ID fails the citation check; never show it to a student
+        if not link_for(sections.get(sid)):  # invented ID, or no PW page to open: nothing to show
             return ""
         if sid not in order:
             order.append(sid)
-        return f"[{order.index(sid) + 1}]"
+        return f" [{order.index(sid) + 1}]"
 
-    text = CITATION.sub(number, reply).strip()
+    text = re.sub(r"[ \t]*" + CITATION.pattern, number, reply).strip()
     if not order:
         return text
-    lines = []
-    for i, sid in enumerate(order, 1):
-        section = sections[sid]
-        link = URL.search(section.source) if section.source.startswith("official") else None
-        lines.append(f"{i}. {section.title}" + (f": {link.group(0)}" if link else ""))
+    lines = [f"{i}. {sections[sid].title}: {link_for(sections[sid])}" for i, sid in enumerate(order, 1)]
     return f"{text}\n\n{HEADING.get(language, 'Sources')}:\n" + "\n".join(lines)
+
+
+def link_for(section) -> str:
+    """PW's page for an article that is official policy; empty for anything else."""
+    if section is None or not section.source.startswith("official"):
+        return ""
+    link = URL.search(section.source)
+    return link.group(0) if link else ""
