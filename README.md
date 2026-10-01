@@ -13,7 +13,7 @@ On a ticket that needs a person, the agent decides and Nirnay assists: the reply
 
 ![A ticket that needs a person: the reasons in plain words, the details pulled out of the message, and Nirnay's draft in the reply box with its cited articles](docs/images/draft.png)
 
-**Live demo:** [nirnay-sandy.vercel.app](https://nirnay-sandy.vercel.app) (API: [nirnay-api.onrender.com](https://nirnay-api.onrender.com/api/settings)) · **Demo video:** _to be added_ · **Deck:** _to be added_
+**Live demo:** [nirnay-sandy.vercel.app](https://nirnay-sandy.vercel.app) (API: [nirnay-api.onrender.com](https://nirnay-api.onrender.com/api/settings)) · **Demo video:** _to be added_ · **Deck:** [pitch deck (PDF)](docs/pitch-deck.pdf)
 
 ## Why this problem
 
