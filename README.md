@@ -11,7 +11,7 @@ On a ticket that needs a person, the agent decides and Nirnay assists: the reply
 
 > A prototype built for PW Support for the PW AI Engineer Intern assessment. Not an official PW product; all tickets and student names are synthetic.
 
-**Live demo:** _to be added_ · **Demo video:** _to be added_ · **Deck:** _to be added_
+**Live demo:** [nirnay-sandy.vercel.app](https://nirnay-sandy.vercel.app) (API: [nirnay-api.onrender.com](https://nirnay-api.onrender.com/api/settings)) · **Demo video:** _to be added_ · **Deck:** _to be added_
 
 ## Why this problem
 
