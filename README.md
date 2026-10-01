@@ -49,7 +49,7 @@ Details: [docs/architecture.md](docs/architecture.md).
 ## What agents and the team lead get
 
 - **Inbox:** the familiar three-pane helpdesk. Queues worked urgent first; sort and multi-filters; "why this needs you" in plain words, quoting the student; the student's earlier messages this week; order IDs, UTRs and amounts pulled out with a copy button; help articles ranked for the ticket, to read, insert or cite; send & next with a 5-second **Undo**; **Reopen** an automatic reply that should have come to a person.
-- **Student side:** replies in the student's language, with numbered sources and PW links instead of article IDs.
+- **Student side:** replies in the student's language, with numbered links to PW's pages instead of article IDs (articles PW doesn't publish stay internal).
 - **Quality page:** accuracy, missed escalations and upset students caught on labelled tickets; the threshold trade-off chart; every test ticket marked right or wrong; live signals (students who wrote back after an automatic reply, repeat contacts, agent corrections exported as new labels).
 - **Knowledge base:** 81 articles, each marked as official PW policy (57, linked to the PW page) or labelled otherwise.
 
@@ -98,8 +98,8 @@ Full results, per-topic scores and every failure: [docs/evaluation.md](docs/eval
 
 - **Test data:** 156 synthetic tickets modelled on PW's public complaint themes (English, Hinglish, Hindi; WhatsApp, email, forms; typos, wrong form fields, multi-issue, upset students), split 56 tuning / 100 held-out, labelled by a guide written *before* the tickets ([data/LABELING.md](data/LABELING.md)). Plus 15 blind tickets written by me without seeing the prompts.
 - **Evaluation:** `python -m eval.run_eval --model <model> --split <dev|test|blind>` (routing, escalation precision/recall, per-topic precision/recall, upset and needs-action detection, citation pass rate, cost, latency, threshold sweep); `eval/robustness.py` (9 hostile inputs); `eval/reply_quality.py` (drafts checked against their sources).
-- **Unit tests:** `python -m pytest`: 28 tests, under a second, no API key (escalation rule, citations, masking, extraction, routing, API).
-- **Browser tests:** `tests/e2e/flows.py` (10 flows: triage, correct, send and undo, search, filters, threshold, reopen, Quality, Knowledge base) `tests/e2e/reply_box.py` (13 checks of the reply box) and `tests/e2e/phone.py` (sending on a phone: confirmation, Undo, switching apps inside the undo window), against the running app.
+- **Unit tests:** `python -m pytest`: 29 tests, under a second, no API key (escalation rule, citations, masking, extraction, routing, API).
+- **Browser tests:** `tests/e2e/flows.py` (10 flows: triage, correct, send and undo, search, filters, threshold, reopen, Quality, Knowledge base) `tests/e2e/reply_box.py` (13 checks of the reply box), `tests/e2e/phone.py` (sending on a phone: confirmation, Undo, switching apps inside the undo window; Chromium, WebKit and Firefox) and `tests/e2e/two_devices.py` (a phone and a laptop on the same inbox, several rounds: what one does, the other sees; a ticket can't be answered twice), against the running app.
 
 ## Known limitations
 

@@ -1,6 +1,7 @@
 """Sending a reply on a phone, in a real browser, against the running app.
 
     python tests/e2e/phone.py      # with the API (port 8000) and web app (port 3000) running
+    NIRNAY_ENGINE=webkit python tests/e2e/phone.py      # Safari's engine; also firefox (default chromium)
 
 On a phone the list and the ticket are separate screens, and the 5-second undo window runs
 in the browser. These checks make sure an agent always sees that a reply went, and that
@@ -14,6 +15,7 @@ from playwright.sync_api import expect, sync_playwright
 
 BASE = os.environ.get("NIRNAY_WEB", "http://localhost:3000")
 CHROME = os.environ.get("CHROME_PATH")  # optional; by default Playwright's own Chromium
+ENGINE = os.environ.get("NIRNAY_ENGINE", "chromium")
 
 results = []
 
@@ -29,8 +31,12 @@ def check(name, fn):
 
 
 with sync_playwright() as p:
-    browser = p.chromium.launch(executable_path=CHROME) if CHROME else p.chromium.launch()
-    page = browser.new_context(**p.devices["iPhone 13"]).new_page()
+    engine = getattr(p, ENGINE)
+    browser = engine.launch(executable_path=CHROME) if CHROME and ENGINE == "chromium" else engine.launch()
+    phone = dict(p.devices["iPhone 13"])
+    if ENGINE == "firefox":
+        phone.pop("is_mobile")  # Firefox can't emulate a mobile browser; the size and touch still apply
+    page = browser.new_context(**phone).new_page()
     errors = []
     page.on("pageerror", lambda e: errors.append(str(e)))
     page.goto(BASE, wait_until="networkidle")
