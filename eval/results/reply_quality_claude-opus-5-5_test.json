@@ -1,0 +1,3467 @@
+{
+  "run": "claude-opus-5-5_test",
+  "judge": "claude-sonnet-5-5",
+  "summary": {
+    "replies": 100,
+    "judged": 100,
+    "claims": 612,
+    "claims_supported": 0.8856209150326797,
+    "claims_partly": 0.08006535947712418,
+    "claims_unsupported": 0.03431372549019608,
+    "replies_fully_grounded": 0.45,
+    "answers_question": 0.67,
+    "same_language": 1.0,
+    "promises_beyond_articles": 5,
+    "cost_usd": 0.55704
+  },
+  "rows": [
+    {
+      "id": "test-01",
+      "claims": [
+        {
+          "claim": "After a batch expires, its content can no longer be opened",
+          "supported": "yes"
+        },
+        {
+          "claim": "Batch validity is not extended automatically",
+          "supported": "yes"
+        },
+        {
+          "claim": "Extension requests are reviewed by the support team",
+          "supported": "yes"
+        },
+        {
+          "claim": "The student's request will be passed to a support agent who will follow up",
+          "supported": "partly"
+        },
+        {
+          "claim": "Support cannot promise an extension right now",
+          "supported": "yes"
+        },
+        {
+          "claim": "Sharing order ID and registered mobile number will help the review",
+          "supported": "no"
+        },
+        {
+          "claim": "Notes for all classes are free on the PW website",
+          "supported": "yes"
+        },
+        {
+          "claim": "Free lectures are available in the app's library section and on the Physics Wallah YouTube channel",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.005748,
+      "error": null
+    },
+    {
+      "id": "test-02",
+      "claims": [
+        {
+          "claim": "A batch can be changed to another batch of the same amount within 10 days of purchase",
+          "supported": "yes"
+        },
+        {
+          "claim": "The student bought yesterday, so is within the 10-day window",
+          "supported": "yes"
+        },
+        {
+          "claim": "Batch change is done by the support team, not automatically",
+          "supported": "yes"
+        },
+        {
+          "claim": "Student should share order ID, batch bought and batch wanted",
+          "supported": "yes"
+        },
+        {
+          "claim": "A support agent will review the request against the policy and reply with a decision",
+          "supported": "yes"
+        },
+        {
+          "claim": "PW aims to resolve support queries within 7 days",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.00502,
+      "error": null
+    },
+    {
+      "id": "test-03",
+      "claims": [
+        {
+          "claim": "Check that the app is on the latest version",
+          "supported": "yes"
+        },
+        {
+          "claim": "On Android, clear the app's cache via Settings > Apps > Physics Wallah > Storage, then restart the phone",
+          "supported": "yes"
+        },
+        {
+          "claim": "If it still won't open, reinstall the app",
+          "supported": "yes"
+        },
+        {
+          "claim": "Downloaded lectures may need to be downloaded again after reinstalling",
+          "supported": "yes"
+        },
+        {
+          "claim": "PW support is available 24x7 on 07406346660 or 08448982616",
+          "supported": "yes"
+        },
+        {
+          "claim": "Students can email support@pw.live",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.005062,
+      "error": null
+    },
+    {
+      "id": "test-04",
+      "claims": [
+        {
+          "claim": "Every refund request is personally reviewed by a support agent who checks the order against policy and gives a decision",
+          "supported": "yes"
+        },
+        {
+          "claim": "A support agent will now handle the student's case themselves",
+          "supported": "yes"
+        },
+        {
+          "claim": "Online batches are generally non-refundable",
+          "supported": "yes"
+        },
+        {
+          "claim": "Exceptions exist for batches bought by mistake, payment errors such as double charge, and book orders",
+          "supported": "yes"
+        },
+        {
+          "claim": "Sharing order ID, registered mobile number and payment details will let the agent check quickly",
+          "supported": "partly"
+        },
+        {
+          "claim": "For a double charge, send both transaction IDs (UTR/UPI reference)",
+          "supported": "yes"
+        },
+        {
+          "claim": "If still unresolved, the student can escalate by writing to support@pw.live with ticket details",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.00658,
+      "error": null
+    },
+    {
+      "id": "test-05",
+      "claims": [
+        {
+          "claim": "PW offers split payments and EMIs mainly for higher-fee courses, especially offline Vidyapeeth and hybrid programmes",
+          "supported": "yes"
+        },
+        {
+          "claim": "Batches can be paid for with UPI, debit or credit card, and net banking via the payment gateway in the PW app or on pw.live",
+          "supported": "yes"
+        },
+        {
+          "claim": "Help articles don't explain why the EMI option isn't showing for the student's credit card",
+          "supported": "yes"
+        },
+        {
+          "claim": "A support agent will follow up with the student on this issue",
+          "supported": "partly"
+        },
+        {
+          "claim": "A loan is not the same as a no-cost EMI and can carry interest and a processing fee; read terms carefully",
+          "supported": "yes"
+        },
+        {
+          "claim": "Student can ask support to confirm whether a plan is a loan",
+          "supported": "yes"
+        },
+        {
+          "claim": "Pay only inside the official app or website, never to a personal account or unknown UPI ID",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "partly",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.006498,
+      "error": null
+    },
+    {
+      "id": "test-06",
+      "claims": [
+        {
+          "claim": "Support team does not solve subject questions, so it can't explain the SN1 vs SN2 difference",
+          "supported": "yes"
+        },
+        {
+          "claim": "AI Guru in the PW app can be used for subject doubts",
+          "supported": "yes"
+        },
+        {
+          "claim": "In AI Guru you can type, speak, or upload a photo of your question, including in Hinglish",
+          "supported": "yes"
+        },
+        {
+          "claim": "If the AI answer isn't clear, mark it unhelpful and ask again with more detail",
+          "supported": "yes"
+        },
+        {
+          "claim": "Alternatively take the doubt to your batch's doubt support",
+          "supported": "yes"
+        },
+        {
+          "claim": "During live class you can post a doubt via the class doubt option",
+          "supported": "yes"
+        },
+        {
+          "claim": "Smart Doubt Engine answers instantly with text or short video",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "partly",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.005858,
+      "error": null
+    },
+    {
+      "id": "test-07",
+      "claims": [
+        {
+          "claim": "Since more than 2 hours have passed and re-login didn't help, the support team must check the order manually",
+          "supported": "yes"
+        },
+        {
+          "claim": "Make sure you logged in with the same mobile number used for payment",
+          "supported": "yes"
+        },
+        {
+          "claim": "Share order ID or payment screenshot along with registered mobile number",
+          "supported": "yes"
+        },
+        {
+          "claim": "A support agent will personally take over and handle the missing batch",
+          "supported": "yes"
+        },
+        {
+          "claim": "You can raise it via 'Contact us' in the PW app, the fastest way",
+          "supported": "yes"
+        },
+        {
+          "claim": "You can call 07406346660 / 08448982616, available 24x7",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.00545,
+      "error": null
+    },
+    {
+      "id": "test-08",
+      "claims": [
+        {
+          "claim": "Notes are in the PW app under Study > My Batches, then select the batch, subject (Physics) and chapter",
+          "supported": "yes"
+        },
+        {
+          "claim": "Each lecture lists its class notes and DPPs alongside it",
+          "supported": "yes"
+        },
+        {
+          "claim": "For live classes, the recording is added after the class, so the lecture will appear there too",
+          "supported": "yes"
+        },
+        {
+          "claim": "The 'Contact us' option in the PW app is the fastest way to raise an issue if notes still aren't visible",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.004544,
+      "error": null
+    },
+    {
+      "id": "test-09",
+      "claims": [
+        {
+          "claim": "A blocked or locked account can only be restored by the support team after verifying the registered mobile number and order details.",
+          "supported": "yes"
+        },
+        {
+          "claim": "A support agent will personally handle this case (blocked account) and contact the student.",
+          "supported": "partly"
+        },
+        {
+          "claim": "The student should keep their registered mobile number and order ID or payment details ready.",
+          "supported": "yes"
+        },
+        {
+          "claim": "Support is available 24x7 on 07406346660 or 08448982616.",
+          "supported": "yes"
+        },
+        {
+          "claim": "The student can also email support@pw.live.",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.005354,
+      "error": null
+    },
+    {
+      "id": "test-10",
+      "claims": [
+        {
+          "claim": "Check that the mobile number is entered correctly",
+          "supported": "yes"
+        },
+        {
+          "claim": "Check that the phone has network signal",
+          "supported": "yes"
+        },
+        {
+          "claim": "A full SMS inbox can block OTPs, so check that it isn't full",
+          "supported": "yes"
+        },
+        {
+          "claim": "Wait 60 seconds before tapping Resend OTP",
+          "supported": "yes"
+        },
+        {
+          "claim": "If no OTP arrives after 3 attempts, try again after 30 minutes",
+          "supported": "yes"
+        },
+        {
+          "claim": "If it still fails, contact support with the registered number",
+          "supported": "yes"
+        },
+        {
+          "claim": "PW support is reachable 24x7 at 07406346660 or 08448982616",
+          "supported": "yes"
+        },
+        {
+          "claim": "Support can be emailed at support@pw.live",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.005588,
+      "error": null
+    },
+    {
+      "id": "test-11",
+      "claims": [
+        {
+          "claim": "A support team agent will personally contact the student on a priority basis",
+          "supported": "yes"
+        },
+        {
+          "claim": "Tele-MANAS is the Government of India's free mental-health helpline, available 24x7",
+          "supported": "yes"
+        },
+        {
+          "claim": "Tele-MANAS number is 14416 or 1-800-891-4416",
+          "supported": "yes"
+        },
+        {
+          "claim": "If the student feels unsafe, they should call 112 immediately",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.00429,
+      "error": null
+    },
+    {
+      "id": "test-12",
+      "claims": [
+        {
+          "claim": "A support agent will personally review a complaint about what a counsellor promised, and the outcome isn't decided automatically",
+          "supported": "yes"
+        },
+        {
+          "claim": "Student should share counsellor's name or number, date of call, and any messages or screenshots",
+          "supported": "yes"
+        },
+        {
+          "claim": "Premium and Pro PW Skills courses are refundable if requested within 30 calendar days of purchase, minus a non-refundable ₹10,000 registration fee",
+          "supported": "yes"
+        },
+        {
+          "claim": "Basic (self-paced) courses are non-refundable",
+          "supported": "yes"
+        },
+        {
+          "claim": "Course access is revoked once a refund is processed",
+          "supported": "yes"
+        },
+        {
+          "claim": "Raise the request at support@pwskills.com or via LMS > Contact Us > Raise a support request and keep the ticket number to be on record within the window",
+          "supported": "yes"
+        },
+        {
+          "claim": "The team first tries to resolve the concern, and if the learner still wants a refund it is initiated on day 5 and usually credited within 7–10 working days",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.007508,
+      "error": null
+    },
+    {
+      "id": "test-13",
+      "claims": [
+        {
+          "claim": "The PW account can be used on both phone and laptop, but not at the same time",
+          "supported": "yes"
+        },
+        {
+          "claim": "Logging in on a second device logs you out of the first one",
+          "supported": "yes"
+        },
+        {
+          "claim": "Sharing the account or unusual activity can lead to the account being locked",
+          "supported": "yes"
+        },
+        {
+          "claim": "The account should be for your own use only",
+          "supported": "yes"
+        },
+        {
+          "claim": "You should log out at the end of each session, especially on a shared laptop",
+          "supported": "partly"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.004282,
+      "error": null
+    },
+    {
+      "id": "test-14",
+      "claims": [
+        {
+          "claim": "Lower the video quality in player settings or turn on Low Data Mode, which uses much less data per lecture",
+          "supported": "yes"
+        },
+        {
+          "claim": "Close other apps using the internet and update the PW app to the latest version",
+          "supported": "yes"
+        },
+        {
+          "claim": "Download the lecture on Wi-Fi and watch offline to avoid buffering",
+          "supported": "yes"
+        },
+        {
+          "claim": "Downloads work only inside the PW app and only while the batch is valid",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.004514,
+      "error": null
+    },
+    {
+      "id": "test-15",
+      "claims": [
+        {
+          "claim": "Online batches like Udaan are non-refundable once purchased, whatever the reason, including change of mind or stopping studies",
+          "supported": "yes"
+        },
+        {
+          "claim": "Exceptions are a batch bought by mistake, payment errors, and book orders damaged or lost in delivery",
+          "supported": "yes"
+        },
+        {
+          "claim": "A batch bought by mistake can only be switched to another batch of the same amount within 10 days of purchase",
+          "supported": "yes"
+        },
+        {
+          "claim": "Recommended to check batch details (syllabus, schedule, faculty, validity) and free content before paying",
+          "supported": "yes"
+        },
+        {
+          "claim": "For help choosing a course, give a missed call to 07019243492 or call 07406346660 / 08448982616 to talk to a counsellor",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.006196,
+      "error": null
+    },
+    {
+      "id": "test-16",
+      "claims": [
+        {
+          "claim": "If the same order was paid twice, the extra payment is returned to the original payment method after support verifies both transactions",
+          "supported": "yes"
+        },
+        {
+          "claim": "Refund usually takes 5–7 working days after verification, depending on the bank",
+          "supported": "yes"
+        },
+        {
+          "claim": "Student should share both UPI transaction IDs (UTR) or payment screenshots plus registered mobile number",
+          "supported": "yes"
+        },
+        {
+          "claim": "A support agent will review the request and reply with a decision",
+          "supported": "yes"
+        },
+        {
+          "claim": "For crashing: update the app to the latest version",
+          "supported": "yes"
+        },
+        {
+          "claim": "Clear cache from Settings > Apps > Physics Wallah > Storage, then restart the phone",
+          "supported": "yes"
+        },
+        {
+          "claim": "If it still crashes, reinstall the app; downloaded lectures will need to be downloaded again",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.006332,
+      "error": null
+    },
+    {
+      "id": "test-17",
+      "claims": [
+        {
+          "claim": "Reinstalling the app removes downloaded lectures and notes, so they must be downloaded again",
+          "supported": "yes"
+        },
+        {
+          "claim": "Clearing app storage or logging in on another device also removes downloads",
+          "supported": "yes"
+        },
+        {
+          "claim": "Downloading on Wi-Fi makes downloading quicker and saves mobile data",
+          "supported": "partly"
+        },
+        {
+          "claim": "Downloads play only inside the PW app",
+          "supported": "yes"
+        },
+        {
+          "claim": "Downloads play only while the batch is valid",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.00455,
+      "error": null
+    },
+    {
+      "id": "test-18",
+      "claims": [
+        {
+          "claim": "Offline students get PW app access to their batch within 24–48 hours of batch allotment",
+          "supported": "yes"
+        },
+        {
+          "claim": "Batch details appear under Study > My Batches",
+          "supported": "yes"
+        },
+        {
+          "claim": "Batch allotment happens only after paying the first instalment and completing the ERP admission form",
+          "supported": "yes"
+        },
+        {
+          "claim": "If batch is allotted and more than 48 hours have passed, a support agent will check the account and follow up",
+          "supported": "partly"
+        },
+        {
+          "claim": "Missing batch issues are handled personally by an agent",
+          "supported": "yes"
+        },
+        {
+          "claim": "The app's Contact us option is the fastest way to raise an issue",
+          "supported": "yes"
+        },
+        {
+          "claim": "Students can call 07406346660 / 08448982616",
+          "supported": "yes"
+        },
+        {
+          "claim": "Vidyapeeth helpdesk can be reached at +91 9513350005",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.006816,
+      "error": null
+    },
+    {
+      "id": "test-19",
+      "claims": [
+        {
+          "claim": "Invoice for any purchase can be downloaded from the orders section of the PW app or website",
+          "supported": "yes"
+        },
+        {
+          "claim": "Changes to an invoice such as name or GST details are raised by the support team",
+          "supported": "yes"
+        },
+        {
+          "claim": "A support agent will personally take over the invoice correction request and follow up with the student",
+          "supported": "yes"
+        },
+        {
+          "claim": "Student should keep order ID, father's company name and GST details ready to help the agent",
+          "supported": "partly"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.004216,
+      "error": null
+    },
+    {
+      "id": "test-20",
+      "claims": [
+        {
+          "claim": "AI Guru, the AI help tool in the PW app, answers subject doubts fastest",
+          "supported": "yes"
+        },
+        {
+          "claim": "The support team doesn't solve subject questions",
+          "supported": "yes"
+        },
+        {
+          "claim": "Students can type, speak, or upload a photo of the question in AI Guru",
+          "supported": "yes"
+        },
+        {
+          "claim": "AI Guru works in Hindi, English or Hinglish",
+          "supported": "yes"
+        },
+        {
+          "claim": "In a live class, students can post a doubt through the doubt option",
+          "supported": "yes"
+        },
+        {
+          "claim": "The Smart Doubt Engine answers instantly with text or short video explanations",
+          "supported": "yes"
+        },
+        {
+          "claim": "If the AI answer is unclear, the student can mark it unhelpful and ask again with more detail",
+          "supported": "yes"
+        },
+        {
+          "claim": "Student can take the doubt to their batch's doubt support",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "partly",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.00592,
+      "error": null
+    },
+    {
+      "id": "test-21",
+      "claims": [
+        {
+          "claim": "Coupon can only be applied on the payment page before paying, via 'Apply coupon'",
+          "supported": "yes"
+        },
+        {
+          "claim": "A coupon cannot be added to an order that is already paid",
+          "supported": "yes"
+        },
+        {
+          "claim": "For future purchases, apply the coupon before payment",
+          "supported": "yes"
+        },
+        {
+          "claim": "Check that the coupon's validity and eligible batches match your batch",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.003982,
+      "error": null
+    },
+    {
+      "id": "test-22",
+      "claims": [
+        {
+          "claim": "PW OnlyIAS offers UPSC and State PSC preparation",
+          "supported": "yes"
+        },
+        {
+          "claim": "PW OnlyIAS has an offline centre in Lucknow, along with Delhi and Patna",
+          "supported": "yes"
+        },
+        {
+          "claim": "A counsellor can help choose the right course and centre",
+          "supported": "yes"
+        },
+        {
+          "claim": "For course guidance, give a missed call to 07019243492 or call 07406346660 / 08448982616",
+          "supported": "yes"
+        },
+        {
+          "claim": "The Vidyapeeth admissions helpdesk at +91 9513350005 can confirm whether a Vidyapeeth or Pathshala centre for JEE, NEET or foundation classes exists in Lucknow",
+          "supported": "partly"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.005346,
+      "error": null
+    },
+    {
+      "id": "test-23",
+      "claims": [
+        {
+          "claim": "Each batch has one validity date shown on its batch page, often tied to the target exam",
+          "supported": "yes"
+        },
+        {
+          "claim": "The end date is the same for everyone in the batch, so joining after the batch started means less time, not a later end date",
+          "supported": "yes"
+        },
+        {
+          "claim": "After expiry the content can no longer be opened",
+          "supported": "yes"
+        },
+        {
+          "claim": "Validity is not extended automatically",
+          "supported": "yes"
+        },
+        {
+          "claim": "Extension requests are reviewed by the support team",
+          "supported": "yes"
+        },
+        {
+          "claim": "A support agent will personally take over the case and follow up because the student is upset and it concerns their batch",
+          "supported": "yes"
+        },
+        {
+          "claim": "Student should share order ID, batch name and registered mobile number to help the agent check",
+          "supported": "no"
+        },
+        {
+          "claim": "If not resolved through support, the student can write to support@pw.live with ticket details",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "partly",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.006722,
+      "error": null
+    },
+    {
+      "id": "test-24",
+      "claims": [
+        {
+          "claim": "During a live class, students can post doubts via the doubt option inside the class.",
+          "supported": "yes"
+        },
+        {
+          "claim": "Smart Doubt Engine answers instantly with text or short video explanations.",
+          "supported": "yes"
+        },
+        {
+          "claim": "If the option isn't visible, raise an issue via the PW app's 'Contact us' option.",
+          "supported": "partly"
+        },
+        {
+          "claim": "'Contact us' in the app is the fastest way to raise an issue.",
+          "supported": "yes"
+        },
+        {
+          "claim": "Support can be called 24x7 on 07406346660 or 08448982616.",
+          "supported": "yes"
+        },
+        {
+          "claim": "Support can be emailed at support@pw.live.",
+          "supported": "yes"
+        },
+        {
+          "claim": "AI Guru can be used for subject doubts by typing, speaking, or uploading a photo.",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.005854,
+      "error": null
+    },
+    {
+      "id": "test-25",
+      "claims": [
+        {
+          "claim": "When money is deducted but payment shows failed, the bank normally reverses the amount automatically within 5–7 working days",
+          "supported": "yes"
+        },
+        {
+          "claim": "The student does not need to do anything while waiting for the reversal",
+          "supported": "yes"
+        },
+        {
+          "claim": "If money isn't returned after 7 working days, the student can contact support via the app's 'Contact us' option or support@pw.live so the team can check",
+          "supported": "partly"
+        },
+        {
+          "claim": "Payments should be made only on the official PW app or pw.live, not to a personal account or unknown UPI ID",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.005168,
+      "error": null
+    },
+    {
+      "id": "test-26",
+      "claims": [
+        {
+          "claim": "Support team can check whether the attempt was recorded if the student shares test name, batch, and date and time of the attempt",
+          "supported": "yes"
+        },
+        {
+          "claim": "The fastest way to send details is the 'Contact us' option inside the PW app",
+          "supported": "yes"
+        },
+        {
+          "claim": "Student can email support@pw.live",
+          "supported": "yes"
+        },
+        {
+          "claim": "For future tests, check internet connection before submitting and keep the app open until submission finishes",
+          "supported": "yes"
+        },
+        {
+          "claim": "If the app keeps closing, update to the latest version",
+          "supported": "yes"
+        },
+        {
+          "claim": "On Android, clear cache from Settings > Apps > Physics Wallah > Storage, then restart the phone",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.005494,
+      "error": null
+    },
+    {
+      "id": "test-27",
+      "claims": [
+        {
+          "claim": "Do not share your OTP with the caller.",
+          "supported": "yes"
+        },
+        {
+          "claim": "PW never asks students for OTPs, passwords, card PINs or payments to personal accounts over calls or WhatsApp; anyone asking is not PW.",
+          "supported": "yes"
+        },
+        {
+          "claim": "Don't pay anything to this caller.",
+          "supported": "yes"
+        },
+        {
+          "claim": "Report the number to support@pw.live.",
+          "supported": "yes"
+        },
+        {
+          "claim": "Only pay inside the official PW app or pw.live, never to a personal account or unknown UPI ID.",
+          "supported": "yes"
+        },
+        {
+          "claim": "If the batch isn't showing after a successful payment, share the transaction ID (UTR) and registered mobile number with support so the team can check it.",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.00564,
+      "error": null
+    },
+    {
+      "id": "test-28",
+      "claims": [
+        {
+          "claim": "Invoice for each purchase can be downloaded from the orders section of the app or website",
+          "supported": "yes"
+        },
+        {
+          "claim": "If invoice needs correction (name, GST details), support team raises it",
+          "supported": "yes"
+        },
+        {
+          "claim": "Lower video quality from player settings to save data",
+          "supported": "yes"
+        },
+        {
+          "claim": "Switching on Low Data Mode uses much less data per lecture",
+          "supported": "yes"
+        },
+        {
+          "claim": "Downloading lecture on Wi-Fi and watching offline saves more data",
+          "supported": "partly"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.004606,
+      "error": null
+    },
+    {
+      "id": "test-29",
+      "claims": [
+        {
+          "claim": "Every batch has a batch page in the PW app and on pw.live where subjects, teachers, validity and features (live classes, recordings, tests) can be compared before buying",
+          "supported": "yes"
+        },
+        {
+          "claim": "Many batches have free demo lectures on the batch page",
+          "supported": "yes"
+        },
+        {
+          "claim": "Online batches are non-refundable once bought",
+          "supported": "yes"
+        },
+        {
+          "claim": "A counsellor can give personal advice on choosing between batches via missed call to 07019243492 or calls to 07406346660 / 08448982616",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "partly",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.00545,
+      "error": null
+    },
+    {
+      "id": "test-30",
+      "claims": [
+        {
+          "claim": "Delivery usually takes 3–5 working days after dispatch",
+          "supported": "yes"
+        },
+        {
+          "claim": "Remote areas, strikes, bad weather can cause delays up to 15–20 days",
+          "supported": "yes"
+        },
+        {
+          "claim": "Student can track the order in the app under My Orders",
+          "supported": "yes"
+        },
+        {
+          "claim": "Student can contact the courier directly",
+          "supported": "yes"
+        },
+        {
+          "claim": "Courier helplines: Delhivery +91 8069856101, Xpressbees +91 (020) 4911 6100, India Post 1800 266 6868",
+          "supported": "yes"
+        },
+        {
+          "claim": "PW Store support +91-7406346660 (9 am – 9 pm) or support@pw.live",
+          "supported": "yes"
+        },
+        {
+          "claim": "If not delivered 15–20 days after dispatch, PW initiates a refund for that order",
+          "supported": "yes"
+        },
+        {
+          "claim": "A support agent will check the order status and follow up with the student",
+          "supported": "no"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.006786,
+      "error": null
+    },
+    {
+      "id": "test-31",
+      "claims": [
+        {
+          "claim": "A newly bought batch can take up to 2 hours to appear in the app.",
+          "supported": "yes"
+        },
+        {
+          "claim": "Log out and log back in using the same mobile number used for payment, then open Study > My Batches.",
+          "supported": "yes"
+        },
+        {
+          "claim": "If the batch is still missing after 2 hours, share order ID or payment screenshot plus registered mobile number so support can check the order manually.",
+          "supported": "yes"
+        },
+        {
+          "claim": "A support agent will personally handle the missing batch request.",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.004508,
+      "error": null
+    },
+    {
+      "id": "test-32",
+      "claims": [
+        {
+          "claim": "Lakshya batch students can move to Lakshya NEET 2.0 within 15 days of purchase",
+          "supported": "yes"
+        },
+        {
+          "claim": "At 12 days the student is still within the window",
+          "supported": "yes"
+        },
+        {
+          "claim": "Batch change is not automatic; the support team does it",
+          "supported": "yes"
+        },
+        {
+          "claim": "Student should share order ID, batch bought and batch wanted",
+          "supported": "yes"
+        },
+        {
+          "claim": "The window closes at 15 days so details should be sent soon",
+          "supported": "yes"
+        },
+        {
+          "claim": "A support agent will review the request against the policy and reply with a decision",
+          "supported": "yes"
+        },
+        {
+          "claim": "The 'Contact us' option in the PW app is the fastest way to send details",
+          "supported": "yes"
+        },
+        {
+          "claim": "Student can email support@pw.live",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.00594,
+      "error": null
+    },
+    {
+      "id": "test-33",
+      "claims": [
+        {
+          "claim": "Update the app to the latest version",
+          "supported": "yes"
+        },
+        {
+          "claim": "On Android, clear cache via Settings > Apps > Physics Wallah > Storage and restart the phone",
+          "supported": "yes"
+        },
+        {
+          "claim": "If it still crashes, reinstall the app",
+          "supported": "yes"
+        },
+        {
+          "claim": "After reinstalling, downloaded lectures may need to be downloaded again",
+          "supported": "yes"
+        },
+        {
+          "claim": "If steps fail, raise the issue via the app's Contact us option, which is the fastest way",
+          "supported": "yes"
+        },
+        {
+          "claim": "Support can be called on 07406346660 / 08448982616",
+          "supported": "yes"
+        },
+        {
+          "claim": "Support can be emailed at support@pw.live",
+          "supported": "yes"
+        },
+        {
+          "claim": "A support agent will personally contact the student and follow up",
+          "supported": "partly"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.006316,
+      "error": null
+    },
+    {
+      "id": "test-34",
+      "claims": [
+        {
+          "claim": "The exact validity of the batch is shown on its batch page in the PW app and on pw.live",
+          "supported": "yes"
+        },
+        {
+          "claim": "Validity is usually tied to the target exam",
+          "supported": "yes"
+        },
+        {
+          "claim": "The batch page lists validity along with subjects, teachers and course features, and can be checked anytime",
+          "supported": "yes"
+        },
+        {
+          "claim": "Lectures, notes and tests stay available until the validity date",
+          "supported": "yes"
+        },
+        {
+          "claim": "After expiry the content can no longer be opened",
+          "supported": "yes"
+        },
+        {
+          "claim": "Validity is not extended automatically",
+          "supported": "yes"
+        },
+        {
+          "claim": "Extension requests are reviewed by the support team",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "partly",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.005496,
+      "error": null
+    },
+    {
+      "id": "test-35",
+      "claims": [
+        {
+          "claim": "Low Data Mode uses much less data per lecture",
+          "supported": "yes"
+        },
+        {
+          "claim": "The help guides don't say exactly where Low Data Mode is located in the app",
+          "supported": "yes"
+        },
+        {
+          "claim": "A support agent will follow up with the student about the location of the option",
+          "supported": "no"
+        },
+        {
+          "claim": "You can lower video quality from the player settings",
+          "supported": "yes"
+        },
+        {
+          "claim": "Close other apps using the internet and update the PW app to the latest version",
+          "supported": "yes"
+        },
+        {
+          "claim": "Downloading lectures on Wi-Fi and watching offline avoids buffering",
+          "supported": "yes"
+        },
+        {
+          "claim": "You can use the Contact us option inside the PW app for quicker help",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "partly",
+      "same_language": true,
+      "promises_beyond_articles": true,
+      "cost_usd": 0.005448,
+      "error": null
+    },
+    {
+      "id": "test-36",
+      "claims": [
+        {
+          "claim": "Support team does not solve subject questions such as maths doubts",
+          "supported": "yes"
+        },
+        {
+          "claim": "AI Guru in the PW app gives the fastest answer to subject doubts",
+          "supported": "yes"
+        },
+        {
+          "claim": "In AI Guru you can type, speak, or upload a photo of the problem, including in Hinglish",
+          "supported": "yes"
+        },
+        {
+          "claim": "If the AI answer is unclear, mark it unhelpful and ask again with more detail",
+          "supported": "yes"
+        },
+        {
+          "claim": "Alternatively take the doubt to the batch's doubt support",
+          "supported": "yes"
+        },
+        {
+          "claim": "During live class, post doubts via the class doubt option",
+          "supported": "yes"
+        },
+        {
+          "claim": "Smart Doubt Engine instantly gives text or short video explanation",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "partly",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.005722,
+      "error": null
+    },
+    {
+      "id": "test-37",
+      "claims": [
+        {
+          "claim": "Student can mark the AI Guru answer as unhelpful and ask again with more detail",
+          "supported": "yes"
+        },
+        {
+          "claim": "Student can include the full question or a clear photo when asking again",
+          "supported": "yes"
+        },
+        {
+          "claim": "Student can take the doubt to their batch's doubt support",
+          "supported": "yes"
+        },
+        {
+          "claim": "Teachers can review the doubt if the batch includes mentorship or doubt sessions",
+          "supported": "yes"
+        },
+        {
+          "claim": "In a live class, student can post the doubt using the in-class doubt option",
+          "supported": "yes"
+        },
+        {
+          "claim": "The support team does not solve subject questions itself",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.005086,
+      "error": null
+    },
+    {
+      "id": "test-38",
+      "claims": [
+        {
+          "claim": "Online batches are non-refundable whatever the reason, including not liking the batch",
+          "supported": "yes"
+        },
+        {
+          "claim": "Exceptions are batch bought by mistake, payment errors, and book orders damaged or lost in delivery",
+          "supported": "yes"
+        },
+        {
+          "claim": "If bought by mistake, student can ask to change to another batch of the same amount within 10 days of purchase",
+          "supported": "yes"
+        },
+        {
+          "claim": "Student should share order ID, batch bought and batch wanted",
+          "supported": "yes"
+        },
+        {
+          "claim": "Every refund or batch-change request is reviewed by a support agent who checks the order against policy and replies with a decision",
+          "supported": "yes"
+        },
+        {
+          "claim": "Other PW programmes (PW Skills, Vidyapeeth, OnlyIAS) have their own refund rules",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.006332,
+      "error": null
+    },
+    {
+      "id": "test-39",
+      "claims": [
+        {
+          "claim": "A support agent will personally handle the case because missing batch and refund requests need account and payment checks",
+          "supported": "yes"
+        },
+        {
+          "claim": "Refund requests are not decided automatically; an agent checks the order against policy and replies",
+          "supported": "yes"
+        },
+        {
+          "claim": "PW aims to resolve queries within 7 days",
+          "supported": "yes"
+        },
+        {
+          "claim": "Share order ID or payment screenshot and registered mobile number so the agent can check manually",
+          "supported": "yes"
+        },
+        {
+          "claim": "Meanwhile log out and log in with the same mobile number and check Study > My Batches",
+          "supported": "yes"
+        },
+        {
+          "claim": "If support doesn't resolve the issue, write to support@pw.live with ticket details",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.005986,
+      "error": null
+    },
+    {
+      "id": "test-40",
+      "claims": [
+        {
+          "claim": "Debit card payments are accepted",
+          "supported": "yes"
+        },
+        {
+          "claim": "Batches can be paid with UPI, debit/credit card, and net banking via the payment gateway in the PW app or pw.live",
+          "supported": "yes"
+        },
+        {
+          "claim": "PW does not store card details; payments are processed by partner payment gateways",
+          "supported": "yes"
+        },
+        {
+          "claim": "Pay only inside the official app or website, never to a personal account or unknown UPI ID",
+          "supported": "yes"
+        },
+        {
+          "claim": "Coupons should be applied on the payment page before paying; cannot be added after the order is paid",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.00478,
+      "error": null
+    },
+    {
+      "id": "test-41",
+      "claims": [
+        {
+          "claim": "Most orders arrive within 3–5 working days of dispatch",
+          "supported": "yes"
+        },
+        {
+          "claim": "Remote areas or disruptions (strikes, bad weather) can take up to 15–20 days",
+          "supported": "yes"
+        },
+        {
+          "claim": "Student gets an update with reason and new expected delivery date when undelivered 5 days and 10 days after dispatch",
+          "supported": "yes"
+        },
+        {
+          "claim": "Student can track the order under My Orders or contact the courier directly",
+          "supported": "yes"
+        },
+        {
+          "claim": "Courier helplines: Delhivery +91 8069856101, Xpressbees +91 (020) 4911 6100, India Post 1800 266 6868",
+          "supported": "yes"
+        },
+        {
+          "claim": "If not delivered 15–20 days after dispatch, PW initiates a refund",
+          "supported": "yes"
+        },
+        {
+          "claim": "PW Store support is at +91-7406346660 (9 am – 9 pm) or support@pw.live",
+          "supported": "yes"
+        },
+        {
+          "claim": "Student should include order ID PWB-38817 when contacting support",
+          "supported": "partly"
+        }
+      ],
+      "answers_question": "partly",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.007156,
+      "error": null
+    },
+    {
+      "id": "test-42",
+      "claims": [
+        {
+          "claim": "Delivery charges depend on cart value",
+          "supported": "yes"
+        },
+        {
+          "claim": "Shipping is currently free only for orders above ₹500",
+          "supported": "yes"
+        },
+        {
+          "claim": "A ₹460 cart does not qualify for free shipping",
+          "supported": "yes"
+        },
+        {
+          "claim": "Adding items worth just over ₹40 would bring the cart above ₹500",
+          "supported": "yes"
+        },
+        {
+          "claim": "A support agent will follow up if the student needs the exact delivery charge for the current cart",
+          "supported": "no"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.004332,
+      "error": null
+    },
+    {
+      "id": "test-43",
+      "claims": [
+        {
+          "claim": "Student can fill the Return and Replace form, where the damaged item is picked up and a new one sent",
+          "supported": "yes"
+        },
+        {
+          "claim": "The Return and Replace form applies only to selected products",
+          "supported": "yes"
+        },
+        {
+          "claim": "If the courier damaged the product, the student is entitled to a replacement",
+          "supported": "yes"
+        },
+        {
+          "claim": "Student should share order ID and photos of the torn pages and damaged cover",
+          "supported": "yes"
+        },
+        {
+          "claim": "PW Store support can be contacted at +91-7406346660 (9 am – 9 pm) or support@pw.live",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.005016,
+      "error": null
+    },
+    {
+      "id": "test-44",
+      "claims": [
+        {
+          "claim": "An order not yet shipped can be cancelled at no charge before PW sends the shipment confirmation",
+          "supported": "yes"
+        },
+        {
+          "claim": "Cancelling an order is a change to the order, so a support agent will personally handle it and follow up",
+          "supported": "yes"
+        },
+        {
+          "claim": "Orders usually ship the next working day",
+          "supported": "yes"
+        },
+        {
+          "claim": "The 'Contact us' option in the PW app is the fastest way to raise it",
+          "supported": "yes"
+        },
+        {
+          "claim": "Student can call 07406346660 / 08448982616, available 24x7",
+          "supported": "yes"
+        },
+        {
+          "claim": "If the order ships before cancellation, the return and refund rules apply instead",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "partly",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.005656,
+      "error": null
+    },
+    {
+      "id": "test-45",
+      "claims": [
+        {
+          "claim": "The help sections have no process for changing the address on an order",
+          "supported": "partly"
+        },
+        {
+          "claim": "A support agent will follow up with the student about this order",
+          "supported": "partly"
+        },
+        {
+          "claim": "If the order is not delivered because of a wrong address, no refund is given for that order",
+          "supported": "yes"
+        },
+        {
+          "claim": "If shipment confirmation has not yet been sent, the order can be cancelled at no charge",
+          "supported": "yes"
+        },
+        {
+          "claim": "PW Store support can be called on +91-7406346660 (9 am – 9 pm)",
+          "supported": "yes"
+        },
+        {
+          "claim": "PW Store support can be emailed at support@pw.live",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "partly",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.005484,
+      "error": null
+    },
+    {
+      "id": "test-46",
+      "claims": [
+        {
+          "claim": "If an order is still undelivered 15–20 days after dispatch, PW initiates a refund.",
+          "supported": "yes"
+        },
+        {
+          "claim": "A support agent personally handles every refund request.",
+          "supported": "yes"
+        },
+        {
+          "claim": "An agent will check order PWB-47712 and contact the student.",
+          "supported": "partly"
+        },
+        {
+          "claim": "The student can track the order under My Orders.",
+          "supported": "yes"
+        },
+        {
+          "claim": "PW Store support can be reached at +91-7406346660 (9 am–9 pm) or support@pw.live.",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.005164,
+      "error": null
+    },
+    {
+      "id": "test-47",
+      "claims": [
+        {
+          "claim": "If an order isn't delivered 15–20 days after dispatch, PW initiates a refund for it.",
+          "supported": "yes"
+        },
+        {
+          "claim": "At 18 days since the order, PWB-39001 falls in the 15–20 day refund window.",
+          "supported": "partly"
+        },
+        {
+          "claim": "A support agent will personally take over the case and follow up with the student.",
+          "supported": "yes"
+        },
+        {
+          "claim": "The student can check the latest order status under My Orders.",
+          "supported": "yes"
+        },
+        {
+          "claim": "The student can call the courier directly, e.g. Delhivery +91 8069856101 or Xpressbees +91 (020) 4911 6100.",
+          "supported": "yes"
+        },
+        {
+          "claim": "PW Store support can be reached at +91-7406346660 (9 am – 9 pm).",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "partly",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.005782,
+      "error": null
+    },
+    {
+      "id": "test-48",
+      "claims": [
+        {
+          "claim": "Order PWB-52290 has been returned",
+          "supported": "partly"
+        },
+        {
+          "claim": "If the address given was wrong, the order gets no refund",
+          "supported": "yes"
+        },
+        {
+          "claim": "If the address was correct, a support agent will personally handle the request and follow up with the student",
+          "supported": "partly"
+        },
+        {
+          "claim": "The student can contact PW Store support at +91-7406346660 (9 am – 9 pm) or support@pw.live",
+          "supported": "yes"
+        },
+        {
+          "claim": "The student can also contact the courier's helpline",
+          "supported": "yes"
+        },
+        {
+          "claim": "Keep order ID and correct address ready when contacting",
+          "supported": "no"
+        }
+      ],
+      "answers_question": "partly",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.005232,
+      "error": null
+    },
+    {
+      "id": "test-49",
+      "claims": [
+        {
+          "claim": "Prices shown in the cart are always the latest prices",
+          "supported": "yes"
+        },
+        {
+          "claim": "Adding an item to the cart does not reserve its price",
+          "supported": "yes"
+        },
+        {
+          "claim": "The price can go up or down before the order is placed",
+          "supported": "yes"
+        },
+        {
+          "claim": "The NEET module showed a higher price at payment because of this price-change policy",
+          "supported": "yes"
+        },
+        {
+          "claim": "A coupon must be applied on the payment page before paying",
+          "supported": "yes"
+        },
+        {
+          "claim": "A coupon cannot be added to an order that is already paid",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.004528,
+      "error": null
+    },
+    {
+      "id": "test-50",
+      "claims": [
+        {
+          "claim": "Under PW Store policy, an order whose delivery was refused is generally not entitled to a refund",
+          "supported": "yes"
+        },
+        {
+          "claim": "When a product arrives damaged, PW offers 'Return and Replace' or 'Return and Refund' forms for selected products",
+          "supported": "yes"
+        },
+        {
+          "claim": "An item damaged or lost by the courier is entitled to a replacement",
+          "supported": "yes"
+        },
+        {
+          "claim": "A support agent will personally review the case and reply with a decision since it involves order and payment",
+          "supported": "partly"
+        },
+        {
+          "claim": "Student should share order ID and photos of the open, torn box",
+          "supported": "yes"
+        },
+        {
+          "claim": "PW Store support can be reached at +91-7406346660 (9 am – 9 pm) or support@pw.live",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.005934,
+      "error": null
+    },
+    {
+      "id": "test-51",
+      "claims": [
+        {
+          "claim": "The ₹5,000 seat-booking amount for a Vidyapeeth centre is non-refundable",
+          "supported": "yes"
+        },
+        {
+          "claim": "The booking amount is normally adjusted into the final fee when the student joins/visits the centre",
+          "supported": "yes"
+        },
+        {
+          "claim": "Vidyapeeth refunds follow the PW Vidyapeeth Refund Policy",
+          "supported": "yes"
+        },
+        {
+          "claim": "Any refund request must be raised in person at the centre; phone or email requests are not accepted",
+          "supported": "yes"
+        },
+        {
+          "claim": "A support agent will personally review the message and follow up because it concerns a payment on the account",
+          "supported": "yes"
+        },
+        {
+          "claim": "The Vidyapeeth helpdesk number is +91 9513350005",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.006066,
+      "error": null
+    },
+    {
+      "id": "test-52",
+      "claims": [
+        {
+          "claim": "Documents are usually not needed for a regular admission visit at Vidyapeeth",
+          "supported": "yes"
+        },
+        {
+          "claim": "Documents may be needed if applying with a scholarship",
+          "supported": "yes"
+        },
+        {
+          "claim": "Keep digital copies of Aadhaar (or other ID), Class 10 marksheet if applicable, and bank details",
+          "supported": "yes"
+        },
+        {
+          "claim": "After registering, fill in the admission form sent by SMS",
+          "supported": "yes"
+        },
+        {
+          "claim": "Then open the Student Portal and visit the centre to complete pending formalities and pay the fee",
+          "supported": "yes"
+        },
+        {
+          "claim": "For PWNSAT scholarship, centre staff help with documents needed to confirm eligibility",
+          "supported": "yes"
+        },
+        {
+          "claim": "Vidyapeeth helpdesk number is +91 9513350005",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.005856,
+      "error": null
+    },
+    {
+      "id": "test-53",
+      "claims": [
+        {
+          "claim": "Batch access on the PW app comes within 24–48 hours of Vidyapeeth batch allotment",
+          "supported": "yes"
+        },
+        {
+          "claim": "Batch details are under Study > My Batches",
+          "supported": "yes"
+        },
+        {
+          "claim": "Recorded lectures, video solutions and test analysis are on the PW app",
+          "supported": "yes"
+        },
+        {
+          "claim": "The batch's notice section shows how to find the recordings",
+          "supported": "yes"
+        },
+        {
+          "claim": "If the batch doesn't appear after 48 hours, raise it via the 'Contact us' option in the PW app",
+          "supported": "partly"
+        },
+        {
+          "claim": "'Contact us' in the app is the fastest way to reach support",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.00513,
+      "error": null
+    },
+    {
+      "id": "test-54",
+      "claims": [
+        {
+          "claim": "A valid ID card is required to enter the centre.",
+          "supported": "yes"
+        },
+        {
+          "claim": "The ID card is collected at the centre after batch allotment.",
+          "supported": "yes"
+        },
+        {
+          "claim": "The help articles do not cover how to get a replacement ID card.",
+          "supported": "yes"
+        },
+        {
+          "claim": "A support agent will follow up with the student personally about the lost ID card.",
+          "supported": "no"
+        },
+        {
+          "claim": "The student can call the Vidyapeeth helpdesk at +91 9513350005 for help.",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "partly",
+      "same_language": true,
+      "promises_beyond_articles": true,
+      "cost_usd": 0.004876,
+      "error": null
+    },
+    {
+      "id": "test-55",
+      "claims": [
+        {
+          "claim": "On course completion the ₹1,000 security deposit is refunded",
+          "supported": "yes"
+        },
+        {
+          "claim": "Refund is made after deducting outstanding dues and verified damage claims",
+          "supported": "yes"
+        },
+        {
+          "claim": "The help articles do not state how many days the refund will take",
+          "supported": "partly"
+        },
+        {
+          "claim": "A support agent will follow up with the student about the timeline",
+          "supported": "partly"
+        },
+        {
+          "claim": "An agent personally checks each refund-related request and tells the student the decision",
+          "supported": "yes"
+        },
+        {
+          "claim": "The student can raise the issue via the PW app 'Contact us' option",
+          "supported": "yes"
+        },
+        {
+          "claim": "The app 'Contact us' option is the fastest way",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "partly",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.005676,
+      "error": null
+    },
+    {
+      "id": "test-56",
+      "claims": [
+        {
+          "claim": "Transfers from one Vidyapeeth centre to another, like Kota to Delhi, are possible",
+          "supported": "yes"
+        },
+        {
+          "claim": "To start, the student should talk to the counsellor of the centre concerned",
+          "supported": "yes"
+        },
+        {
+          "claim": "The Vidyapeeth helpdesk number is +91 9513350005",
+          "supported": "yes"
+        },
+        {
+          "claim": "The helpdesk can help with the transfer",
+          "supported": "partly"
+        },
+        {
+          "claim": "A support agent will personally handle any change needed to the account or batch",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.004916,
+      "error": null
+    },
+    {
+      "id": "test-57",
+      "claims": [
+        {
+          "claim": "Transfer between Pathshala and Vidyapeeth is not possible in either direction",
+          "supported": "yes"
+        },
+        {
+          "claim": "Transfer is possible only from one Vidyapeeth centre to another Vidyapeeth centre",
+          "supported": "yes"
+        },
+        {
+          "claim": "For a Vidyapeeth centre transfer, the student must talk to the counsellor of the concerned centre",
+          "supported": "yes"
+        },
+        {
+          "claim": "The Vidyapeeth admissions helpdesk can be called at +91 9513350005 for Vidyapeeth options",
+          "supported": "yes"
+        },
+        {
+          "claim": "A support agent will follow up on any question about the current Pathshala admission or fees",
+          "supported": "partly"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.005504,
+      "error": null
+    },
+    {
+      "id": "test-58",
+      "claims": [
+        {
+          "claim": "For higher-fee courses like offline Vidyapeeth, PW offers split payments and EMIs",
+          "supported": "yes"
+        },
+        {
+          "claim": "PW also offers education loans through lending partners (NBFCs)",
+          "supported": "yes"
+        },
+        {
+          "claim": "A loan is not the same as a no-cost EMI and can carry interest and a processing fee",
+          "supported": "yes"
+        },
+        {
+          "claim": "Read loan terms (interest rate, fees, tenure, lender name) before signing",
+          "supported": "yes"
+        },
+        {
+          "claim": "You can ask support to confirm whether a plan is a loan",
+          "supported": "yes"
+        },
+        {
+          "claim": "Batch is allotted after the first instalment is paid and the ERP admission form is completed",
+          "supported": "yes"
+        },
+        {
+          "claim": "The Vidyapeeth helpdesk number is +91 9513350005",
+          "supported": "yes"
+        },
+        {
+          "claim": "The Vidyapeeth helpdesk can give details on the instalment plans available at your centre",
+          "supported": "partly"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.006634,
+      "error": null
+    },
+    {
+      "id": "test-59",
+      "claims": [
+        {
+          "claim": "No help article covers an instalment paid at the centre counter that still shows as due in the ERP",
+          "supported": "yes"
+        },
+        {
+          "claim": "A support agent will personally look into this and follow up, since it involves payment records",
+          "supported": "yes"
+        },
+        {
+          "claim": "The student should not pay the instalment a second time while it is being checked",
+          "supported": "no"
+        },
+        {
+          "claim": "The student should keep the counter receipt/payment proof, transaction ID and registered mobile number ready to help the agent",
+          "supported": "no"
+        },
+        {
+          "claim": "PW support is available 24x7 on 07406346660 or 08448982616",
+          "supported": "yes"
+        },
+        {
+          "claim": "PW support can be reached by email at support@pw.live",
+          "supported": "yes"
+        },
+        {
+          "claim": "The Vidyapeeth helpdesk is available at +91 9513350005",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "partly",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.005976,
+      "error": null
+    },
+    {
+      "id": "test-60",
+      "claims": [
+        {
+          "claim": "Under the PW Vidyapeeth Refund Policy, refund requests must be raised in person at the centre",
+          "supported": "yes"
+        },
+        {
+          "claim": "Requests made by phone, email or fax are not accepted",
+          "supported": "yes"
+        },
+        {
+          "claim": "The email likely didn't move forward because email requests are not accepted",
+          "supported": "yes"
+        },
+        {
+          "claim": "Registration, book/module, doubt-series, test-series and PWNSAT fees are non-refundable in all cases",
+          "supported": "yes"
+        },
+        {
+          "claim": "The ₹1,000 security deposit is refunded on withdrawal after deducting outstanding dues and verified damage claims",
+          "supported": "yes"
+        },
+        {
+          "claim": "A support agent will personally review the complaint and follow up with the customer",
+          "supported": "partly"
+        },
+        {
+          "claim": "The Vidyapeeth helpdesk number is +91 9513350005 and can help with next steps at the centre",
+          "supported": "partly"
+        }
+      ],
+      "answers_question": "partly",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.006614,
+      "error": null
+    },
+    {
+      "id": "test-61",
+      "claims": [
+        {
+          "claim": "None of the help articles cover bullying at a centre",
+          "supported": "yes"
+        },
+        {
+          "claim": "A support agent will personally reach out to the parent to take this forward",
+          "supported": "partly"
+        },
+        {
+          "claim": "PW support is available 24x7 on 07406346660 or 08448982616",
+          "supported": "yes"
+        },
+        {
+          "claim": "Parent can email support@pw.live",
+          "supported": "yes"
+        },
+        {
+          "claim": "Tele-MANAS, the Government of India's free mental-health helpline, is available 24x7 at 14416 or 1-800-891-4416",
+          "supported": "yes"
+        },
+        {
+          "claim": "Call 112 if the son is unsafe",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "partly",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.005326,
+      "error": null
+    },
+    {
+      "id": "test-62",
+      "claims": [
+        {
+          "claim": "The Rs 5,000 seat-booking amount for a Vidyapeeth or Pathshala centre is non-refundable.",
+          "supported": "yes"
+        },
+        {
+          "claim": "It won't be returned if the student decides not to join.",
+          "supported": "yes"
+        },
+        {
+          "claim": "If the student joins, the amount is adjusted into the final total fee when they visit the centre.",
+          "supported": "yes"
+        },
+        {
+          "claim": "The Vidyapeeth admissions helpdesk can be called at +91 9513350005 for help choosing a course.",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.004582,
+      "error": null
+    },
+    {
+      "id": "test-63",
+      "claims": [
+        {
+          "claim": "PWNSAT for Classes 11–12 NEET has 60 questions covering Physics, Chemistry and Biology",
+          "supported": "yes"
+        },
+        {
+          "claim": "PWNSAT Prodigy (Level 2) exam is 60 minutes long",
+          "supported": "yes"
+        },
+        {
+          "claim": "Prodigy marking is +4 for correct and −1 for wrong answer",
+          "supported": "yes"
+        },
+        {
+          "claim": "Students are shortlisted for PWNSAT Prodigy (Level 2)",
+          "supported": "yes"
+        },
+        {
+          "claim": "Level 1 runs online every day from 1 to 15 October 2026",
+          "supported": "yes"
+        },
+        {
+          "claim": "Level 1 runs offline on 3, 4, 10 and 11 October 2026",
+          "supported": "yes"
+        },
+        {
+          "claim": "You can register through PW's official scholarship page, the PW app or a PW centre",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.006188,
+      "error": null
+    },
+    {
+      "id": "test-64",
+      "claims": [
+        {
+          "claim": "PWNSAT Prodigy (Level 2) is an offline exam at PW Vidyapeeth centres on 1 November 2026",
+          "supported": "yes"
+        },
+        {
+          "claim": "Level 2 is open to students shortlisted from Level 1 or recommended by their schools",
+          "supported": "yes"
+        },
+        {
+          "claim": "Level 2 details are sent by WhatsApp/SMS to the registered mobile number and shown in the PW app",
+          "supported": "yes"
+        },
+        {
+          "claim": "Level 1 runs from 1 to 15 October 2026",
+          "supported": "yes"
+        },
+        {
+          "claim": "Level 2 shortlisting comes after Level 1",
+          "supported": "partly"
+        },
+        {
+          "claim": "If shortlisted and no details appear, a support agent will follow up to check",
+          "supported": "no"
+        }
+      ],
+      "answers_question": "partly",
+      "same_language": true,
+      "promises_beyond_articles": true,
+      "cost_usd": 0.005598,
+      "error": null
+    },
+    {
+      "id": "test-65",
+      "claims": [
+        {
+          "claim": "Scholarship percentage depends on PWNSAT result and applies to admission at PW Vidyapeeth centres",
+          "supported": "yes"
+        },
+        {
+          "claim": "Documents such as ID proof and marksheets may be needed to confirm scholarship eligibility",
+          "supported": "yes"
+        },
+        {
+          "claim": "Centre staff help with the scholarship documents",
+          "supported": "yes"
+        },
+        {
+          "claim": "Keep digital copies of Aadhaar (or other ID) and marksheets ready",
+          "supported": "yes"
+        },
+        {
+          "claim": "If a counsellor promised the scholarship, share counsellor's name or number, date of call, and messages or screenshots",
+          "supported": "yes"
+        },
+        {
+          "claim": "A support agent will review the complaint personally",
+          "supported": "yes"
+        },
+        {
+          "claim": "Vidyapeeth helpdesk number is +91 9513350005",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "partly",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.006384,
+      "error": null
+    },
+    {
+      "id": "test-66",
+      "claims": [
+        {
+          "claim": "PWNSAT is open to students from Classes 5 to 12 and droppers, so a Class 6 student can take it",
+          "supported": "yes"
+        },
+        {
+          "claim": "PWNSAT can be taken online or offline",
+          "supported": "yes"
+        },
+        {
+          "claim": "For Classes 5–10 the test has 40 questions covering Physics, Chemistry, Biology, Maths and MAT/IQ",
+          "supported": "yes"
+        },
+        {
+          "claim": "Level 1 runs online every day from 1 to 15 October 2026",
+          "supported": "yes"
+        },
+        {
+          "claim": "Level 1 runs offline on 3, 4, 10 and 11 October 2026",
+          "supported": "yes"
+        },
+        {
+          "claim": "Register through PW's official scholarship page (also reachable from the PW app) or at a PW centre",
+          "supported": "yes"
+        },
+        {
+          "claim": "After registering, choose online or offline mode and a test date",
+          "supported": "yes"
+        },
+        {
+          "claim": "Students can win up to 100% scholarships, cash rewards and learning opportunities",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.006904,
+      "error": null
+    },
+    {
+      "id": "test-67",
+      "claims": [
+        {
+          "claim": "The help information doesn't say where Level 1 results are published",
+          "supported": "yes"
+        },
+        {
+          "claim": "A support agent will follow up with the student on where to see the result",
+          "supported": "no"
+        },
+        {
+          "claim": "If shortlisted for PWNSAT Prodigy (Level 2), details are sent by WhatsApp/SMS to the registered mobile number and shown in the PW app",
+          "supported": "yes"
+        },
+        {
+          "claim": "Scholarship percentage depends on PWNSAT result and applies to admission at PW Vidyapeeth centres",
+          "supported": "yes"
+        },
+        {
+          "claim": "Student can raise the issue through the 'Contact us' option in the PW app for a quicker response",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "no",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.005728,
+      "error": null
+    },
+    {
+      "id": "test-68",
+      "claims": [
+        {
+          "claim": "Students can register online via PW's official scholarship page, which is also reachable from the PW app",
+          "supported": "yes"
+        },
+        {
+          "claim": "Students can also register at a PW centre",
+          "supported": "yes"
+        },
+        {
+          "claim": "At registration, choose online or offline mode and take the test on the chosen date",
+          "supported": "yes"
+        },
+        {
+          "claim": "Level 1 online runs every day from 1 to 15 October 2026",
+          "supported": "yes"
+        },
+        {
+          "claim": "Level 1 offline is on 3, 4, 10 and 11 October 2026",
+          "supported": "yes"
+        },
+        {
+          "claim": "Any fee paid for PWNSAT is non-refundable",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.00544,
+      "error": null
+    },
+    {
+      "id": "test-69",
+      "claims": [
+        {
+          "claim": "If a test was interrupted by a technical problem, support can check whether the attempt was recorded",
+          "supported": "yes"
+        },
+        {
+          "claim": "Share test name, batch, and date and time of the attempt",
+          "supported": "yes"
+        },
+        {
+          "claim": "Check internet connection and don't close the app or page while the test submits",
+          "supported": "yes"
+        },
+        {
+          "claim": "If the PW app keeps crashing, update to the latest version",
+          "supported": "yes"
+        },
+        {
+          "claim": "On Android, clear app cache via Settings > Apps > Physics Wallah > Storage and restart the phone",
+          "supported": "yes"
+        },
+        {
+          "claim": "Fastest way to raise it is 'Contact us' in the PW app",
+          "supported": "yes"
+        },
+        {
+          "claim": "Call 07406346660 / 08448982616 (24x7) or email support@pw.live",
+          "supported": "yes"
+        },
+        {
+          "claim": "A support agent will follow up on whether the attempt can be recovered",
+          "supported": "no"
+        }
+      ],
+      "answers_question": "partly",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.006492,
+      "error": null
+    },
+    {
+      "id": "test-70",
+      "claims": [
+        {
+          "claim": "Premium PW Skills courses are refundable if requested within 30 calendar days of purchase",
+          "supported": "yes"
+        },
+        {
+          "claim": "The refund is minus a non-refundable registration fee of ₹10,000",
+          "supported": "partly"
+        },
+        {
+          "claim": "Course access is revoked once a refund is processed",
+          "supported": "yes"
+        },
+        {
+          "claim": "Request a refund by emailing support@pwskills.com or via LMS > Contact Us > Raise a support request, and keep the ticket number",
+          "supported": "yes"
+        },
+        {
+          "claim": "Team first tries to resolve the concern during days 1–4; if the learner still wants a refund it is initiated on day 5 and usually credited in 7–10 working days",
+          "supported": "yes"
+        },
+        {
+          "claim": "For EMI, loan or FlexiPay purchases, cancellation goes through the financing partner whose own process and timelines apply",
+          "supported": "yes"
+        },
+        {
+          "claim": "The student's window is 30 days from purchase so they should raise the request soon",
+          "supported": "yes"
+        },
+        {
+          "claim": "The student's Full Stack course is a Premium course",
+          "supported": "no"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.007042,
+      "error": null
+    },
+    {
+      "id": "test-71",
+      "claims": [
+        {
+          "claim": "Premium and Pro courses are refundable only if requested within 30 calendar days of purchase",
+          "supported": "yes"
+        },
+        {
+          "claim": "Basic (self-paced) courses are non-refundable",
+          "supported": "yes"
+        },
+        {
+          "claim": "After 30 days there is no refund, whatever the reason or course usage",
+          "supported": "yes"
+        },
+        {
+          "claim": "Student's purchase 2 months ago falls outside the refund window",
+          "supported": "yes"
+        },
+        {
+          "claim": "Student can contact PW Skills support at support@pwskills.com or raise a ticket from LMS > Contact Us",
+          "supported": "yes"
+        },
+        {
+          "claim": "Queries are attended to within 24 business hours",
+          "supported": "yes"
+        },
+        {
+          "claim": "The team can look at the order despite being outside the window",
+          "supported": "partly"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.005816,
+      "error": null
+    },
+    {
+      "id": "test-72",
+      "claims": [
+        {
+          "claim": "The course completion certificate is generated from the course analytics section of the dashboard once the course requirements (videos, assignments, etc.) are met",
+          "supported": "yes"
+        },
+        {
+          "claim": "The student can check the course analytics section to see whether anything still shows as pending",
+          "supported": "partly"
+        },
+        {
+          "claim": "If a submitted assignment hasn't been updated, the student can contact support@pwskills.com",
+          "supported": "yes"
+        },
+        {
+          "claim": "The student can raise a ticket from the course dashboard (LMS > Contact Us)",
+          "supported": "yes"
+        },
+        {
+          "claim": "Queries are attended to within 24 business hours",
+          "supported": "yes"
+        },
+        {
+          "claim": "A support agent will follow up with the student on why the certificate is still locked if nothing else explains it",
+          "supported": "no"
+        }
+      ],
+      "answers_question": "partly",
+      "same_language": true,
+      "promises_beyond_articles": true,
+      "cost_usd": 0.005994,
+      "error": null
+    },
+    {
+      "id": "test-73",
+      "claims": [
+        {
+          "claim": "There is no separate PW Skills app",
+          "supported": "yes"
+        },
+        {
+          "claim": "All PW Skills courses are available only on pwskills.com",
+          "supported": "yes"
+        },
+        {
+          "claim": "You can open pwskills.com in your phone browser and watch lectures from the course dashboard",
+          "supported": "partly"
+        },
+        {
+          "claim": "PW Skills lectures cannot be downloaded and stay available on the dashboard",
+          "supported": "yes"
+        },
+        {
+          "claim": "For problems, email support@pwskills.com or raise a ticket from the course dashboard via LMS > Contact Us",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.004978,
+      "error": null
+    },
+    {
+      "id": "test-74",
+      "claims": [
+        {
+          "claim": "Live sessions are recorded and uploaded to the course dashboard within 24 working hours.",
+          "supported": "yes"
+        },
+        {
+          "claim": "Lectures cannot be downloaded.",
+          "supported": "yes"
+        },
+        {
+          "claim": "Lectures remain available on the dashboard to watch anytime.",
+          "supported": "yes"
+        },
+        {
+          "claim": "If the recording isn't visible after that, the student can email support@pwskills.com.",
+          "supported": "yes"
+        },
+        {
+          "claim": "The student can raise a ticket from the dashboard via LMS > Contact Us.",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.00475,
+      "error": null
+    },
+    {
+      "id": "test-75",
+      "claims": [
+        {
+          "claim": "Learners in eligible new programmes can pause for up to 3 months in total, so a 2-month pause fits",
+          "supported": "yes"
+        },
+        {
+          "claim": "During a pause, recordings and doubt resolution stay available but no new lectures are added",
+          "supported": "yes"
+        },
+        {
+          "claim": "To request the pause, email support@pwskills.com or raise a ticket from the course dashboard (LMS > Contact Us)",
+          "supported": "partly"
+        },
+        {
+          "claim": "Queries are attended to within 24 business hours and support usually calls or emails within 7–8 hours",
+          "supported": "yes"
+        },
+        {
+          "claim": "Support can confirm whether your programme is eligible for a pause",
+          "supported": "partly"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.005236,
+      "error": null
+    },
+    {
+      "id": "test-76",
+      "claims": [
+        {
+          "claim": "A complaint that a counsellor promised something the course doesn't deliver (e.g., guaranteed result) is reviewed personally by a support agent",
+          "supported": "yes"
+        },
+        {
+          "claim": "Student should share counsellor's name or number, date of call, and any messages or screenshots",
+          "supported": "yes"
+        },
+        {
+          "claim": "The agent will check the sale and respond; the outcome isn't decided automatically",
+          "supported": "yes"
+        },
+        {
+          "claim": "PW Skills Premium and Pro courses can be refunded if requested within 30 calendar days of purchase, minus a non-refundable registration fee",
+          "supported": "yes"
+        },
+        {
+          "claim": "Basic courses are non-refundable",
+          "supported": "yes"
+        },
+        {
+          "claim": "Student can raise a request at support@pwskills.com or via LMS > Contact Us and should keep the ticket number",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.006742,
+      "error": null
+    },
+    {
+      "id": "test-77",
+      "claims": [
+        {
+          "claim": "PW Skills certificates are not recognised by regulators such as AICTE or UGC, so they are not UGC approved",
+          "supported": "yes"
+        },
+        {
+          "claim": "Some programmes don't offer a certificate",
+          "supported": "yes"
+        },
+        {
+          "claim": "Where offered, the certificate is generated from the course analytics section of the dashboard once course requirements are met",
+          "supported": "yes"
+        },
+        {
+          "claim": "Whether a certificate is accepted for a specific government job isn't covered in the help sections",
+          "supported": "yes"
+        },
+        {
+          "claim": "A support agent will follow up with the student on government job acceptance",
+          "supported": "no"
+        },
+        {
+          "claim": "Student can contact PW Skills support at support@pwskills.com or via LMS > Contact Us on the course dashboard",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.005688,
+      "error": null
+    },
+    {
+      "id": "test-78",
+      "claims": [
+        {
+          "claim": "PW Skills queries are attended to within 24 business hours",
+          "supported": "yes"
+        },
+        {
+          "claim": "Support team usually calls or emails within 7–8 hours",
+          "supported": "yes"
+        },
+        {
+          "claim": "You can email support@pwskills.com to reach PW Skills support",
+          "supported": "yes"
+        },
+        {
+          "claim": "You can raise a ticket from the course dashboard under LMS > Contact Us",
+          "supported": "yes"
+        },
+        {
+          "claim": "If you've already raised a ticket, keep the ticket number handy to follow up",
+          "supported": "partly"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.004714,
+      "error": null
+    },
+    {
+      "id": "test-79",
+      "claims": [
+        {
+          "claim": "Whether a PW Skills programme includes doubt support is listed in the programme details.",
+          "supported": "yes"
+        },
+        {
+          "claim": "Where doubt support is included, learners clear doubts with subject experts in doubt-clearing sessions held on fixed days for their course.",
+          "supported": "yes"
+        },
+        {
+          "claim": "PW Skills doubts are not handled by the PW app's AI Guru.",
+          "supported": "yes"
+        },
+        {
+          "claim": "For mentor talk or session details, email support@pwskills.com or raise a ticket via course dashboard LMS > Contact Us.",
+          "supported": "partly"
+        },
+        {
+          "claim": "Support usually calls or emails within 7-8 hours.",
+          "supported": "yes"
+        },
+        {
+          "claim": "Queries are attended to within 24 business hours.",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "partly",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.005652,
+      "error": null
+    },
+    {
+      "id": "test-80",
+      "claims": [
+        {
+          "claim": "Within 30 days of batch start date, student is eligible for a full refund of tuition fee",
+          "supported": "yes"
+        },
+        {
+          "claim": "The ₹11,800 seat booking amount will be deducted from the refund",
+          "supported": "yes"
+        },
+        {
+          "claim": "Registration, infrastructure and study-material fees are non-refundable",
+          "supported": "yes"
+        },
+        {
+          "claim": "Refund request must be sent in writing to info@pwonlyias.com",
+          "supported": "yes"
+        },
+        {
+          "claim": "Processing can take up to 15 business days",
+          "supported": "yes"
+        },
+        {
+          "claim": "A support agent will review the request against the policy and reply with a decision",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.005136,
+      "error": null
+    },
+    {
+      "id": "test-81",
+      "claims": [
+        {
+          "claim": "The Rs 11,800 seat booking (registration) amount at PW OnlyIAS offline centres is non-refundable in all cases",
+          "supported": "yes"
+        },
+        {
+          "claim": "Registration, infrastructure and study-material fees are also non-refundable",
+          "supported": "yes"
+        },
+        {
+          "claim": "Within 30 days of batch start, a full refund of tuition fee is available, with the seat booking amount deducted",
+          "supported": "yes"
+        },
+        {
+          "claim": "After 30 days there is no refund",
+          "supported": "yes"
+        },
+        {
+          "claim": "Refund requests must be made in writing to info@pwonlyias.com",
+          "supported": "yes"
+        },
+        {
+          "claim": "Refunds can take up to 15 business days",
+          "supported": "yes"
+        },
+        {
+          "claim": "PW OnlyIAS counsellors can help choose the right course or centre",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.005816,
+      "error": null
+    },
+    {
+      "id": "test-82",
+      "claims": [
+        {
+          "claim": "PW OnlyIAS offers UPSC and State PSC preparation in online, offline and hybrid modes",
+          "supported": "yes"
+        },
+        {
+          "claim": "Offline centres include Lucknow (along with Delhi and Patna)",
+          "supported": "yes"
+        },
+        {
+          "claim": "Counsellors help choose the right course and centre",
+          "supported": "yes"
+        },
+        {
+          "claim": "Give a missed call to 07019243492 to talk to a counsellor",
+          "supported": "yes"
+        },
+        {
+          "claim": "Call 07406346660 / 08448982616 to talk to a counsellor",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.004778,
+      "error": null
+    },
+    {
+      "id": "test-83",
+      "claims": [
+        {
+          "claim": "Promotional messages can be stopped by changing communication preferences",
+          "supported": "yes"
+        },
+        {
+          "claim": "Promotional messages can be stopped using the unsubscribe link in any PW email",
+          "supported": "yes"
+        },
+        {
+          "claim": "Student can email support@pw.live asking them to block promotional communication to their number",
+          "supported": "yes"
+        },
+        {
+          "claim": "When emailing, include the registered mobile number so the right number can be blocked",
+          "supported": "no"
+        },
+        {
+          "claim": "Order updates on WhatsApp such as dispatch and delivery alerts are sent to the student",
+          "supported": "yes"
+        },
+        {
+          "claim": "Order updates on WhatsApp are separate service messages (distinct from promotional messages)",
+          "supported": "partly"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.005094,
+      "error": null
+    },
+    {
+      "id": "test-84",
+      "claims": [
+        {
+          "claim": "Registered mobile number is the login and all purchases are linked to it",
+          "supported": "yes"
+        },
+        {
+          "claim": "Only the support team can change the number, after verifying identity and order details",
+          "supported": "yes"
+        },
+        {
+          "claim": "A support agent personally handles account change requests",
+          "supported": "yes"
+        },
+        {
+          "claim": "An agent will contact the student soon to help update the number",
+          "supported": "partly"
+        },
+        {
+          "claim": "Student should keep old registered number, new number and order details (e.g. order ID) ready for verification",
+          "supported": "partly"
+        },
+        {
+          "claim": "Student can raise the issue via the app's Contact us option, which is the fastest way",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.005196,
+      "error": null
+    },
+    {
+      "id": "test-85",
+      "claims": [
+        {
+          "claim": "The PW app can only be used on one device at a time; logging in on another device logs you out of the first.",
+          "supported": "yes"
+        },
+        {
+          "claim": "Students should report any unauthorised use of their account to PW immediately.",
+          "supported": "yes"
+        },
+        {
+          "claim": "Students should log out at the end of each session.",
+          "supported": "yes"
+        },
+        {
+          "claim": "The \"Contact us\" option in the PW app is the fastest way to raise an issue.",
+          "supported": "yes"
+        },
+        {
+          "claim": "Support can be reached 24x7 on 07406346660 / 08448982616 or by email at support@pw.live.",
+          "supported": "yes"
+        },
+        {
+          "claim": "Unusual activity can sometimes lead to an account being locked.",
+          "supported": "yes"
+        },
+        {
+          "claim": "A locked account is restored by the support team after verifying the registered mobile number and order details.",
+          "supported": "yes"
+        },
+        {
+          "claim": "A support agent will follow up personally to look into the student's account.",
+          "supported": "partly"
+        }
+      ],
+      "answers_question": "partly",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.00648,
+      "error": null
+    },
+    {
+      "id": "test-86",
+      "claims": [
+        {
+          "claim": "PW's terms allow it to use a student's name, photo, rank and testimonials in promotions",
+          "supported": "yes"
+        },
+        {
+          "claim": "A parent who objects can write to support@pw.live and the support team will review the request",
+          "supported": "yes"
+        },
+        {
+          "claim": "Parent should include son's name, registered mobile number and a link or screenshot of the Instagram ad in the email",
+          "supported": "no"
+        },
+        {
+          "claim": "A support agent will personally look into the message because the parent is upset",
+          "supported": "partly"
+        },
+        {
+          "claim": "If not resolved through support, escalate by writing to support@pw.live with ticket details",
+          "supported": "yes"
+        },
+        {
+          "claim": "Concerns about personal data use can go to the Grievance Redressal Officer at grievance.officer@pw.live",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "partly",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.00565,
+      "error": null
+    },
+    {
+      "id": "test-87",
+      "claims": [
+        {
+          "claim": "Students can usually fix the spelling of their name themselves by editing it in Profile in the PW app",
+          "supported": "yes"
+        },
+        {
+          "claim": "If the app doesn't allow editing, the support team can update the name",
+          "supported": "yes"
+        },
+        {
+          "claim": "Support can be reached via the 'Contact us' option in the PW app",
+          "supported": "yes"
+        },
+        {
+          "claim": "Support can be reached by phone at 07406346660 or 08448982616, available 24x7",
+          "supported": "yes"
+        },
+        {
+          "claim": "Support can be reached by email at support@pw.live",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.004556,
+      "error": null
+    },
+    {
+      "id": "test-88",
+      "claims": [
+        {
+          "claim": "Account deletion can be requested in the PW app via menu (top left) > Profile > Settings > Additional settings > Account Deletion",
+          "supported": "yes"
+        },
+        {
+          "claim": "After deletion, a new account is needed to use PW again",
+          "supported": "yes"
+        },
+        {
+          "claim": "PW is legally required to keep some data such as order history, for tax and security reasons",
+          "supported": "yes"
+        },
+        {
+          "claim": "Content posted publicly may remain visible with the user's name",
+          "supported": "yes"
+        },
+        {
+          "claim": "Promotional messages can be stopped via the email unsubscribe link or by emailing support@pw.live",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.005464,
+      "error": null
+    },
+    {
+      "id": "test-89",
+      "claims": [
+        {
+          "claim": "PW never asks students for OTPs, passwords or card PINs over calls or WhatsApp, so the caller was not from PW",
+          "supported": "yes"
+        },
+        {
+          "claim": "Student should not share any more OTPs or make any payment to the caller",
+          "supported": "yes"
+        },
+        {
+          "claim": "Report the caller's number to support@pw.live",
+          "supported": "yes"
+        },
+        {
+          "claim": "A locked or inaccessible account can only be restored by the support team after verifying registered mobile number and order details",
+          "supported": "yes"
+        },
+        {
+          "claim": "A support agent will personally take over the student's case to help regain account access",
+          "supported": "yes"
+        },
+        {
+          "claim": "PW support is available 24x7 on 07406346660 or 08448982616",
+          "supported": "yes"
+        },
+        {
+          "claim": "Student can use 'Contact us' in the PW app to reach support",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.006164,
+      "error": null
+    },
+    {
+      "id": "test-90",
+      "claims": [
+        {
+          "claim": "The help information does not cover NEET result dates or rank details",
+          "supported": "yes"
+        },
+        {
+          "claim": "A support agent will follow up with the student on this NEET result/rank question",
+          "supported": "no"
+        },
+        {
+          "claim": "PW support is available 24x7 on 07406346660 and 08448982616",
+          "supported": "yes"
+        },
+        {
+          "claim": "Students can email support@pw.live",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "no",
+      "same_language": true,
+      "promises_beyond_articles": true,
+      "cost_usd": 0.003992,
+      "error": null
+    },
+    {
+      "id": "test-91",
+      "claims": [
+        {
+          "claim": "The help information doesn't cover whether PW mock tests match the actual NEET 2025 paper",
+          "supported": "yes"
+        },
+        {
+          "claim": "A support agent will follow up with the student on this question",
+          "supported": "no"
+        },
+        {
+          "claim": "A batch page shows the course features included, such as practice questions and tests",
+          "supported": "yes"
+        },
+        {
+          "claim": "PW support is available 24x7 on 07406346660 or 08448982616",
+          "supported": "yes"
+        },
+        {
+          "claim": "PW support can be reached by email at support@pw.live",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "no",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.005142,
+      "error": null
+    },
+    {
+      "id": "test-92",
+      "claims": [
+        {
+          "claim": "The support team does not solve subject questions.",
+          "supported": "yes"
+        },
+        {
+          "claim": "AI Guru in the PW app is the fastest way to get subject doubts explained.",
+          "supported": "yes"
+        },
+        {
+          "claim": "Students can type the question, speak it, or upload a photo in AI Guru.",
+          "supported": "yes"
+        },
+        {
+          "claim": "AI Guru works in Hindi, English or Hinglish.",
+          "supported": "yes"
+        },
+        {
+          "claim": "If the AI answer isn't clear, the student can mark it as unhelpful and ask again with more detail.",
+          "supported": "yes"
+        },
+        {
+          "claim": "The student can take the doubt to their batch's doubt support.",
+          "supported": "yes"
+        },
+        {
+          "claim": "In a live class, the student can post the doubt there and the Smart Doubt Engine will answer it instantly.",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "partly",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.00565,
+      "error": null
+    },
+    {
+      "id": "test-93",
+      "claims": [
+        {
+          "claim": "Support team can't judge subject answers, so it can't say which answer is right",
+          "supported": "yes"
+        },
+        {
+          "claim": "If AI Guru's answer seems unclear or wrong, mark it as unhelpful and ask again with more detail",
+          "supported": "yes"
+        },
+        {
+          "claim": "Student can include the exact question and what teacher's notes say when asking again",
+          "supported": "partly"
+        },
+        {
+          "claim": "Student can take the doubt to their batch's doubt support",
+          "supported": "yes"
+        },
+        {
+          "claim": "Batches with mentorship or doubt sessions have teachers who can review the doubt",
+          "supported": "yes"
+        },
+        {
+          "claim": "In a live class, post the doubt through the doubt option in the class for an instant explanation",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "partly",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.0054,
+      "error": null
+    },
+    {
+      "id": "test-94",
+      "claims": [
+        {
+          "claim": "Check that the app is on the latest version",
+          "supported": "yes"
+        },
+        {
+          "claim": "On Android, clear the app cache via Settings > Apps > Physics Wallah > Storage and restart the phone",
+          "supported": "yes"
+        },
+        {
+          "claim": "If the problem continues, reinstall the app",
+          "supported": "yes"
+        },
+        {
+          "claim": "After reinstalling, downloaded lectures may need to be downloaded again",
+          "supported": "yes"
+        },
+        {
+          "claim": "Use the correct registered mobile number when entering the OTP",
+          "supported": "partly"
+        },
+        {
+          "claim": "Wait 60 seconds before requesting a new OTP",
+          "supported": "yes"
+        },
+        {
+          "claim": "If OTP still does not verify, contact support via the app's Contact us option",
+          "supported": "yes"
+        },
+        {
+          "claim": "Support can be reached at 07406346660 / 08448982616 with the registered number",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "partly",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.006376,
+      "error": null
+    },
+    {
+      "id": "test-95",
+      "claims": [
+        {
+          "claim": "A new batch can take up to 2 hours to appear",
+          "supported": "yes"
+        },
+        {
+          "claim": "Since it has been much longer than 2 hours, support needs to check the order manually",
+          "supported": "yes"
+        },
+        {
+          "claim": "Make sure you are logged in with the same mobile number used for payment",
+          "supported": "yes"
+        },
+        {
+          "claim": "Check Study > My Batches",
+          "supported": "yes"
+        },
+        {
+          "claim": "If still missing, reply with order ID or payment screenshot and registered mobile number",
+          "supported": "yes"
+        },
+        {
+          "claim": "Support has noted the student's UTR 419922718821",
+          "supported": "no"
+        },
+        {
+          "claim": "A support agent will personally take over and look into the order",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.005208,
+      "error": null
+    },
+    {
+      "id": "test-96",
+      "claims": [
+        {
+          "claim": "For higher-fee courses (especially offline Vidyapeeth and hybrid) PW offers split payments, EMI and education loans via NBFC lending partners",
+          "supported": "yes"
+        },
+        {
+          "claim": "A loan is not the same as no-cost EMI; loans can carry interest and processing fee",
+          "supported": "yes"
+        },
+        {
+          "claim": "Read interest rate, fees, tenure and lender name before signing",
+          "supported": "yes"
+        },
+        {
+          "claim": "The articles do not say which batch offers EMI without a credit card",
+          "supported": "yes"
+        },
+        {
+          "claim": "A support agent will follow up with the student on EMI without credit card",
+          "supported": "no"
+        },
+        {
+          "claim": "Counsellor can be called on 07406346660 / 08448982616 or missed call on 07019243492 to choose course and payment option",
+          "supported": "partly"
+        },
+        {
+          "claim": "Pay only via official PW app or pw.live, never a personal account or unknown UPI ID",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "partly",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.006838,
+      "error": null
+    },
+    {
+      "id": "test-97",
+      "claims": [
+        {
+          "claim": "PW offers both EMIs and education loans through lending partners (NBFCs) for Vidyapeeth fees",
+          "supported": "yes"
+        },
+        {
+          "claim": "A loan is not the same as a no-cost EMI and can carry interest and a processing fee",
+          "supported": "yes"
+        },
+        {
+          "claim": "A support agent will personally review the complaint about the counsellor, check the sale and respond",
+          "supported": "yes"
+        },
+        {
+          "claim": "The outcome is not decided automatically",
+          "supported": "yes"
+        },
+        {
+          "claim": "Student should share counsellor's name or number, call date, and messages or screenshots",
+          "supported": "yes"
+        },
+        {
+          "claim": "Student should share loan or EMI documents showing lender name, interest rate and fees",
+          "supported": "yes"
+        },
+        {
+          "claim": "Student can ask support to confirm whether their plan is a loan",
+          "supported": "yes"
+        },
+        {
+          "claim": "A support agent will follow up on the cancellation request",
+          "supported": "yes"
+        },
+        {
+          "claim": "The help sections don't say whether the plan can be cancelled",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "partly",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.006834,
+      "error": null
+    },
+    {
+      "id": "test-98",
+      "claims": [
+        {
+          "claim": "A support agent will reach out to the student personally and as a priority",
+          "supported": "yes"
+        },
+        {
+          "claim": "Tele-MANAS is the Government of India's free mental-health helpline",
+          "supported": "yes"
+        },
+        {
+          "claim": "Tele-MANAS is available 24x7 at 14416 or 1-800-891-4416",
+          "supported": "yes"
+        },
+        {
+          "claim": "In an emergency or if unsafe, call 112",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.00414,
+      "error": null
+    },
+    {
+      "id": "test-99",
+      "claims": [
+        {
+          "claim": "Batch validity is not extended automatically; support team reviews extension requests",
+          "supported": "yes"
+        },
+        {
+          "claim": "Batch extension is a change to the batch record, so a support agent will personally review the request and follow up",
+          "supported": "partly"
+        },
+        {
+          "claim": "Invoice can be downloaded from the orders section of the app or website",
+          "supported": "yes"
+        },
+        {
+          "claim": "If name or GST details need correction, the support team raises it",
+          "supported": "yes"
+        },
+        {
+          "claim": "For OTP, check the mobile number is correct and there is network",
+          "supported": "yes"
+        },
+        {
+          "claim": "Wait 60 seconds before tapping Resend OTP",
+          "supported": "yes"
+        },
+        {
+          "claim": "Check DND settings or a full SMS inbox as they can block OTPs",
+          "supported": "yes"
+        },
+        {
+          "claim": "If OTP does not arrive after 3 attempts, try again after 30 minutes",
+          "supported": "yes"
+        },
+        {
+          "claim": "If OTP still fails, contact support with the registered number",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.006772,
+      "error": null
+    },
+    {
+      "id": "test-100",
+      "claims": [
+        {
+          "claim": "If the courier damages or loses a product, the student is entitled to a replacement.",
+          "supported": "yes"
+        },
+        {
+          "claim": "If a product arrives damaged, the student is entitled to a replacement.",
+          "supported": "partly"
+        },
+        {
+          "claim": "Student can share the order ID and photos of the damage.",
+          "supported": "yes"
+        },
+        {
+          "claim": "PW support is available 24x7 on 07406346660 and 08448982616.",
+          "supported": "yes"
+        },
+        {
+          "claim": "PW support can be reached by email at support@pw.live.",
+          "supported": "yes"
+        }
+      ],
+      "answers_question": "yes",
+      "same_language": true,
+      "promises_beyond_articles": false,
+      "cost_usd": 0.00458,
+      "error": null
+    }
+  ]
+}

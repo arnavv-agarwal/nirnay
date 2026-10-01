@@ -1,0 +1,873 @@
+{
+  "model": "claude-sonnet-5-5",
+  "split": "blind",
+  "summary": {
+    "tickets": 15,
+    "category_exact_match": 0.6666666666666666,
+    "categories": {
+      "refund": {
+        "precision": 0.6,
+        "recall": 1.0,
+        "f1": 0.7499999999999999,
+        "tp": 3,
+        "fp": 2,
+        "fn": 0,
+        "support": 3
+      },
+      "batch_access": {
+        "precision": 1.0,
+        "recall": 0.6666666666666666,
+        "f1": 0.8,
+        "tp": 2,
+        "fp": 0,
+        "fn": 1,
+        "support": 3
+      },
+      "payment": {
+        "precision": 1.0,
+        "recall": 0.2,
+        "f1": 0.33333333333333337,
+        "tp": 1,
+        "fp": 0,
+        "fn": 4,
+        "support": 5
+      },
+      "technical": {
+        "precision": 1.0,
+        "recall": 0.8333333333333334,
+        "f1": 0.9090909090909091,
+        "tp": 5,
+        "fp": 0,
+        "fn": 1,
+        "support": 6
+      },
+      "academic_doubt": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 3,
+        "fp": 0,
+        "fn": 0,
+        "support": 3
+      },
+      "other": {
+        "precision": 0.6666666666666666,
+        "recall": 0.6666666666666666,
+        "f1": 0.6666666666666666,
+        "tp": 2,
+        "fp": 1,
+        "fn": 1,
+        "support": 3
+      }
+    },
+    "escalation": {
+      "precision": 0.75,
+      "recall": 0.6666666666666666,
+      "f1": 0.7058823529411765,
+      "tp": 6,
+      "fp": 2,
+      "fn": 3
+    },
+    "escalation_accuracy": 0.6666666666666666,
+    "missed_escalations": [
+      "blind-09",
+      "blind-11",
+      "blind-13"
+    ],
+    "unneeded_escalations": [
+      "blind-01",
+      "blind-03"
+    ],
+    "auto_reply_rate": 0.4666666666666667,
+    "at_risk": {
+      "precision": 1.0,
+      "recall": 0.42857142857142855,
+      "f1": 0.6,
+      "tp": 3,
+      "fp": 0,
+      "fn": 4
+    },
+    "needs_human": {
+      "precision": 0.8,
+      "recall": 0.8,
+      "f1": 0.8000000000000002,
+      "tp": 4,
+      "fp": 1,
+      "fn": 1
+    },
+    "citation_pass_rate": 1.0,
+    "model_errors": 0,
+    "cost_usd_total": 0.237242,
+    "cost_usd_per_ticket": 0.015816133333333333,
+    "latency_s_mean": 7.706401027673079,
+    "latency_s_p95": 12.17125912499614
+  },
+  "sweep": [
+    {
+      "threshold": 0.5,
+      "precision": 0.75,
+      "recall": 0.6666666666666666,
+      "f1": 0.7058823529411765,
+      "tp": 6,
+      "fp": 2,
+      "fn": 3,
+      "auto_reply_rate": 0.4666666666666667
+    },
+    {
+      "threshold": 0.6,
+      "precision": 0.75,
+      "recall": 0.6666666666666666,
+      "f1": 0.7058823529411765,
+      "tp": 6,
+      "fp": 2,
+      "fn": 3,
+      "auto_reply_rate": 0.4666666666666667
+    },
+    {
+      "threshold": 0.7,
+      "precision": 0.75,
+      "recall": 0.6666666666666666,
+      "f1": 0.7058823529411765,
+      "tp": 6,
+      "fp": 2,
+      "fn": 3,
+      "auto_reply_rate": 0.4666666666666667
+    },
+    {
+      "threshold": 0.8,
+      "precision": 0.6666666666666666,
+      "recall": 0.6666666666666666,
+      "f1": 0.6666666666666666,
+      "tp": 6,
+      "fp": 3,
+      "fn": 3,
+      "auto_reply_rate": 0.4
+    },
+    {
+      "threshold": 0.9,
+      "precision": 0.7272727272727273,
+      "recall": 0.8888888888888888,
+      "f1": 0.7999999999999999,
+      "tp": 8,
+      "fp": 3,
+      "fn": 1,
+      "auto_reply_rate": 0.26666666666666666
+    },
+    {
+      "threshold": 0.95,
+      "precision": 0.6666666666666666,
+      "recall": 0.8888888888888888,
+      "f1": 0.761904761904762,
+      "tp": 8,
+      "fp": 4,
+      "fn": 1,
+      "auto_reply_rate": 0.2
+    }
+  ],
+  "rows": [
+    {
+      "id": "blind-01",
+      "split": "blind",
+      "channel": "whatsapp",
+      "language": "hinglish",
+      "text": "Ji, mujhe kuch poochna tha. maine lasjya neet liga hai kal, paise bhi de diye hai Abhi tak pata nahi chala hai batch kab start hoga, kabse join karna hai. Upar se payment ka koi message nahi aaya hai.",
+      "categories": [
+        "batch_access",
+        "payment"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": false,
+      "note": "Written blind by Arnav. Topics as written: Batch access  /  Payment. Why: User is asking for payment confirmation and batch start information.",
+      "pred_categories": [
+        "batch_access",
+        "payment"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.4,
+      "reasons": [
+        "Low confidence (0.40 < 0.70)"
+      ],
+      "codes": [
+        "low_confidence"
+      ],
+      "reply": "Aapne kal batch liya hai, to thoda confusion hona natural hai. Naya batch dikhne mein 2 hours tak lag sakte hain; pehle app se logout karke usi mobile number se login karein jo payment mein use kiya tha, phir Study > My Batches kholein [BA-1]. Agar 2 ghante baad bhi batch na dikhe, to order ID ya payment screenshot aur registered mobile number share karein, taaki support team manually check kar sake [BA-1]. Agar paise kat gaye hain par app mein payment failed dikh raha hai, to bank aam taur par 5–7 working days mein amount khud reverse kar deta hai [PY-2]. Batch kab start hoga aur timetable ke liye batch page ke announcements dekhein; agar timetable abhi nahi dikh raha, to wait karein kyunki wahin update hota hai [JB-1]. Batch start date ki exact jaankari mere paas nahi hai, isliye is par support agent aapko follow up karega [CT-3].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "batch_access",
+            "confidence": 0.6
+          },
+          {
+            "category": "payment",
+            "confidence": 0.4
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "hinglish",
+        "summary": "Student bought the Lakshya NEET batch yesterday and paid, but has no payment confirmation message and doesn't know when the batch starts or how to join; bought only a day ago so likely just needs guidance."
+      },
+      "error": null,
+      "cost_usd": 0.019208,
+      "latency_s": 9.00467541598482
+    },
+    {
+      "id": "blind-02",
+      "split": "blind",
+      "channel": "whatsapp",
+      "language": "en",
+      "text": "Hi, I have bought the PW Arjuna For JEE Main & Advanced Class 11 Physics, Chemistry, Mathematics Modules and Question Booklet with Solutions Combo Set of 16 Books (2026 Edition) from PW Store. \n\nOrder ID: PW-1234567\n\nThe books have arrived with torn pages, they seem old and used. This is not expected from a company such as PW. I have reached out to support but no reply, the is not good. Please help me get a new order or else give me my money back, oi won’t tolerate this.",
+      "categories": [
+        "payment",
+        "other"
+      ],
+      "needs_human_action": true,
+      "at_risk": true,
+      "should_escalate": true,
+      "note": "Written blind by Arnav. Topics as written: Payment  /  Other - PW Store Product Bad Quality. Why: The user mentions he won’t tolerate this and he need a new fresh order or els he demand his money back. The user also mentions “not good”.",
+      "pred_categories": [
+        "refund"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": true,
+      "pred_needs_human": true,
+      "min_confidence": 0.95,
+      "reasons": [
+        "Student at risk: Student says earlier support contact got no reply and states 'I won't tolerate this', showing anger and an unresolved complaint.",
+        "Needs account/payment action: Damaged books received (torn, used-looking pages) for order PW-1234567; student wants a replacement or refund, which needs an agent to check the order."
+      ],
+      "codes": [
+        "at_risk",
+        "needs_action"
+      ],
+      "reply": "I'm sorry the books reached you torn and looking used, and that your earlier message went unanswered; that's frustrating. You can fill in the \"Return and Replace\" form (the damaged item is picked up and a new one sent) or the \"Return and Refund\" form (refund once the item is picked up), though both apply to selected products [ST-5]. Please share your order ID and photos of the damage, and if the courier damaged the product you are entitled to a replacement [ST-5]. For PW Store you can also reach support at +91-7406346660 (9 am – 9 pm) or support@pw.live [ST-8]. Since this needs a change to your order, a support agent will personally follow up on it [CT-3]. I can't promise a specific outcome or timeline here, as that depends on the agent's review of your photos and order.",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "refund",
+            "confidence": 0.95
+          }
+        ],
+        "needs_human_action": true,
+        "needs_human_reason": "Damaged books received (torn, used-looking pages) for order PW-1234567; student wants a replacement or refund, which needs an agent to check the order.",
+        "at_risk": true,
+        "at_risk_reason": "Student says earlier support contact got no reply and states 'I won't tolerate this', showing anger and an unresolved complaint.",
+        "language": "en",
+        "summary": "Student received a 16-book PW Arjuna JEE combo (Order PW-1234567) with torn, old-looking books; asks for a replacement or refund and says earlier contact went unanswered."
+      },
+      "error": null,
+      "cost_usd": 0.01659,
+      "latency_s": 9.6539111250313
+    },
+    {
+      "id": "blind-03",
+      "split": "blind",
+      "channel": "whatsapp",
+      "language": "hinglish",
+      "text": "mAINE KHARIDA Power Batch : JEE Dropper Fastrack 2.0 2027. Abhi tak pata nahi chala hai kab tak start hoga batch. Pls help kardo pls.",
+      "categories": [
+        "batch_access"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": false,
+      "note": "Written blind by Arnav. Topics as written: Batch access. Why: User is asking for info pertaining to batch start date. User wants to know when will batch start.",
+      "pred_categories": [
+        "other"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.6,
+      "reasons": [
+        "Category 'other' is outside the knowledge base",
+        "Low confidence (0.60 < 0.70)"
+      ],
+      "codes": [
+        "out_of_scope",
+        "low_confidence"
+      ],
+      "reply": "Tension mat lo, hum help karte hain. Batch ka timetable aur class schedule us batch ke announcements mein post hota hai, toh PW app ya pw.live par apne batch page mein announcements check karo [JB-1]. Agar timetable abhi dikh nahi raha, toh thoda wait karo, kyunki wahin update kiya jata hai [JB-1]. Batch ki exact start date in sections mein nahi hai, isliye is par ek support agent follow up karega [CT-3]. Agar chaho toh Power Batch counselling ke liye 07290070560 par call kar sakte ho [CT-2].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "other",
+            "confidence": 0.6
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "hinglish",
+        "summary": "Student bought the JEE Dropper Fastrack 2.0 2027 batch and wants to know when the batch will start; this is a batch schedule query, not an access problem."
+      },
+      "error": null,
+      "cost_usd": 0.021474,
+      "latency_s": 7.904089457995724
+    },
+    {
+      "id": "blind-04",
+      "split": "blind",
+      "channel": "email",
+      "language": "hinglish",
+      "text": "Subject: Need Information on Payment Refund\n\nHi Team, \n\nMy name is Rohit and I am an aspiring engineer who bough your Lakshay batch slot starting on Oct 5th, 2026 this year. However, I realised that I don’t want to continue with this batch anymore and in fact don’t want to join pw at any capacity. \n\nI have been trying to reach out to your team for a cancellation and refund but is is of no use. Its been two weeks. I have also visited one of your centres to talk face to face, even they didn’t have a solution on this. Additionally, the employees there were extremely rude and kept on saying “Agar join nahi Karna the to Kharida kya? Hum nahi jaunt refund ya cancellation raise Hota hai, support se baat karo”.\n\nAdditionally, there is something wrong with your website. I tried opening it multiple times but it kept own crashing.\n\nI am extreme angry and disappointed with the beviour of PW. I need my refund and a formal apology from your end for how your employees treated me. I cannot afford more delays, if I don’t get my refund by next week Monday, I will take legal action.",
+      "categories": [
+        "refund",
+        "payment",
+        "technical",
+        "other"
+      ],
+      "needs_human_action": true,
+      "at_risk": true,
+      "should_escalate": true,
+      "note": "Written blind by Arnav. Topics as written: Refund / Payment / Technical / Others - Rude behaviour by PW employees. Why: User mentions multiple things: Refund of payment ; Website Crashing ; Bad behaviour by employees. User threatens to take legal action if demands are not met.",
+      "pred_categories": [
+        "other",
+        "refund",
+        "technical"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": true,
+      "pred_needs_human": true,
+      "min_confidence": 0.6,
+      "reasons": [
+        "Student at risk: Student is extremely angry, reports a repeated unresolved complaint for two weeks, complains of rude centre staff and threatens legal action if no refund by Monday.",
+        "Needs account/payment action: Student requests cancellation and refund of the Lakshay batch; unresolved for two weeks, needs account and payment lookup and refund processing.",
+        "Category 'other' is outside the knowledge base",
+        "Low confidence (0.60 < 0.70)"
+      ],
+      "codes": [
+        "at_risk",
+        "needs_action",
+        "out_of_scope",
+        "low_confidence"
+      ],
+      "reply": "Rohit, I'm sorry about the delays and the rude treatment at the centre; your frustration is completely understandable. Online batches are generally non-refundable, but a refund or batch-change request is never decided automatically: a support agent reviews it, checks your order against the policy and replies with a decision [RF-1][RF-4]. I can't promise a refund or a date by Monday, but PW aims to resolve support queries within 7 days [RF-4]. Your complaint about the staff's behaviour will also be handled personally by a support agent, and it helps to share the centre's name, the date of your visit and any messages or screenshots [RF-6][CT-3]. For the website crashing, please update the app to the latest version, and on Android clear the app's cache from Settings > Apps > Physics Wallah > Storage and restart the phone [TS-3]. If your concern is still unresolved, you can also write to support@pw.live with your ticket details [CT-5].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "refund",
+            "confidence": 0.97
+          },
+          {
+            "category": "technical",
+            "confidence": 0.7
+          },
+          {
+            "category": "other",
+            "confidence": 0.6
+          }
+        ],
+        "needs_human_action": true,
+        "needs_human_reason": "Student requests cancellation and refund of the Lakshay batch; unresolved for two weeks, needs account and payment lookup and refund processing.",
+        "at_risk": true,
+        "at_risk_reason": "Student is extremely angry, reports a repeated unresolved complaint for two weeks, complains of rude centre staff and threatens legal action if no refund by Monday.",
+        "language": "en",
+        "summary": "Rohit wants to cancel the Lakshay batch and get a refund; unresolved for two weeks, also reports rude centre staff and website crashing, and threatens legal action if not refunded by Monday."
+      },
+      "error": null,
+      "cost_usd": 0.02765,
+      "latency_s": 7.964736875030212
+    },
+    {
+      "id": "blind-05",
+      "split": "blind",
+      "channel": "email",
+      "language": "hinglish",
+      "text": "Subject: teacher complain \n\nGood morning sir, \n\nMe ek teacher ka complain Karna chata hu. Aklesh sir physics ke. Wo Bhot zor zor se shout karte hai. Baccho ko bhi dar lagta phir. Pls such karo. \n\ndo din pehle, wo gali de rahe the bacho ko.,\n\nthanks",
+      "categories": [
+        "other"
+      ],
+      "needs_human_action": true,
+      "at_risk": true,
+      "should_escalate": true,
+      "note": "Written blind by Arnav. Topics as written: Other - Bad behaviour by teacher. Why: User said “dar lagta hai”. So, he is afraid.",
+      "pred_categories": [
+        "other"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.9,
+      "reasons": [
+        "Category 'other' is outside the knowledge base"
+      ],
+      "codes": [
+        "out_of_scope"
+      ],
+      "reply": "Aapne yeh baat batai, uske liye shukriya, aur bachon ko dar lag raha hai yeh sunke bura laga. Teacher ke behaviour ki complaint ek support agent khud personally handle karta hai, isliye woh aapse is par follow up karega [CT-3]. Agar complaint solve nahi hoti, to aap ticket details ke saath support@pw.live par bhi likh sakte hain [CT-5]. Jaldi baat karni ho to aap 07406346660 par call kar sakte hain, ya app mein \"Contact us\" use kar sakte hain [CT-1].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "other",
+            "confidence": 0.9
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "hinglish",
+        "summary": "Student complains that physics teacher Aklesh sir shouts loudly at students and abused them two days ago; feedback/complaint about a teacher, no account-specific service issue."
+      },
+      "error": null,
+      "cost_usd": 0.021655999999999998,
+      "latency_s": 8.526168790936936
+    },
+    {
+      "id": "blind-06",
+      "split": "blind",
+      "channel": "whatsapp",
+      "language": "hinglish",
+      "text": "What is the law of conservation of mass? iska answer kya hai? Pls bata.",
+      "categories": [
+        "academic_doubt"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": false,
+      "note": "Written blind by Arnav. Topics as written: Academic doubt. Why: User has a doubt he is asking.",
+      "pred_categories": [
+        "academic_doubt"
+      ],
+      "pred_escalate": false,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.97,
+      "reasons": [],
+      "codes": [],
+      "reply": "Hi! Subject doubts hum support team se solve nahi karte, isliye is question ka answer main yahan nahi de sakta. [AD-1] Aap PW app mein AI Guru use karo, jahan aap question type kar sakte ho, bol sakte ho ya photo upload kar sakte ho, Hindi, English ya Hinglish mein. [AD-1] Agar AI ka answer clear na lage, to use unhelpful mark karke zyada detail ke saath dobara pooch sakte ho, ya apne batch ke doubt support se help le sakte ho. [AD-3]",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "academic_doubt",
+            "confidence": 0.97
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "hinglish",
+        "summary": "Student asks for the definition of the law of conservation of mass, a subject doubt with no account issue."
+      },
+      "error": null,
+      "cost_usd": 0.011108,
+      "latency_s": 5.989457250048872
+    },
+    {
+      "id": "blind-07",
+      "split": "blind",
+      "channel": "whatsapp",
+      "language": "en",
+      "text": "How to ask for doubts? I am not sure. Pls help",
+      "categories": [
+        "academic_doubt"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": false,
+      "note": "Written blind by Arnav. Topics as written: Academic doubt. Why: User wants to know the process of asking doubts.",
+      "pred_categories": [
+        "academic_doubt"
+      ],
+      "pred_escalate": false,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.95,
+      "reasons": [],
+      "codes": [],
+      "reply": "Happy to help! Subject doubts are answered fastest by AI Guru in the PW app, where you can type your question, speak it, or upload a photo of the problem, in Hindi, English or Hinglish. [AD-1] During a live class, you can post your doubt through the doubt option in the class, and the Smart Doubt Engine answers instantly with text or short video explanations. [AD-2] If an AI answer is unclear or seems wrong, mark it as unhelpful and ask again with more detail, or take it to your batch's doubt support. [AD-3]",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "academic_doubt",
+            "confidence": 0.95
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "en",
+        "summary": "Student asks how to ask doubts on the platform; a help article on doubt-solving covers it."
+      },
+      "error": null,
+      "cost_usd": 0.010838,
+      "latency_s": 4.82980587502243
+    },
+    {
+      "id": "blind-08",
+      "split": "blind",
+      "channel": "whatsapp",
+      "language": "hinglish",
+      "text": "Dropper hit jee test pass change Karna tha. I buy Real Test Pass [Dropper JEE], musher upgrade Karana hai to Real Test Pass Pro [Dropper JEE]. Raise hogs?",
+      "categories": [
+        "payment",
+        "technical"
+      ],
+      "needs_human_action": true,
+      "at_risk": false,
+      "should_escalate": true,
+      "note": "Written blind by Arnav. Topics as written: Technical  /  Payment. Why: User wants to upgrade his pass.",
+      "pred_categories": [
+        "refund"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": false,
+      "pred_needs_human": true,
+      "min_confidence": 0.6,
+      "reasons": [
+        "Needs account/payment action: Student wants to upgrade/change from Real Test Pass to Real Test Pass Pro (JEE Dropper); needs agent to check account and process the batch change.",
+        "Low confidence (0.60 < 0.70)"
+      ],
+      "codes": [
+        "needs_action",
+        "low_confidence"
+      ],
+      "reply": "Aapka request samajh aaya, par help sections mein Real Test Pass se Real Test Pass Pro mein upgrade ke baare mein koi jaankari nahi hai, isliye main yeh confirm nahi kar sakta. Batch change ya account/order mein badlaav ka koi bhi request support agent khud handle karta hai, to ek support agent is par aapse follow up karega [CT-3]. Agar aapne galti se purchase kiya hai, to same amount wale batch mein 10 din ke andar change ho sakta hai, aur iske liye order ID, jo batch kharida aur jo chahiye woh share karein [RF-2]. Yeh request support team manually dekhti hai, automatically decide nahi hota [RF-4]. Jaldi help ke liye aap app ke \"Contact us\" option se bhi raise kar sakte hain [CT-1].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "refund",
+            "confidence": 0.6
+          }
+        ],
+        "needs_human_action": true,
+        "needs_human_reason": "Student wants to upgrade/change from Real Test Pass to Real Test Pass Pro (JEE Dropper); needs agent to check account and process the batch change.",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "hinglish",
+        "summary": "Student bought Real Test Pass [Dropper JEE] and wants to upgrade/change to Real Test Pass Pro [Dropper JEE]; asks if this can be done."
+      },
+      "error": null,
+      "cost_usd": 0.014637999999999998,
+      "latency_s": 7.581853500043508
+    },
+    {
+      "id": "blind-09",
+      "split": "blind",
+      "channel": "form",
+      "language": "hinglish",
+      "text": "App is not working. Help kar do plej. App Baar Baar crash hora hai. I need help. Fix this, videos nahi dekh pa Raha hu.",
+      "categories": [
+        "technical"
+      ],
+      "needs_human_action": false,
+      "at_risk": true,
+      "should_escalate": true,
+      "note": "Written blind by Arnav. Topics as written: Technical. Why: User says app is crashing and he can’t watch videos.",
+      "pred_categories": [
+        "technical"
+      ],
+      "pred_escalate": false,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.96,
+      "reasons": [],
+      "codes": [],
+      "reply": "Samajh sakta hu, app baar baar crash ho raha hai toh bahut frustrating hai. Pehle PW app ko latest version par update karo [TS-3]. Android par Settings > Apps > Physics Wallah > Storage me jaakar cache clear karo aur phone restart karo [TS-3]. Agar phir bhi crash ho, toh app reinstall karo, par downloaded lectures dobara download karne pad sakte hain [TS-3][TS-4]. Agar issue solve na ho, toh app ke andar \"Contact us\" option se issue raise karo, wo sabse fast tarika hai [CT-1].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "technical",
+            "confidence": 0.96
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "hinglish",
+        "summary": "Student says the app keeps crashing and they cannot watch videos; needs standard app crash/playback troubleshooting."
+      },
+      "error": null,
+      "cost_usd": 0.011458,
+      "latency_s": 7.204623291967437
+    },
+    {
+      "id": "blind-10",
+      "split": "blind",
+      "channel": "whatsapp",
+      "language": "en",
+      "text": "Hi, \n\nI need help with Batch change. I booked Prahaar batch starting oct 15th, 2026. However, I have some family function, so I won’t be able to join. I want to join the next batch which starts on oct 23rd. Please help.",
+      "categories": [
+        "refund"
+      ],
+      "needs_human_action": true,
+      "at_risk": false,
+      "should_escalate": true,
+      "note": "Written blind by Arnav. Topics as written: Batch Change. Why:",
+      "pred_categories": [
+        "refund"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": false,
+      "pred_needs_human": true,
+      "min_confidence": 0.9,
+      "reasons": [
+        "Needs account/payment action: Batch-change request needs an agent to change the student's booked batch from the Oct 15 Prahaar batch to the Oct 23 batch."
+      ],
+      "codes": [
+        "needs_action"
+      ],
+      "reply": "Thanks for reaching out, and I'm sorry about the clash with your family function. A batch change is handled by a support agent, not automatically, because it changes your batch records [RF-4][CT-3]. A batch bought by mistake can be changed to another batch of the same amount within 10 days of purchase, and some batches have their own transfer window [RF-2]. Please share your order ID, the batch you bought (Prahaar, starting Oct 15) and the batch you want (the one starting Oct 23) so the team can review it [RF-2]. Whether your request is eligible will be decided by the agent, who will reply with a decision, and PW aims to resolve queries within 7 days [RF-4].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "refund",
+            "confidence": 0.9
+          }
+        ],
+        "needs_human_action": true,
+        "needs_human_reason": "Batch-change request needs an agent to change the student's booked batch from the Oct 15 Prahaar batch to the Oct 23 batch.",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "en",
+        "summary": "Student booked the Prahaar batch starting Oct 15, 2026 but cannot join due to a family function and wants to move to the next batch starting Oct 23."
+      },
+      "error": null,
+      "cost_usd": 0.013725999999999999,
+      "latency_s": 4.857281292031985
+    },
+    {
+      "id": "blind-11",
+      "split": "blind",
+      "channel": "whatsapp",
+      "language": "hinglish",
+      "text": "Mujhe batao app kyu nahi chal raha? 4 baar try kar liya hai, not wording at allllll!!!!! Please isse theek karo asap!!!!!",
+      "categories": [
+        "technical"
+      ],
+      "needs_human_action": false,
+      "at_risk": true,
+      "should_escalate": true,
+      "note": "Written blind by Arnav. Topics as written: Technical. Why: User is agitated as the app is not working. Mentioned “not working” , !!!!!!",
+      "pred_categories": [
+        "technical"
+      ],
+      "pred_escalate": false,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.85,
+      "reasons": [],
+      "codes": [],
+      "reply": "Aapki frustration samajh sakte hain, 4 baar try karne ke baad bhi app na chale to bahut irritating hota hai. Sabse pehle app ko latest version par update karo, phir Settings > Apps > Physics Wallah > Storage se cache clear karke phone restart karo [TS-3]. Agar phir bhi crash ho raha hai, to app reinstall karo, par downloaded lectures dobara download karne pad sakte hain [TS-3][TS-4]. Agar issue phir bhi bana rahe, to app ke \"Contact us\" option se ya 07406346660 / 08448982616 par call karke batao, support 24x7 available hai [CT-1]. Hum koi fix ka timeline promise nahi kar sakte, par PW ka aim 7 din ke andar queries resolve karna hai [CT-1].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "technical",
+            "confidence": 0.85
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "hinglish",
+        "summary": "Student says the app is not working despite 4 attempts and wants it fixed urgently; no specific error given, needs basic troubleshooting."
+      },
+      "error": null,
+      "cost_usd": 0.012268000000000001,
+      "latency_s": 7.1557777500129305
+    },
+    {
+      "id": "blind-12",
+      "split": "blind",
+      "channel": "form",
+      "language": "en",
+      "text": "Hi, \n\nI have a query regarding the app. Every time I open it, it hangs for a bit. Like about 2 mins and then its back to normal, is this expected or am I the only one facing this issue. Please help me.",
+      "categories": [
+        "technical"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": false,
+      "note": "Written blind by Arnav. Topics as written: Technical. Why:",
+      "pred_categories": [
+        "technical"
+      ],
+      "pred_escalate": false,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.93,
+      "reasons": [],
+      "codes": [],
+      "reply": "Sorry about the trouble, a 2-minute hang every time you open the app isn't something I can confirm as expected, and I can't say whether other students are seeing it too. Please update the app to the latest version, then on Android clear the cache from Settings > Apps > Physics Wallah > Storage and restart your phone [TS-3]. If it still hangs, reinstall the app, but note that downloaded lectures may need to be downloaded again [TS-3][TS-4]. If the issue continues after that, you can use the \"Contact us\" option inside the PW app, which is the fastest way to raise an issue [CT-1].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "technical",
+            "confidence": 0.93
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "en",
+        "summary": "Student reports the app hangs for about 2 minutes every time it is opened, then works normally, and asks if this is expected or a problem only they face."
+      },
+      "error": null,
+      "cost_usd": 0.011414,
+      "latency_s": 6.0645920829847455
+    },
+    {
+      "id": "blind-13",
+      "split": "blind",
+      "channel": "email",
+      "language": "hinglish",
+      "text": "Subject: Need urgent help with downloaded videos on help.\n\n\nHi mam, \n\nI need help with videos that I downloaded on the app. Mujhe koi chi downloaded videos nahi dikh Rahi. Mujhe nahi pata kyu. Pls help!!!1 its important. Mere test hai 2 din me.",
+      "categories": [
+        "technical"
+      ],
+      "needs_human_action": false,
+      "at_risk": true,
+      "should_escalate": true,
+      "note": "Written blind by Arnav. Topics as written: Technical. Why: User mentions “important”.",
+      "pred_categories": [
+        "technical"
+      ],
+      "pred_escalate": false,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.85,
+      "reasons": [],
+      "codes": [],
+      "reply": "Samajh sakti hoon ki test 2 din me hai, isliye yeh bahut urgent lag raha hoga. Downloads sirf PW app ke andar chalte hain aur sirf tab tak jab tak batch valid hai [TS-4]. App reinstall karne, app storage clear karne ya kisi dusre device par login karne se downloads hat jaate hain, aur unhe dobara download karna padta hai [TS-4]. Agar aapne inme se kuch kiya hai, to lectures ko dobara download kar lijiye [TS-4]. Dusre device par login karne se pehle wale device se account logout ho jaata hai, isliye yeh bhi check kar lijiye [BA-3]. Agar batch valid hone ke baad bhi videos nahi dikh rahe, to is baare me ek support agent aapko follow up karega [CT-3].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "technical",
+            "confidence": 0.85
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "hinglish",
+        "summary": "Student cannot see any downloaded videos in the app and has a test in 2 days; needs help with downloads troubleshooting."
+      },
+      "error": null,
+      "cost_usd": 0.01248,
+      "latency_s": 7.462327292014379
+    },
+    {
+      "id": "blind-14",
+      "split": "blind",
+      "channel": "whatsapp",
+      "language": "hinglish",
+      "text": "Mujhe kota center ke physics wale sir Arjun ke saath baat karni hai ek question ke liye. Maine unki video dekni thi. Mera ek doubt hai, wo clear nahi hi ra. Baat karado.",
+      "categories": [
+        "academic_doubt"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": false,
+      "note": "Written blind by Arnav. Topics as written: Academic doubt. Why:",
+      "pred_categories": [
+        "academic_doubt"
+      ],
+      "pred_escalate": false,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.7,
+      "reasons": [],
+      "codes": [],
+      "reply": "Doubt clear na hone par pareshaani samajh sakte hain. Physics ka question aap AI Guru mein type, bol kar ya photo upload karke pooch sakte ho, Hindi, English ya Hinglish mein; support team subject questions solve nahi karti [AD-1]. Agar AI ka answer clear na lage, to use unhelpful mark karke zyada detail ke saath dobara pooch sakte ho, ya apne batch ke doubt support ke paas ja sakte ho [AD-3]. Agar aap Kota Vidyapeeth ke offline student ho, to centre par teachers se in-person doubt help mil sakti hai [AD-5]. Kisi specific teacher se baat karwane ke baare mein mere paas koi jaankari nahi hai, isliye ek support agent is par aapko follow up karega [CT-3].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "academic_doubt",
+            "confidence": 0.7
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "hinglish",
+        "summary": "Student wants to talk to physics teacher Arjun Sir (Kota centre) about an unclear doubt after watching his video; guide them on how to ask doubts."
+      },
+      "error": null,
+      "cost_usd": 0.014392000000000002,
+      "latency_s": 9.22545629099477
+    },
+    {
+      "id": "blind-15",
+      "split": "blind",
+      "channel": "whatsapp",
+      "language": "hinglish",
+      "text": "Maine online batch khareeda the, 10,000 diye. But wo app me dikha nahi Raha. Bas 1 marina hut hai mujhe. Ye galat hai. Me aap logo pe case kar dunga agar isse theek nahi kayak to. Nahi ho ra to paise wapas kardo mere.",
+      "categories": [
+        "refund",
+        "batch_access",
+        "payment"
+      ],
+      "needs_human_action": false,
+      "at_risk": true,
+      "should_escalate": true,
+      "note": "Written blind by Arnav. Topics as written: Refund or batch change  /  Batch access  /  Payment. Why: User mentions “ye gasket hai” “paise wapas kardo” “case kar dunga”",
+      "pred_categories": [
+        "batch_access",
+        "refund"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": true,
+      "pred_needs_human": true,
+      "min_confidence": 0.8,
+      "reasons": [
+        "Student at risk: Threatens to file a case against PW if the issue is not resolved.",
+        "Needs account/payment action: Batch not visible after payment of Rs 10,000 and student is demanding a refund if not fixed; needs account/payment lookup."
+      ],
+      "codes": [
+        "at_risk",
+        "needs_action"
+      ],
+      "reply": "Aapki pareshani samajh sakta hoon, payment ke baad batch na dikhna sach mein frustrating hai. Pehle app se log out karke wapas usi mobile number se log in kijiye jisse payment kiya tha, phir Study > My Batches kholiye; naya batch dikhne mein 2 ghante tak lag sakte hain [BA-1]. Agar 2 ghante baad bhi batch na dikhe, to order ID ya payment screenshot aur registered mobile number share kijiye, taaki support team order manually check kar sake [BA-1]. Batch payment ke baad nahi dikhna aisa case hai jise support agent personally handle karta hai [CT-3]. Refund ke baare mein: online batch kharidne ke baad non-refundable hota hai [RF-1], aur is par koi bhi refund decision support agent review ke baad hi lega [RF-4]. Agent aapse follow up karega, aur aap chahein to \"Contact us\" option se app mein bhi issue raise kar sakte hain [CT-1].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "batch_access",
+            "confidence": 0.9
+          },
+          {
+            "category": "refund",
+            "confidence": 0.8
+          }
+        ],
+        "needs_human_action": true,
+        "needs_human_reason": "Batch not visible after payment of Rs 10,000 and student is demanding a refund if not fixed; needs account/payment lookup.",
+        "at_risk": true,
+        "at_risk_reason": "Threatens to file a case against PW if the issue is not resolved.",
+        "language": "hinglish",
+        "summary": "Student paid Rs 10,000 for an online batch but it is not showing in the app; threatens legal case and asks for a refund if it cannot be fixed."
+      },
+      "error": null,
+      "cost_usd": 0.018342,
+      "latency_s": 12.17125912499614
+    }
+  ]
+}

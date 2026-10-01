@@ -1,0 +1,2712 @@
+{
+  "model": "claude-sonnet-5-5",
+  "split": "dev",
+  "summary": {
+    "tickets": 56,
+    "category_exact_match": 0.9642857142857143,
+    "categories": {
+      "refund": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 13,
+        "fp": 0,
+        "fn": 0,
+        "support": 13
+      },
+      "batch_access": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 9,
+        "fp": 0,
+        "fn": 0,
+        "support": 9
+      },
+      "payment": {
+        "precision": 1.0,
+        "recall": 0.9090909090909091,
+        "f1": 0.9523809523809523,
+        "tp": 10,
+        "fp": 0,
+        "fn": 1,
+        "support": 11
+      },
+      "technical": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 10,
+        "fp": 0,
+        "fn": 0,
+        "support": 10
+      },
+      "academic_doubt": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "support": 5
+      },
+      "other": {
+        "precision": 0.9333333333333333,
+        "recall": 1.0,
+        "f1": 0.9655172413793104,
+        "tp": 14,
+        "fp": 1,
+        "fn": 0,
+        "support": 14
+      }
+    },
+    "escalation": {
+      "precision": 0.9722222222222222,
+      "recall": 1.0,
+      "f1": 0.9859154929577464,
+      "tp": 35,
+      "fp": 1,
+      "fn": 0
+    },
+    "escalation_accuracy": 0.9821428571428571,
+    "missed_escalations": [],
+    "unneeded_escalations": [
+      "dev-30"
+    ],
+    "auto_reply_rate": 0.35714285714285715,
+    "at_risk": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 6,
+      "fp": 0,
+      "fn": 0
+    },
+    "needs_human": {
+      "precision": 1.0,
+      "recall": 0.9523809523809523,
+      "f1": 0.975609756097561,
+      "tp": 20,
+      "fp": 0,
+      "fn": 1
+    },
+    "citation_pass_rate": 1.0,
+    "model_errors": 0,
+    "cost_usd_total": 0.894428,
+    "cost_usd_per_ticket": 0.01597192857142857,
+    "latency_s_mean": 6.686449361577355,
+    "latency_s_p95": 10.218760250951163
+  },
+  "sweep": [
+    {
+      "threshold": 0.5,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 35,
+      "fp": 0,
+      "fn": 0,
+      "auto_reply_rate": 0.375
+    },
+    {
+      "threshold": 0.6,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "tp": 35,
+      "fp": 0,
+      "fn": 0,
+      "auto_reply_rate": 0.375
+    },
+    {
+      "threshold": 0.7,
+      "precision": 0.9722222222222222,
+      "recall": 1.0,
+      "f1": 0.9859154929577464,
+      "tp": 35,
+      "fp": 1,
+      "fn": 0,
+      "auto_reply_rate": 0.35714285714285715
+    },
+    {
+      "threshold": 0.8,
+      "precision": 0.9722222222222222,
+      "recall": 1.0,
+      "f1": 0.9859154929577464,
+      "tp": 35,
+      "fp": 1,
+      "fn": 0,
+      "auto_reply_rate": 0.35714285714285715
+    },
+    {
+      "threshold": 0.9,
+      "precision": 0.8974358974358975,
+      "recall": 1.0,
+      "f1": 0.945945945945946,
+      "tp": 35,
+      "fp": 4,
+      "fn": 0,
+      "auto_reply_rate": 0.30357142857142855
+    },
+    {
+      "threshold": 0.95,
+      "precision": 0.813953488372093,
+      "recall": 1.0,
+      "f1": 0.8974358974358974,
+      "tp": 35,
+      "fp": 8,
+      "fn": 0,
+      "auto_reply_rate": 0.23214285714285715
+    }
+  ],
+  "rows": [
+    {
+      "id": "dev-01",
+      "split": "dev",
+      "channel": "whatsapp",
+      "language": "hinglish",
+      "text": "sir maine kal Arjuna JEE 2027 batch kharida, paise kat gaye but app me batch nahi dikh raha. 1 din ho gaya. order id PW8823119",
+      "categories": [
+        "batch_access",
+        "payment"
+      ],
+      "needs_human_action": true,
+      "at_risk": false,
+      "should_escalate": true,
+      "note": "Paid a day ago, batch still missing: past the 2-hour wait, needs order check.",
+      "pred_categories": [
+        "batch_access"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": false,
+      "pred_needs_human": true,
+      "min_confidence": 0.95,
+      "reasons": [
+        "Needs account/payment action: Batch not visible after successful payment and a day of waiting; needs account and order lookup (order PW8823119)."
+      ],
+      "codes": [
+        "needs_action"
+      ],
+      "reply": "Paise kat gaye aur batch nahi dikh raha, ye pareshani wali baat hai, samajh sakte hain. Naya batch aane me 2 ghante tak lag sakte hain, aur aapko 1 din ho gaya hai, isliye support team ko order manually check karna hoga [BA-1]. Ek baar logout karke payment wale same mobile number se login karein aur Study > My Batches kholein [BA-1]. Agar phir bhi na dikhe, to order ID PW8823119 ke saath payment screenshot aur registered mobile number share karein [BA-1]. Missing batch ke case ko support agent personally handle karta hai, to wo aapse follow up karenge [CT-3]. Aap app ke \"Contact us\" option se bhi issue raise kar sakte hain, ye sabse fast tarika hai [CT-1].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "batch_access",
+            "confidence": 0.95
+          }
+        ],
+        "needs_human_action": true,
+        "needs_human_reason": "Batch not visible after successful payment and a day of waiting; needs account and order lookup (order PW8823119).",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "hinglish",
+        "summary": "Student bought Arjuna JEE 2027 batch yesterday (order PW8823119), payment deducted but batch not showing in app after 1 day; needs batch activation check."
+      },
+      "error": null,
+      "cost_usd": 0.016334,
+      "latency_s": 8.114347248978447
+    },
+    {
+      "id": "dev-02",
+      "split": "dev",
+      "channel": "email",
+      "language": "en",
+      "text": "Subject: Refund request\n\nHello, I purchased Yakeen NEET 2.0 last week but I have decided to join an offline coaching instead. Please refund my fees of Rs 4,500.\n\nRegards,\nSneha",
+      "categories": [
+        "refund"
+      ],
+      "needs_human_action": true,
+      "at_risk": false,
+      "should_escalate": true,
+      "note": "Explicit refund request.",
+      "pred_categories": [
+        "refund"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": false,
+      "pred_needs_human": true,
+      "min_confidence": 0.97,
+      "reasons": [
+        "Needs account/payment action: Refund request for a purchased batch (Rs 4,500) needs an agent to check the account, payment and eligibility."
+      ],
+      "codes": [
+        "needs_action"
+      ],
+      "reply": "Hi Sneha, thanks for reaching out. Online batches are non-refundable once bought, and this applies whatever the reason, including deciding to join another coaching [RF-1]. The only exceptions are a batch bought by mistake, payment errors, and book orders damaged or lost in delivery [RF-1]. Since you bought the batch last week, if it was bought by mistake you can ask for a switch to another batch of the same amount within 10 days of purchase, by sharing your order ID, the batch you bought and the batch you want [RF-2]. Any refund or batch change request is reviewed by a support agent, who checks your order against the policy and replies with a decision [RF-4].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "refund",
+            "confidence": 0.97
+          }
+        ],
+        "needs_human_action": true,
+        "needs_human_reason": "Refund request for a purchased batch (Rs 4,500) needs an agent to check the account, payment and eligibility.",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "en",
+        "summary": "Sneha bought Yakeen NEET 2.0 last week, has decided to join offline coaching instead, and requests a refund of Rs 4,500."
+      },
+      "error": null,
+      "cost_usd": 0.015234000000000001,
+      "latency_s": 5.363590750028379
+    },
+    {
+      "id": "dev-03",
+      "split": "dev",
+      "channel": "form",
+      "language": "en",
+      "text": "Issue type: Technical\nDescription: Videos keep buffering on my phone even though my internet is fine. Its very irritating in live class.",
+      "categories": [
+        "technical"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": false,
+      "note": "Playback fix in TS-2. Mild irritation is not at-risk.",
+      "pred_categories": [
+        "technical"
+      ],
+      "pred_escalate": false,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.96,
+      "reasons": [],
+      "codes": [],
+      "reply": "Sorry about the buffering, it's really frustrating when it happens during a live class. You can lower the video quality from the player settings or switch on Low Data Mode, which uses much less data per lecture [TS-2]. Please also close other apps that are using the internet and update the PW app to the latest version [TS-2]. If you miss part of a class, downloading the lecture on Wi-Fi and watching it offline also avoids buffering [TS-2]. If it still keeps buffering after this, a support agent will follow up, and you can also raise it through \"Contact us\" in the PW app [CT-1].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "technical",
+            "confidence": 0.96
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "en",
+        "summary": "Student reports videos buffering on phone during live class despite good internet; needs playback troubleshooting steps."
+      },
+      "error": null,
+      "cost_usd": 0.011098,
+      "latency_s": 10.346124915988185
+    },
+    {
+      "id": "dev-04",
+      "split": "dev",
+      "channel": "whatsapp",
+      "language": "hinglish",
+      "text": "OTP nahi aa raha login ke liye, 4 baar try kiya",
+      "categories": [
+        "technical"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": false,
+      "note": "OTP self-help in TS-1.",
+      "pred_categories": [
+        "technical"
+      ],
+      "pred_escalate": false,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.97,
+      "reasons": [],
+      "codes": [],
+      "reply": "OTP na aane se pareshani hoti hai, samajh sakte hain. Pehle check karein ki mobile number sahi dala hai aur phone mein network signal hai, aur \"Resend OTP\" dabane se pehle 60 seconds wait karein. DND settings ya full SMS inbox bhi OTP ko block kar sakte hain, to wo bhi dekh lein [TS-1]. Aapne 4 baar try kar liya hai, isliye 30 minutes baad dobara try karein [TS-1]. Phir bhi OTP na aaye to registered number ke saath support se contact karein: 07406346660 ya 08448982616 par 24x7, ya support@pw.live par email karein [CT-1].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "technical",
+            "confidence": 0.97
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "hinglish",
+        "summary": "Student is not receiving the login OTP despite 4 attempts; standard OTP troubleshooting steps should help."
+      },
+      "error": null,
+      "cost_usd": 0.011618,
+      "latency_s": 6.49540908302879
+    },
+    {
+      "id": "dev-05",
+      "split": "dev",
+      "channel": "whatsapp",
+      "language": "en",
+      "text": "Can I change my batch from Lakshya NEET to Lakshya NEET 2.0? I bought it 5 days ago",
+      "categories": [
+        "refund"
+      ],
+      "needs_human_action": true,
+      "at_risk": false,
+      "should_escalate": true,
+      "note": "Batch-change request inside the window; support must process it (RF-2).",
+      "pred_categories": [
+        "refund"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": false,
+      "pred_needs_human": true,
+      "min_confidence": 0.93,
+      "reasons": [
+        "Needs account/payment action: Batch change request requires an agent to review and change the student's batch/account."
+      ],
+      "codes": [
+        "needs_action"
+      ],
+      "reply": "Thanks for reaching out! Lakshya batch students can move to Lakshya JEE 2.0 or Lakshya NEET 2.0 within 15 days of purchase, so at 5 days you are within that window [RF-2]. A batch change is done by the support team, not automatically, so please share your order ID, the batch you bought and the batch you want [RF-2]. A support agent will review your request and reply with a decision, since every batch-change request is checked against the policy [RF-4][CT-3].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "refund",
+            "confidence": 0.93
+          }
+        ],
+        "needs_human_action": true,
+        "needs_human_reason": "Batch change request requires an agent to review and change the student's batch/account.",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "en",
+        "summary": "Student bought Lakshya NEET 5 days ago and asks to change to Lakshya NEET 2.0; batch-change request needs agent action."
+      },
+      "error": null,
+      "cost_usd": 0.012666,
+      "latency_s": 6.189319458033424
+    },
+    {
+      "id": "dev-06",
+      "split": "dev",
+      "channel": "email",
+      "language": "en",
+      "text": "This is the THIRD time I am writing. My son's account has been blocked for 5 days and no one replies. If this is not fixed by tomorrow I will file a complaint in consumer court.",
+      "categories": [
+        "batch_access"
+      ],
+      "needs_human_action": true,
+      "at_risk": true,
+      "should_escalate": true,
+      "note": "Blocked account needs verification; repeat complaint and legal threat.",
+      "pred_categories": [
+        "batch_access"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": true,
+      "pred_needs_human": true,
+      "min_confidence": 0.96,
+      "reasons": [
+        "Student at risk: Repeated unresolved complaint (third message, no reply in 5 days) and threatens consumer court.",
+        "Needs account/payment action: Account has been blocked for 5 days; an agent must review the account and unblock it."
+      ],
+      "codes": [
+        "at_risk",
+        "needs_action"
+      ],
+      "reply": "I'm really sorry you've had to write three times and have still not received a reply; that is frustrating, especially with your son's studies affected. A blocked account can only be restored by the support team after verifying the registered mobile number and order details [BA-3], and a support agent personally handles blocked-account requests [CT-3]. I can't promise that it will be fixed by tomorrow, as no timeline like that is stated in the help sections I have. If you want to raise this further, you can write to support@pw.live with your ticket details [CT-5], or call 07406346660 or 08448982616, which are available 24x7 [CT-1]. Please keep the registered mobile number and order details ready so the agent can verify them quickly [BA-3].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "batch_access",
+            "confidence": 0.96
+          }
+        ],
+        "needs_human_action": true,
+        "needs_human_reason": "Account has been blocked for 5 days; an agent must review the account and unblock it.",
+        "at_risk": true,
+        "at_risk_reason": "Repeated unresolved complaint (third message, no reply in 5 days) and threatens consumer court.",
+        "language": "en",
+        "summary": "Parent says son's account has been blocked for 5 days, this is their third message with no reply, and threatens consumer court if not fixed by tomorrow."
+      },
+      "error": null,
+      "cost_usd": 0.015684,
+      "latency_s": 5.570135248999577
+    },
+    {
+      "id": "dev-07",
+      "split": "dev",
+      "channel": "whatsapp",
+      "language": "hinglish",
+      "text": "sir rotational motion me torque ka direction kaise pata kare? right hand rule samajh nahi aa raha",
+      "categories": [
+        "academic_doubt"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": false,
+      "note": "Subject doubt: route to AI Guru (AD-1).",
+      "pred_categories": [
+        "academic_doubt"
+      ],
+      "pred_escalate": false,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.97,
+      "reasons": [],
+      "codes": [],
+      "reply": "Torque aur right hand rule jaise physics doubts hum support team se solve nahi karte, isliye main explain nahi kar sakta. Aap AI Guru use kar sakte ho, jo PW app me hai; wahan question type kar sakte ho, bol sakte ho ya photo upload kar sakte ho, Hindi, English ya Hinglish me [AD-1]. Agar AI ka answer clear na lage ya galat lage, to use unhelpful mark karke zyada detail ke saath dobara pucho, ya apne batch ke doubt support se teacher ko dikhao [AD-3]. Agar aap live class me ho, to class ke doubt option se Smart Doubt Engine se turant jawab mil sakta hai [AD-2].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "academic_doubt",
+            "confidence": 0.97
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "hinglish",
+        "summary": "Student asks how to find the direction of torque in rotational motion and does not understand the right hand rule (physics doubt)."
+      },
+      "error": null,
+      "cost_usd": 0.01177,
+      "latency_s": 6.688896417035721
+    },
+    {
+      "id": "dev-08",
+      "split": "dev",
+      "channel": "form",
+      "language": "en",
+      "text": "Issue type: Payment\nDescription: Payment failed but Rs 3999 debited from my account. App shows failed.",
+      "categories": [
+        "payment"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": false,
+      "note": "Failed payment auto-reverses in 5-7 working days (PY-2).",
+      "pred_categories": [
+        "payment"
+      ],
+      "pred_escalate": false,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.95,
+      "reasons": [],
+      "codes": [],
+      "reply": "Sorry for the worry this has caused. If money is deducted but the app shows the payment as failed, the bank normally reverses the amount automatically within 5–7 working days, and no action is needed from you [PY-2]. However, if the payment shows as successful and the batch is still not added after 2 hours, the support team must check the transaction, so please share the transaction ID (UTR) and your registered mobile number [PY-2]. A support agent personally handles any case of a missing batch after payment [CT-3].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "payment",
+            "confidence": 0.95
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "en",
+        "summary": "Student's payment shows as failed in the app though Rs 3999 was debited; the bank typically auto-reverses this, so share the help article on failed payments."
+      },
+      "error": null,
+      "cost_usd": 0.015242,
+      "latency_s": 6.245654500031378
+    },
+    {
+      "id": "dev-09",
+      "split": "dev",
+      "channel": "whatsapp",
+      "language": "en",
+      "text": "how do i download the invoice for my batch purchase? need it for my dad's office",
+      "categories": [
+        "payment"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": false,
+      "note": "Self-serve from My Orders (PY-3).",
+      "pred_categories": [
+        "payment"
+      ],
+      "pred_escalate": false,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.95,
+      "reasons": [],
+      "codes": [],
+      "reply": "You can download the invoice for each purchase from the orders section of the PW app or website. [PY-3] If the invoice needs a correction, like your name or GST details, the support team raises it, so a support agent will take that up if you need any changes. [PY-3][CT-3]",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "payment",
+            "confidence": 0.95
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "en",
+        "summary": "Student asks how to download the invoice for their batch purchase for their dad's office; a help article on self-download covers it."
+      },
+      "error": null,
+      "cost_usd": 0.012882000000000001,
+      "latency_s": 5.348430916958023
+    },
+    {
+      "id": "dev-10",
+      "split": "dev",
+      "channel": "whatsapp",
+      "language": "hinglish",
+      "text": "mere se 2 baar paise kat gaye same batch ke liye. dono UPI ref: 412398771204, 412398771388",
+      "categories": [
+        "payment",
+        "refund"
+      ],
+      "needs_human_action": true,
+      "at_risk": false,
+      "should_escalate": true,
+      "note": "Duplicate charge needs verification and refund (RF-3).",
+      "pred_categories": [
+        "payment",
+        "refund"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": false,
+      "pred_needs_human": true,
+      "min_confidence": 0.85,
+      "reasons": [
+        "Needs account/payment action: Duplicate charge for the same batch; needs payment lookup and refund of the extra payment using the two UPI refs."
+      ],
+      "codes": [
+        "needs_action"
+      ],
+      "reply": "Sorry yaar, same batch ke liye do baar paise kat gaye, ye pareshani wali baat hai. Agar same order ka payment do baar hua hai, to support team dono transactions verify karti hai aur extra payment original payment method me wapas aa jata hai [RF-3]. Verification ke baad ye usually 5–7 working days leta hai, bank ke hisaab se [RF-3]. Aapne dono UPI reference numbers share kar diye hain, bas ek baar apna registered mobile number bhi bhej dijiye [RF-3]. Is request ko ek support agent personally review karega aur decision ke saath reply karega [RF-4]. PW ka aim hai ki queries 7 din ke andar resolve ho jayein [RF-4].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "payment",
+            "confidence": 0.9
+          },
+          {
+            "category": "refund",
+            "confidence": 0.85
+          }
+        ],
+        "needs_human_action": true,
+        "needs_human_reason": "Duplicate charge for the same batch; needs payment lookup and refund of the extra payment using the two UPI refs.",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "hinglish",
+        "summary": "Student was charged twice via UPI for the same batch (refs 412398771204 and 412398771388) and needs the extra payment refunded."
+      },
+      "error": null,
+      "cost_usd": 0.015355999999999998,
+      "latency_s": 10.129404956940562
+    },
+    {
+      "id": "dev-11",
+      "split": "dev",
+      "channel": "email",
+      "language": "hi",
+      "text": "नमस्ते, मेरा बैच दिख नहीं रहा है जो मैंने अभी 10 मिनट पहले खरीदा। क्या करूं?",
+      "categories": [
+        "batch_access"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": false,
+      "note": "Bought 10 minutes ago: inside the 2-hour sync window, self-help (BA-1).",
+      "pred_categories": [
+        "batch_access"
+      ],
+      "pred_escalate": false,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.95,
+      "reasons": [],
+      "codes": [],
+      "reply": "नमस्ते! नया खरीदा हुआ बैच ऐप में दिखने में 2 घंटे तक लग सकते हैं, इसलिए अभी थोड़ा इंतज़ार करें। [BA-1] इस बीच भुगतान के लिए इस्तेमाल किए गए उसी मोबाइल नंबर से ऐप में लॉग आउट करके दोबारा लॉग इन करें, फिर Study > My Batches खोलें। [BA-1] अगर 2 घंटे बाद भी बैच न दिखे, तो सपोर्ट टीम को ऑर्डर मैन्युअली चेक करना होगा, इसलिए ऑर्डर ID या पेमेंट स्क्रीनशॉट और अपना रजिस्टर्ड मोबाइल नंबर शेयर करें। [BA-1] भुगतान के बाद बैच न दिखने के मामले को सपोर्ट एजेंट खुद संभालता है। [CT-3]",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "batch_access",
+            "confidence": 0.95
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "hi",
+        "summary": "Student bought a batch about 10 minutes ago and it is not yet visible in the app; advise waiting a short while and refreshing or re-logging in before escalating."
+      },
+      "error": null,
+      "cost_usd": 0.014914,
+      "latency_s": 8.359470500028692
+    },
+    {
+      "id": "dev-12",
+      "split": "dev",
+      "channel": "whatsapp",
+      "language": "hinglish",
+      "text": "bhaiya mujhse nahi ho payega ab, 3 test me fail ho gaya, ghar wale bahut paisa laga chuke hai, sab khatam lag raha hai. batch ka koi fayda nahi",
+      "categories": [
+        "other"
+      ],
+      "needs_human_action": false,
+      "at_risk": true,
+      "should_escalate": true,
+      "note": "Distress; needs a person, as a priority (CT-4).",
+      "pred_categories": [
+        "other"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": true,
+      "pred_needs_human": false,
+      "min_confidence": 0.85,
+      "reasons": [
+        "Student at risk: Student shows distress and hopelessness, says they can't continue after failing 3 tests and feels the batch is useless.",
+        "Category 'other' is outside the knowledge base"
+      ],
+      "codes": [
+        "at_risk",
+        "out_of_scope"
+      ],
+      "reply": "Bhaiya/dost, aapki baat sunke bahut bura laga, 3 tests ka dabaav aur ghar walon ki umeedon ka bojh bahut bhaari lagta hai, par aap akele nahi ho. Jab koi student hopeless ya bahut stressed feel kare, to ek support agent personally aur priority par aapse reach out karta hai [CT-4]. Abhi agar mann bahut bhaari ho to Tele-MANAS ki free helpline 14416 (ya 1-800-891-4416) 24x7 available hai, aur emergency me 112 call karein [CT-4]. Aap chaho to 07406346660 ya 08448982616 par bhi call kar sakte ho, ya app me \"Contact us\" use kar sakte ho [CT-1]. Batch ke refund ya change ke baare me agent hi aapki request dekhega [CT-3].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "other",
+            "confidence": 0.85
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": true,
+        "at_risk_reason": "Student shows distress and hopelessness, says they can't continue after failing 3 tests and feels the batch is useless.",
+        "language": "hinglish",
+        "summary": "Student feels hopeless after failing 3 tests and says the batch is of no use; no specific service issue, needs empathetic support or counselling-style response."
+      },
+      "error": null,
+      "cost_usd": 0.022692,
+      "latency_s": 8.351260123949032
+    },
+    {
+      "id": "dev-13",
+      "split": "dev",
+      "channel": "form",
+      "language": "en",
+      "text": "Issue type: Academic\nDescription: The app crashes every time I open the chemistry DPP of Udaan batch.",
+      "categories": [
+        "technical"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": false,
+      "note": "Student picked the wrong issue type; this is an app crash (TS-3).",
+      "pred_categories": [
+        "technical"
+      ],
+      "pred_escalate": false,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.93,
+      "reasons": [],
+      "codes": [],
+      "reply": "Sorry about the trouble with the chemistry DPP crashing. Please update the app to the latest version, then on Android clear the app's cache from Settings > Apps > Physics Wallah > Storage and restart your phone [TS-3]. If it still crashes, reinstall the app, but note that downloaded lectures may need to be downloaded again [TS-3][TS-4]. If it keeps happening, use the \"Contact us\" option inside the app, which is the fastest way to raise an issue, or write to support@pw.live [CT-1]. If a DPP was interrupted by a technical problem, the support team can check whether your attempt was recorded if you share the test name, batch, and the date and time of the attempt [TS-5].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "technical",
+            "confidence": 0.93
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "en",
+        "summary": "Student reports the app crashes whenever they open the chemistry DPP in the Udaan batch; this is a technical issue, not an academic doubt despite the form's issue type."
+      },
+      "error": null,
+      "cost_usd": 0.011755999999999999,
+      "latency_s": 5.281943334033713
+    },
+    {
+      "id": "dev-14",
+      "split": "dev",
+      "channel": "email",
+      "language": "en",
+      "text": "Hi, two issues: 1) my downloaded lectures disappeared after I updated the app 2) I want to know if the batch validity can be extended by 2 months since my exam got postponed.",
+      "categories": [
+        "technical",
+        "batch_access"
+      ],
+      "needs_human_action": true,
+      "at_risk": false,
+      "should_escalate": true,
+      "note": "Downloads are self-help (TS-4); the validity extension needs support (BA-2).",
+      "pred_categories": [
+        "batch_access",
+        "technical"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": false,
+      "pred_needs_human": true,
+      "min_confidence": 0.9,
+      "reasons": [
+        "Needs account/payment action: Student asks for batch validity to be extended by 2 months, which requires an agent to review and change the batch on the account."
+      ],
+      "codes": [
+        "needs_action"
+      ],
+      "reply": "Happy to help with both. On downloads: they play only inside the PW app and only while the batch is valid, and reinstalling the app, clearing app storage or logging in on another device removes them, so they need to be downloaded again [TS-4]. If your update involved a reinstall or clearing storage, that could explain why they disappeared, and you can simply re-download them while your batch is valid [TS-4]. On validity: it is not extended automatically, and extension requests are reviewed by the support team [BA-2]. I can't promise an extension, but a support agent will follow up on your request about the postponed exam, and you can also raise it via \"Contact us\" in the app [CT-3][CT-1].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "technical",
+            "confidence": 0.9
+          },
+          {
+            "category": "batch_access",
+            "confidence": 0.9
+          }
+        ],
+        "needs_human_action": true,
+        "needs_human_reason": "Student asks for batch validity to be extended by 2 months, which requires an agent to review and change the batch on the account.",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "en",
+        "summary": "Student's downloaded lectures vanished after an app update, and they ask for a 2-month batch validity extension because their exam was postponed."
+      },
+      "error": null,
+      "cost_usd": 0.015262,
+      "latency_s": 5.004737540963106
+    },
+    {
+      "id": "dev-15",
+      "split": "dev",
+      "channel": "whatsapp",
+      "language": "en",
+      "text": "Is refund possible if I don't like the batch after 1 week?",
+      "categories": [
+        "refund"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": false,
+      "note": "Policy question, not a request (RF-1, RF-2).",
+      "pred_categories": [
+        "refund"
+      ],
+      "pred_escalate": false,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.95,
+      "reasons": [],
+      "codes": [],
+      "reply": "Online batches are non-refundable once bought, and this applies whatever the reason, including not liking the batch. [RF-1] The only batch-related option is if it was bought by mistake: you can ask to switch to another batch of the same amount within 10 days of purchase, and since you're at 1 week, you may still be within that window. [RF-2] A switch is done by the support team, so please share your order ID, the batch you bought and the batch you want. [RF-2] Any request like this is reviewed by a support agent, who will check the order and reply with a decision. [RF-4] If you bought a different programme (like PW Skills or an offline centre), the rules differ, so let us know which one. [RF-7]",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "refund",
+            "confidence": 0.95
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "en",
+        "summary": "Student asks whether a refund is possible if they dislike the batch after 1 week; this is a refund policy question."
+      },
+      "error": null,
+      "cost_usd": 0.01281,
+      "latency_s": 4.804112208948936
+    },
+    {
+      "id": "dev-16",
+      "split": "dev",
+      "channel": "whatsapp",
+      "language": "hinglish",
+      "text": "koi PW wala call karke bol raha hai 2000 rs is UPI pe bhejo scholarship ke liye, ye real hai kya?",
+      "categories": [
+        "payment"
+      ],
+      "needs_human_action": true,
+      "at_risk": false,
+      "should_escalate": true,
+      "note": "Fraud in PW's name: warn (PY-7) and a person logs it.",
+      "pred_categories": [
+        "payment"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": false,
+      "pred_needs_human": true,
+      "min_confidence": 0.9,
+      "reasons": [
+        "Needs account/payment action: Reports a possible fraud attempt in PW's name (caller asking for Rs 2000 via UPI); needs to be flagged and investigated."
+      ],
+      "codes": [
+        "needs_action"
+      ],
+      "reply": "Aapne puchhna sahi kiya, please ye 2000 rs mat bhejiye. PW kabhi calls ya WhatsApp par OTP, password, card PIN ya personal account/UPI ID mein payment nahi maangta, aur aisa kehne wala PW se nahi hai [PY-7]. Us number ya message ki report support@pw.live par kijiye [PY-7]. Payment sirf official PW app ya pw.live ke andar hi karein, kisi unknown UPI ID par kabhi nahi [PY-1]. Scholarship ka percentage PWNSAT result par depend karta hai aur uske documents ke liye centre staff madad karte hain [SC-5].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "payment",
+            "confidence": 0.9
+          }
+        ],
+        "needs_human_action": true,
+        "needs_human_reason": "Reports a possible fraud attempt in PW's name (caller asking for Rs 2000 via UPI); needs to be flagged and investigated.",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "hinglish",
+        "summary": "Student got a call from someone claiming to be PW asking for Rs 2000 via UPI for a scholarship and asks if it is genuine; possible fake payment request needing fraud reporting."
+      },
+      "error": null,
+      "cost_usd": 0.016586,
+      "latency_s": 7.105290250037797
+    },
+    {
+      "id": "dev-17",
+      "split": "dev",
+      "channel": "whatsapp",
+      "language": "en",
+      "text": "thank you sir for the amazing lectures!! 🙏",
+      "categories": [
+        "other"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": true,
+      "note": "Feedback; not covered by the knowledge base, so a person decides.",
+      "pred_categories": [
+        "other"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.98,
+      "reasons": [
+        "Category 'other' is outside the knowledge base"
+      ],
+      "codes": [
+        "out_of_scope"
+      ],
+      "reply": "Thank you so much for your kind words, we're really happy the lectures are helping you! 🙏 There's nothing in the help sections I was given that covers passing praise on to teachers, so a support agent will follow up on that. [CT-3] If you ever need anything else, you can raise it from the \"Contact us\" option in the PW app. [CT-1]",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "other",
+            "confidence": 0.98
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "en",
+        "summary": "Student thanks the teacher for the lectures; praise only, no service issue."
+      },
+      "error": null,
+      "cost_usd": 0.019864,
+      "latency_s": 4.134815498953685
+    },
+    {
+      "id": "dev-18",
+      "split": "dev",
+      "channel": "email",
+      "language": "en",
+      "text": "My PW books for Class 10 arrived with torn pages and 2 books are missing. Order PWB-55120.",
+      "categories": [
+        "refund"
+      ],
+      "needs_human_action": true,
+      "at_risk": false,
+      "should_escalate": true,
+      "note": "Damaged/missing books need a replacement order (ST-5).",
+      "pred_categories": [
+        "refund"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": false,
+      "pred_needs_human": true,
+      "min_confidence": 0.95,
+      "reasons": [
+        "Needs account/payment action: Damaged and missing books in order PWB-55120 need an agent to check the order and arrange a replacement or refund."
+      ],
+      "codes": [
+        "needs_action"
+      ],
+      "reply": "I'm sorry your books arrived torn and with 2 missing, that's frustrating. For damaged items, you can fill in the \"Return and Replace\" form (the damaged item is picked up and a new one sent) or the \"Return and Refund\" form (refund once the item is picked up), though both apply only to selected products [ST-5]. If the courier damaged or lost the product, you're entitled to a replacement, so please share your order ID (PWB-55120) and photos of the damage [ST-5]. You can also contact PW Store support on +91-7406346660 (9 am – 9 pm) or support@pw.live [ST-8]. Since this needs a change to your order, a support agent will follow up on the missing books and handle your request personally [CT-3].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "refund",
+            "confidence": 0.95
+          }
+        ],
+        "needs_human_action": true,
+        "needs_human_reason": "Damaged and missing books in order PWB-55120 need an agent to check the order and arrange a replacement or refund.",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "en",
+        "summary": "Student received Class 10 books with torn pages and 2 books missing in order PWB-55120; needs damaged/missing book resolution."
+      },
+      "error": null,
+      "cost_usd": 0.015085999999999999,
+      "latency_s": 5.7937299169716425
+    },
+    {
+      "id": "dev-19",
+      "split": "dev",
+      "channel": "whatsapp",
+      "language": "hinglish",
+      "text": "test submit nahi hua, net chala gaya beech me. Arjuna ka minor test tha 11 am wala. marks milenge?",
+      "categories": [
+        "technical"
+      ],
+      "needs_human_action": true,
+      "at_risk": false,
+      "should_escalate": true,
+      "note": "Support must check whether the attempt was recorded (TS-5).",
+      "pred_categories": [
+        "technical"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": false,
+      "pred_needs_human": true,
+      "min_confidence": 0.9,
+      "reasons": [
+        "Needs account/payment action: Student's internet dropped mid-test; an agent needs to check whether the test attempt was saved and marks can be given."
+      ],
+      "codes": [
+        "needs_action"
+      ],
+      "reply": "Net beech me chala gaya, ye sunke bura laga, samajh sakta hoon ki tension hui hogi. Agar test kisi technical problem se interrupt hua, to support team check kar sakti hai ki aapka attempt record hua ya nahi; iske liye test ka naam, batch, aur attempt ki date aur time share karein [TS-5]. Aapke case me test ka naam Arjuna minor test aur time 11 am hai, baaki details batch ke saath bhej dein [TS-5]. Marks milenge ya nahi, iske baare me mere paas koi confirmed jaankari nahi hai, isliye is par support agent follow up karega [CT-3]. Aap app ke \"Contact us\" option se bhi issue raise kar sakte hain [CT-1].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "technical",
+            "confidence": 0.9
+          }
+        ],
+        "needs_human_action": true,
+        "needs_human_reason": "Student's internet dropped mid-test; an agent needs to check whether the test attempt was saved and marks can be given.",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "hinglish",
+        "summary": "Student's internet disconnected during the Arjuna minor test (11 am) and the test did not submit; asks whether marks will be given."
+      },
+      "error": null,
+      "cost_usd": 0.012344,
+      "latency_s": 9.63439379207557
+    },
+    {
+      "id": "dev-20",
+      "split": "dev",
+      "channel": "form",
+      "language": "en",
+      "text": "Issue type: Other\nDescription: Does Lakshya JEE 2.0 have an EMI option?",
+      "categories": [
+        "payment"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": false,
+      "note": "EMI availability is answered by PY-1.",
+      "pred_categories": [
+        "payment"
+      ],
+      "pred_escalate": false,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.95,
+      "reasons": [],
+      "codes": [],
+      "reply": "Thanks for asking! PW offers split payments and EMIs for higher-fee courses, especially offline Vidyapeeth and hybrid programmes, and education loans through lending partners [PY-5]. I don't have information on whether Lakshya JEE 2.0 specifically has an EMI option, so a support agent will follow up on that [CT-3]. Please note that a loan is not the same as a no-cost EMI, since it can carry interest and a processing fee, so read the interest rate, fees, tenure and lender name before signing [PY-5]. You can also ask support to confirm whether a plan is a loan [PY-5].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "payment",
+            "confidence": 0.95
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "en",
+        "summary": "Student asks whether the Lakshya JEE 2.0 batch offers an EMI option (payment policy question, answerable via help article)."
+      },
+      "error": null,
+      "cost_usd": 0.014202,
+      "latency_s": 7.931244375009555
+    },
+    {
+      "id": "dev-21",
+      "split": "dev",
+      "channel": "whatsapp",
+      "language": "hinglish",
+      "text": "sir maine 2 din pehle PW store se NEET books order ki thi, kab tak aayengi? Order PWB-40213",
+      "categories": [
+        "other"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": true,
+      "note": "Delivery-time question, not overdue yet (ST-1).",
+      "pred_categories": [
+        "other"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.95,
+      "reasons": [
+        "Category 'other' is outside the knowledge base"
+      ],
+      "codes": [
+        "out_of_scope"
+      ],
+      "reply": "Hello! Orders usually ship the next working day aur major cities mein dispatch ke 3–5 working days ke andar deliver ho jaate hain; remote areas ya strike/bad weather mein 15–20 din tak lag sakte hain [ST-1]. Aapko order place hone, courier assign hone, pickup aur delivery ke SMS aur WhatsApp updates milenge [ST-3]. Agar dispatch ke 5 aur 10 din baad bhi delivery nahi hui, to aapko reason aur nayi expected delivery date batayi jaayegi [ST-3]. Aap My Orders mein order PWB-40213 track kar sakte hain, ya courier se direct contact kar sakte hain; PW Store support +91-7406346660 (9 am – 9 pm) ya support@pw.live par bhi mil sakta hai [ST-4][ST-8]. Aapke order ki exact delivery date mere paas nahi hai, isliye tracking dekhna sabse accha rahega.",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "other",
+            "confidence": 0.95
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "hinglish",
+        "summary": "Student ordered NEET books from PW Store 2 days ago (order PWB-40213) and asks when they will be delivered; delivery status query."
+      },
+      "error": null,
+      "cost_usd": 0.022526,
+      "latency_s": 7.740990584017709
+    },
+    {
+      "id": "dev-22",
+      "split": "dev",
+      "channel": "whatsapp",
+      "language": "en",
+      "text": "received the Arjuna JEE module set but Physics part 2 is missing from the box. order PWB-51190",
+      "categories": [
+        "refund"
+      ],
+      "needs_human_action": true,
+      "at_risk": false,
+      "should_escalate": true,
+      "note": "Missing item: replacement order (ST-5).",
+      "pred_categories": [
+        "refund"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": false,
+      "pred_needs_human": true,
+      "min_confidence": 0.93,
+      "reasons": [
+        "Needs account/payment action: Missing book in delivered PW Store order PWB-51190; agent must check the order and arrange replacement or refund."
+      ],
+      "codes": [
+        "needs_action"
+      ],
+      "reply": "Sorry about the missing Physics part 2 in your Arjuna JEE module set, that's frustrating. If a product arrives damaged, missing or wrong, you can share your order ID (PWB-51190) along with photos of the box and what you received, and if the courier lost the item you are entitled to a replacement [ST-5]. The return and replace or refund forms apply only to selected products, so I can't confirm yet which option covers this set [ST-5]. A support agent will follow up on your order to check the next step, since this needs a change to your order [CT-3]. You can also reach PW Store support at +91-7406346660 (9 am – 9 pm) or support@pw.live [ST-8].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "refund",
+            "confidence": 0.93
+          }
+        ],
+        "needs_human_action": true,
+        "needs_human_reason": "Missing book in delivered PW Store order PWB-51190; agent must check the order and arrange replacement or refund.",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "en",
+        "summary": "Student received the Arjuna JEE module set (order PWB-51190) but Physics part 2 was missing from the box; needs missing-book resolution."
+      },
+      "error": null,
+      "cost_usd": 0.014928,
+      "latency_s": 7.3188452500035055
+    },
+    {
+      "id": "dev-23",
+      "split": "dev",
+      "channel": "form",
+      "language": "en",
+      "text": "Issue type: Books\nDescription: How long does delivery take to a village in Arunachal Pradesh?",
+      "categories": [
+        "other"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": true,
+      "note": "Remote delivery 15-20 days (ST-1).",
+      "pred_categories": [
+        "other"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.93,
+      "reasons": [
+        "Category 'other' is outside the knowledge base"
+      ],
+      "codes": [
+        "out_of_scope"
+      ],
+      "reply": "Orders are shipped the next working day and are mostly delivered within 3–5 working days of dispatch in major cities [ST-1]. Deliveries to remote areas can take up to 15–20 days [ST-1]. I can't confirm whether your village counts as a remote area, so a support agent will follow up on that [CT-3]. After dispatch you'll get SMS and WhatsApp updates, and if the order isn't delivered 5 days and again 10 days after dispatch, you'll be told the reason and a new expected delivery date [ST-3]. You can also track the order under My Orders [ST-4].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "other",
+            "confidence": 0.93
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "en",
+        "summary": "Student asks how long PW Store book delivery takes to a village in Arunachal Pradesh; a general delivery timeline query."
+      },
+      "error": null,
+      "cost_usd": 0.020954,
+      "latency_s": 5.504896416969132
+    },
+    {
+      "id": "dev-24",
+      "split": "dev",
+      "channel": "whatsapp",
+      "language": "en",
+      "text": "how do i track my pw store order?",
+      "categories": [
+        "other"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": true,
+      "note": "Tracking via My Orders and SMS/WhatsApp updates (ST-3, ST-4).",
+      "pred_categories": [
+        "other"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.95,
+      "reasons": [
+        "Category 'other' is outside the knowledge base"
+      ],
+      "codes": [
+        "out_of_scope"
+      ],
+      "reply": "You can track your PW Store order under My Orders [ST-4]. You'll also get SMS and WhatsApp updates when the order is placed, assigned to a courier, picked up, delivered, returned or refunded [ST-3]. If you'd like to check with the courier directly, helplines are Ecom Express 8376888888, Delhivery +91 8069856101, Xpressbees +91 (020) 4911 6100 and India Post 1800 266 6868 [ST-8]. For anything else, PW Store support is at +91-7406346660 (9 am – 9 pm) or support@pw.live [ST-8].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "other",
+            "confidence": 0.95
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "en",
+        "summary": "Student asks how to track their PW Store book order; this is a delivery status/tracking question."
+      },
+      "error": null,
+      "cost_usd": 0.020756,
+      "latency_s": 5.3761861670645885
+    },
+    {
+      "id": "dev-25",
+      "split": "dev",
+      "channel": "email",
+      "language": "en",
+      "text": "Hi, can I get an invoice for my PW Store book order for my school's reimbursement? Order PWB-44120",
+      "categories": [
+        "payment"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": false,
+      "note": "Invoice download (PY-3).",
+      "pred_categories": [
+        "payment"
+      ],
+      "pred_escalate": false,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.85,
+      "reasons": [],
+      "codes": [],
+      "reply": "Happy to help! You can download the invoice for each purchase from the orders section of the app or website, so your book order PWB-44120 should be available there. [PY-3] If the invoice needs a correction, such as your name or GST details, the support team raises it. [PY-3] Since that is a change to your order records, a support agent will handle it personally if you need one. [CT-3]",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "payment",
+            "confidence": 0.85
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "en",
+        "summary": "Student asks for an invoice for PW Store book order PWB-44120 for school reimbursement; invoices fall under payment and can likely be downloaded by the student."
+      },
+      "error": null,
+      "cost_usd": 0.014972000000000001,
+      "latency_s": 7.415768750011921
+    },
+    {
+      "id": "dev-26",
+      "split": "dev",
+      "channel": "whatsapp",
+      "language": "hinglish",
+      "text": "vidyapeeth ka seat book karne ke liye 5000 diya tha, wo final fee me adjust hoga na?",
+      "categories": [
+        "payment"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": false,
+      "note": "Seat booking is adjusted in the fee (OC-2).",
+      "pred_categories": [
+        "payment"
+      ],
+      "pred_escalate": false,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.85,
+      "reasons": [],
+      "codes": [],
+      "reply": "Haan, Vidyapeeth ya Pathshala centre ki seat online book karne ke liye jo ₹5,000 aapne diye hain, wo final total fee me adjust ho jayega jab aap centre visit karenge [OC-2]. Dhyan rakhiye ki ye seat-booking amount non-refundable hai [OC-2].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "payment",
+            "confidence": 0.85
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "hinglish",
+        "summary": "Student paid Rs 5000 as seat booking for Vidyapeeth offline centre and asks whether it will be adjusted against the final fee."
+      },
+      "error": null,
+      "cost_usd": 0.016632,
+      "latency_s": 5.012356125982478
+    },
+    {
+      "id": "dev-27",
+      "split": "dev",
+      "channel": "whatsapp",
+      "language": "hinglish",
+      "text": "batch allot hue 4 din ho gaye, abhi tak app me batch nahi aaya. Patna Vidyapeeth",
+      "categories": [
+        "batch_access"
+      ],
+      "needs_human_action": true,
+      "at_risk": false,
+      "should_escalate": true,
+      "note": "Overdue app access, beyond 48 hours (OC-8).",
+      "pred_categories": [
+        "batch_access"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": false,
+      "pred_needs_human": true,
+      "min_confidence": 0.93,
+      "reasons": [
+        "Needs account/payment action: Offline centre (Patna Vidyapeeth) batch allotted 4 days ago but still not visible in app; needs agent to check and link the batch to the account."
+      ],
+      "codes": [
+        "needs_action"
+      ],
+      "reply": "Samajh sakte hain, 4 din ho gaye aur batch abhi bhi app me nahi dikh raha, ye pareshan karne wala hai. Offline students ko batch allotment ke 24–48 ghante ke andar PW app par batch access mil jata hai, aur batch details Study > My Batches me hoti hain [OC-8]. Aapko 4 din ho chuke hain, isliye iska exact reason hum yahan se confirm nahi kar sakte. Batch se jude account ya batch ke change wali requests ko support agent khud handle karta hai, to ek support agent is par aapse follow up karega [CT-3]. Tab tak aap Contact us option se ya 07406346660 / 08448982616 par bhi call karke apna issue raise kar sakte hain [CT-1].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "batch_access",
+            "confidence": 0.93
+          }
+        ],
+        "needs_human_action": true,
+        "needs_human_reason": "Offline centre (Patna Vidyapeeth) batch allotted 4 days ago but still not visible in app; needs agent to check and link the batch to the account.",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "hinglish",
+        "summary": "Student says Patna Vidyapeeth batch was allotted 4 days ago but it still hasn't appeared in the app; needs offline batch linking."
+      },
+      "error": null,
+      "cost_usd": 0.016508,
+      "latency_s": 7.786054581985809
+    },
+    {
+      "id": "dev-28",
+      "split": "dev",
+      "channel": "email",
+      "language": "en",
+      "text": "What is the refund policy if my daughter withdraws from PW Vidyapeeth midway?",
+      "categories": [
+        "refund"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": false,
+      "note": "Policy question (OC-5).",
+      "pred_categories": [
+        "refund"
+      ],
+      "pred_escalate": false,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.93,
+      "reasons": [],
+      "codes": [],
+      "reply": "Thanks for reaching out. Refunds for PW Vidyapeeth follow the PW Vidyapeeth Refund Policy, and a refund request must be raised in person at the centre; requests made verbally or by phone, email or fax are not accepted [OC-5]. The registration fee, book/module fee, doubt-series fee, test-series fee and PWNSAT fee are non-refundable in all cases [OC-5]. The ₹1,000 security deposit is refunded only when the student withdraws or completes the course, after deducting any outstanding dues and verified damage claims [OC-6]. The help sections I have don't state how much of the remaining tuition fee would be refunded on a midway withdrawal, so a support agent will follow up on that [CT-3].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "refund",
+            "confidence": 0.93
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "en",
+        "summary": "Parent asks about the refund policy if their daughter withdraws midway from a PW Vidyapeeth offline centre; policy question only, no account action needed."
+      },
+      "error": null,
+      "cost_usd": 0.014957999999999999,
+      "latency_s": 8.50820224994095
+    },
+    {
+      "id": "dev-29",
+      "split": "dev",
+      "channel": "whatsapp",
+      "language": "en",
+      "text": "is there a vidyapeeth centre in bhopal?",
+      "categories": [
+        "other"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": true,
+      "note": "Centre locations.",
+      "pred_categories": [
+        "other"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.95,
+      "reasons": [
+        "Category 'other' is outside the knowledge base"
+      ],
+      "codes": [
+        "out_of_scope"
+      ],
+      "reply": "Thanks for asking! The help sections I have don't list Vidyapeeth centre locations, so I can't confirm whether there is a centre in Bhopal, and a support agent will follow up on this for you. [CT-3] In the meantime, you can call the Vidyapeeth admissions helpdesk on +91 9513350005 to ask about centres. [CT-2]",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "other",
+            "confidence": 0.95
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "en",
+        "summary": "Student asks whether a PW Vidyapeeth offline centre exists in Bhopal (centre location query)."
+      },
+      "error": null,
+      "cost_usd": 0.020072,
+      "latency_s": 5.576826040982269
+    },
+    {
+      "id": "dev-30",
+      "split": "dev",
+      "channel": "whatsapp",
+      "language": "hinglish",
+      "text": "vidyapeeth me doubt poochne ka time kya hai? teacher available rehte hai?",
+      "categories": [
+        "academic_doubt"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": false,
+      "note": "In-person doubt help (AD-5).",
+      "pred_categories": [
+        "academic_doubt"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.6,
+      "reasons": [
+        "Low confidence (0.60 < 0.70)"
+      ],
+      "codes": [
+        "low_confidence"
+      ],
+      "reply": "Vidyapeeth offline students ko apne centre par teachers se in-person doubt help milti hai, aur jo batch PW ki site par dikhaya gaya hai usme yeh help up to 8 hours tak hai [AD-5]. Exact centre ya batch ke daily timings mere paas available help sections me nahi hain, isliye ek support agent is par aapko follow up karega [CT-3]. Tab tak aap Vidyapeeth helpdesk +91 9513350005 par bhi pooch sakte ho [OC-3]. Subject ka koi doubt ho to AI Guru app me sabse fast answer deta hai [AD-1].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "academic_doubt",
+            "confidence": 0.6
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "hinglish",
+        "summary": "Student asks about doubt-solving timings and teacher availability at Vidyapeeth; a policy/timing question that needs no account action."
+      },
+      "error": null,
+      "cost_usd": 0.013384,
+      "latency_s": 9.800897917011753
+    },
+    {
+      "id": "dev-31",
+      "split": "dev",
+      "channel": "email",
+      "language": "en",
+      "text": "When does the Class 11 JEE batch at Vidyapeeth Lucknow start and how long is the course?",
+      "categories": [
+        "other"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": true,
+      "note": "Course structure (OC-1).",
+      "pred_categories": [
+        "other"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.9,
+      "reasons": [
+        "Category 'other' is outside the knowledge base"
+      ],
+      "codes": [
+        "out_of_scope"
+      ],
+      "reply": "Thanks for your question! Vidyapeeth Class 11 JEE batches run over 2 years [OC-1]. I don't have the start date for the Lucknow centre in my help sections, so a support agent will follow up on that [CT-3]. You can also ask the Vidyapeeth admissions helpdesk on +91 9513350005 [CT-2].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "other",
+            "confidence": 0.9
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "en",
+        "summary": "Student asks for the start date and course duration of the Class 11 JEE batch at Vidyapeeth Lucknow (offline centre information)."
+      },
+      "error": null,
+      "cost_usd": 0.02023,
+      "latency_s": 5.2061242909985594
+    },
+    {
+      "id": "dev-32",
+      "split": "dev",
+      "channel": "whatsapp",
+      "language": "hinglish",
+      "text": "nsat ka exam kab hai class 10 ke liye? online de sakte hai?",
+      "categories": [
+        "other"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": true,
+      "note": "Dates and modes (SC-2).",
+      "pred_categories": [
+        "other"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.95,
+      "reasons": [
+        "Category 'other' is outside the knowledge base"
+      ],
+      "codes": [
+        "out_of_scope"
+      ],
+      "reply": "Class 10 ke liye PWNSAT 2026-27 ka Level 1 online har din 1 se 15 October 2026 tak chalta hai, aur offline 3, 4, 10 aur 11 October 2026 ko hota hai [SC-2]. Haan, PWNSAT online ya offline dono tareeke se diya ja sakta hai [SC-1]. Register karne ke liye PW ke official scholarship page (PW app se bhi khulta hai) ya kisi PW centre par jaake online ya offline mode chuno aur apni chosen date par test do [SC-4]. Class 5–10 ke exam mein 40 questions hote hain (Physics, Chemistry, Biology, Maths aur MAT/IQ) [SC-3]. Class 10 ke liye alag se exact date ke baare mein agar aapko aur detail chahiye, to ek support agent follow up karega [CT-3].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "other",
+            "confidence": 0.95
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "hinglish",
+        "summary": "Class 10 student asks the PWNSAT scholarship exam date and whether it can be taken online (scholarship dates and pattern query)."
+      },
+      "error": null,
+      "cost_usd": 0.022136,
+      "latency_s": 6.266720959043596
+    },
+    {
+      "id": "dev-33",
+      "split": "dev",
+      "channel": "whatsapp",
+      "language": "hinglish",
+      "text": "nsat ki fees wapas kar do, exam nahi de paya",
+      "categories": [
+        "refund"
+      ],
+      "needs_human_action": true,
+      "at_risk": false,
+      "should_escalate": true,
+      "note": "Refund request; fee is non-refundable (SC-6).",
+      "pred_categories": [
+        "refund"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": false,
+      "pred_needs_human": true,
+      "min_confidence": 0.95,
+      "reasons": [
+        "Needs account/payment action: Student requests a refund of the PWNSAT fee; an agent must check the payment and process the refund."
+      ],
+      "codes": [
+        "needs_action"
+      ],
+      "reply": "Samajh sakte hain ki exam na de paana frustrating hota hai. PWNSAT ke liye jo bhi fee pay ki jaati hai wo non-refundable hai, isliye hum fee wapas karne ka promise nahi kar sakte [SC-6]. Agar aapko lagta hai ki aapke case mein koi payment error hua hai, ya aap kuch aur poochna chahte hain, to ek support agent aapke ticket par follow up karega [CT-3]. Aap chahein to support@pw.live par ya app ke \"Contact us\" option se bhi apni details share kar sakte hain [CT-1].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "refund",
+            "confidence": 0.95
+          }
+        ],
+        "needs_human_action": true,
+        "needs_human_reason": "Student requests a refund of the PWNSAT fee; an agent must check the payment and process the refund.",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "hinglish",
+        "summary": "Student asks for a refund of the PWNSAT fee because they could not take the exam."
+      },
+      "error": null,
+      "cost_usd": 0.01432,
+      "latency_s": 6.170702416042332
+    },
+    {
+      "id": "dev-34",
+      "split": "dev",
+      "channel": "email",
+      "language": "en",
+      "text": "Is PWNSAT Prodigy online or offline, and what is the marking scheme?",
+      "categories": [
+        "other"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": true,
+      "note": "Offline, +4/-1 (SC-3).",
+      "pred_categories": [
+        "other"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.95,
+      "reasons": [
+        "Category 'other' is outside the knowledge base"
+      ],
+      "codes": [
+        "out_of_scope"
+      ],
+      "reply": "PWNSAT Prodigy (Level 2) is an offline exam, held at PW Vidyapeeth centres on 1 November 2026 for students shortlisted from Level 1 or recommended by their schools [SC-2]. It runs for 60 minutes, with +4 for a correct answer and −1 for a wrong one [SC-3]. Level 2 details are sent by WhatsApp/SMS to your registered mobile number and shown in the PW app [SC-2].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "other",
+            "confidence": 0.95
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "en",
+        "summary": "Student asks whether the PWNSAT Prodigy exam is online or offline and what its marking scheme is (scholarship exam pattern query)."
+      },
+      "error": null,
+      "cost_usd": 0.020604,
+      "latency_s": 4.656268874939997
+    },
+    {
+      "id": "dev-35",
+      "split": "dev",
+      "channel": "email",
+      "language": "en",
+      "text": "I paid for the Data Science Pro course on PW Skills yesterday but my dashboard shows nothing.",
+      "categories": [
+        "batch_access"
+      ],
+      "needs_human_action": true,
+      "at_risk": false,
+      "should_escalate": true,
+      "note": "Paid, no access (SK-4).",
+      "pred_categories": [
+        "batch_access"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": false,
+      "pred_needs_human": true,
+      "min_confidence": 0.93,
+      "reasons": [
+        "Needs account/payment action: Student paid yesterday for a PW Skills course and still has no access; account and payment need to be checked and access granted."
+      ],
+      "codes": [
+        "needs_action"
+      ],
+      "reply": "Sorry for the trouble, I know it's frustrating to pay and not see your course. The dashboard should be available right after enrolling, so please email support@pwskills.com with your registered email and payment details so they can check it [SK-4]. You can also raise a ticket from the course dashboard (LMS > Contact Us), and queries there are attended to within 24 business hours [SK-1].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "batch_access",
+            "confidence": 0.93
+          }
+        ],
+        "needs_human_action": true,
+        "needs_human_reason": "Student paid yesterday for a PW Skills course and still has no access; account and payment need to be checked and access granted.",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "en",
+        "summary": "Student paid for PW Skills Data Science Pro course yesterday but the dashboard shows no course; needs access check and enablement."
+      },
+      "error": null,
+      "cost_usd": 0.015126,
+      "latency_s": 4.550921750080306
+    },
+    {
+      "id": "dev-36",
+      "split": "dev",
+      "channel": "form",
+      "language": "en",
+      "text": "Issue type: Certificate\nDescription: How do I download my PW Skills course completion certificate?",
+      "categories": [
+        "technical"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": false,
+      "note": "From course analytics (SK-5).",
+      "pred_categories": [
+        "technical"
+      ],
+      "pred_escalate": false,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.93,
+      "reasons": [],
+      "codes": [],
+      "reply": "Happy to help! Your PW Skills course completion certificate is generated from the course analytics section of your dashboard once you've met the course's requirements, such as videos and assignments [SK-5]. Please note that some programmes don't offer a certificate, and PW Skills certificates are not recognised by regulators such as AICTE or UGC [SK-5]. If you can't find it even after completing everything, you can email support@pwskills.com or raise a ticket from LMS > Contact Us [SK-1].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "technical",
+            "confidence": 0.93
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "en",
+        "summary": "Student asks how to download their PW Skills course completion certificate."
+      },
+      "error": null,
+      "cost_usd": 0.012879999999999999,
+      "latency_s": 4.563534250075463
+    },
+    {
+      "id": "dev-37",
+      "split": "dev",
+      "channel": "email",
+      "language": "en",
+      "text": "I uploaded assignment 4 on Sunday but it still shows pending. The deadline was Monday.",
+      "categories": [
+        "technical"
+      ],
+      "needs_human_action": true,
+      "at_risk": false,
+      "should_escalate": true,
+      "note": "Assignment not updated (SK-6).",
+      "pred_categories": [
+        "technical"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": false,
+      "pred_needs_human": true,
+      "min_confidence": 0.55,
+      "reasons": [
+        "Needs account/payment action: Agent needs to check whether the assignment upload was received and saved, since it still shows pending after the deadline.",
+        "Low confidence (0.55 < 0.70)"
+      ],
+      "codes": [
+        "needs_action",
+        "low_confidence"
+      ],
+      "reply": "Sorry for the worry this has caused. If a submitted assignment isn't updated, please contact support@pwskills.com so the team can check it [SK-6]. You can also raise a ticket from LMS > Contact Us, and queries are attended to within 24 business hours [SK-1]. Since you uploaded it before the Monday deadline, mention that in your message along with the assignment name.",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "technical",
+            "confidence": 0.55
+          }
+        ],
+        "needs_human_action": true,
+        "needs_human_reason": "Agent needs to check whether the assignment upload was received and saved, since it still shows pending after the deadline.",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "en",
+        "summary": "Student uploaded assignment 4 on Sunday but it still shows pending after the Monday deadline; needs a check on whether the submission was saved."
+      },
+      "error": null,
+      "cost_usd": 0.013176,
+      "latency_s": 5.356481791997794
+    },
+    {
+      "id": "dev-38",
+      "split": "dev",
+      "channel": "form",
+      "language": "en",
+      "text": "Issue type: Course\nDescription: Is the PW Skills Banking & Finance course refundable?",
+      "categories": [
+        "refund"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": false,
+      "note": "Policy question (SK-2).",
+      "pred_categories": [
+        "refund"
+      ],
+      "pred_escalate": false,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.95,
+      "reasons": [],
+      "codes": [],
+      "reply": "Thanks for checking before deciding! Refunds for PW Skills depend on the course type: Basic (self-paced, recorded) courses are non-refundable, while Premium and Pro (live + hybrid) courses can be refunded if the request is raised within 30 calendar days of purchase [SK-2]. For Banking & Finance courses, a non-refundable registration fee of ₹5,000 is deducted from the refund, and after 30 days there is no refund [SK-2]. Course access is revoked when a refund is processed [SK-2]. If you tell us whether your course is Basic, Premium or Pro, we can be more specific, and if you do want a refund, you can write to support@pwskills.com or use LMS > Contact Us within the 30-day window [SK-3].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "refund",
+            "confidence": 0.95
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "en",
+        "summary": "Student asks whether the PW Skills Banking & Finance course is refundable (refund policy question, no refund requested yet)."
+      },
+      "error": null,
+      "cost_usd": 0.015036,
+      "latency_s": 4.849434916977771
+    },
+    {
+      "id": "dev-39",
+      "split": "dev",
+      "channel": "whatsapp",
+      "language": "en",
+      "text": "Can I pause my PW Skills course? What happens to recordings during the pause?",
+      "categories": [
+        "batch_access"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": false,
+      "note": "Pause policy question (SK-7).",
+      "pred_categories": [
+        "batch_access"
+      ],
+      "pred_escalate": false,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.8,
+      "reasons": [],
+      "codes": [],
+      "reply": "Yes, learners in eligible new programmes can pause for up to 3 months in total [SK-7]. During a pause, recordings and doubt resolution stay available, but no new lectures are added [SK-7]. Pausing beyond 3 months is chargeable and needs PW Skills' approval [SK-7]. Whether your specific programme is eligible isn't something I can confirm from the details I have, so a support agent will follow up on that [CT-3]. You can also write to support@pwskills.com or raise a ticket from LMS > Contact Us on your course dashboard [SK-1].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "batch_access",
+            "confidence": 0.8
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "en",
+        "summary": "Student asks whether a PW Skills course can be paused and what happens to recordings during the pause."
+      },
+      "error": null,
+      "cost_usd": 0.015252,
+      "latency_s": 5.957688374037389
+    },
+    {
+      "id": "dev-40",
+      "split": "dev",
+      "channel": "whatsapp",
+      "language": "en",
+      "text": "sent my onlyias refund request on email 3 weeks ago, still nothing. nobody replies",
+      "categories": [
+        "refund"
+      ],
+      "needs_human_action": true,
+      "at_risk": true,
+      "should_escalate": true,
+      "note": "Unresolved repeat complaint (UP-1).",
+      "pred_categories": [
+        "refund"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": true,
+      "pred_needs_human": true,
+      "min_confidence": 0.95,
+      "reasons": [
+        "Student at risk: Repeated unresolved complaint: no reply for 3 weeks to the email refund request.",
+        "Needs account/payment action: Student requested a PW OnlyIAS refund 3 weeks ago and has had no response; refund needs to be looked up and processed."
+      ],
+      "codes": [
+        "at_risk",
+        "needs_action"
+      ],
+      "reply": "Sorry you've had no reply for 3 weeks, that's frustrating. For PW OnlyIAS offline centres, refund requests are made in writing to info@pwonlyias.com and can take up to 15 business days [UP-1]. Every refund request is reviewed by a support agent who checks the order against the policy and replies with a decision [RF-4]. I can't see the status of your request or promise an outcome, so a support agent will follow up on it personally [CT-3]. If you want to chase it yourself, you can also write to support@pw.live with your ticket details [CT-5], or use the \"Contact us\" option in the PW app [CT-1].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "refund",
+            "confidence": 0.95
+          }
+        ],
+        "needs_human_action": true,
+        "needs_human_reason": "Student requested a PW OnlyIAS refund 3 weeks ago and has had no response; refund needs to be looked up and processed.",
+        "at_risk": true,
+        "at_risk_reason": "Repeated unresolved complaint: no reply for 3 weeks to the email refund request.",
+        "language": "en",
+        "summary": "Student says an OnlyIAS refund request emailed 3 weeks ago has had no reply; needs refund status check and follow-up."
+      },
+      "error": null,
+      "cost_usd": 0.013746000000000001,
+      "latency_s": 5.192904166993685
+    },
+    {
+      "id": "dev-41",
+      "split": "dev",
+      "channel": "whatsapp",
+      "language": "en",
+      "text": "how do I delete my PW account?",
+      "categories": [
+        "other"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": true,
+      "note": "Deletion steps (AC-1).",
+      "pred_categories": [
+        "other"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.93,
+      "reasons": [
+        "Category 'other' is outside the knowledge base"
+      ],
+      "codes": [
+        "out_of_scope"
+      ],
+      "reply": "You can delete your account in the PW app: tap the menu at the top left, go to Profile, open Settings, choose Additional settings, then Account Deletion [AC-1]. After deletion, you will need a new account to use PW again [AC-1]. Please note that PW is required by law to keep certain data, such as order history, and anything you posted publicly (like discussions) along with your name may remain visible [AC-2].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "other",
+            "confidence": 0.93
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "en",
+        "summary": "Student asks how to delete their PW account."
+      },
+      "error": null,
+      "cost_usd": 0.019876,
+      "latency_s": 4.5259346250095405
+    },
+    {
+      "id": "dev-42",
+      "split": "dev",
+      "channel": "form",
+      "language": "en",
+      "text": "Issue type: Other\nDescription: If I delete my account, will my order history be deleted too?",
+      "categories": [
+        "other"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": true,
+      "note": "Kept by law (AC-2).",
+      "pred_categories": [
+        "other"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.85,
+      "reasons": [
+        "Category 'other' is outside the knowledge base"
+      ],
+      "codes": [
+        "out_of_scope"
+      ],
+      "reply": "No, deleting your account won't remove your order history. PW is required by law to keep certain data after deletion, such as order history, for tax and security reasons [AC-2]. Content you posted publicly, like in discussions, and your name on it may also remain visible [AC-2]. If you still want to go ahead, open the PW app, tap the menu at the top left, go to Profile, then Settings, choose Additional settings, and tap Account Deletion [AC-1]. Please note that after deletion you'll need a new account to use PW again [AC-1].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "other",
+            "confidence": 0.85
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "en",
+        "summary": "Student asks whether deleting their account will also delete their order history; this is an account deletion/privacy question."
+      },
+      "error": null,
+      "cost_usd": 0.020596,
+      "latency_s": 5.595759292016737
+    },
+    {
+      "id": "dev-43",
+      "split": "dev",
+      "channel": "email",
+      "language": "en",
+      "text": "Who is the grievance officer for data privacy complaints at PW?",
+      "categories": [
+        "other"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": true,
+      "note": "Grievance Redressal Officer (AC-6).",
+      "pred_categories": [
+        "other"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.85,
+      "reasons": [
+        "Category 'other' is outside the knowledge base"
+      ],
+      "codes": [
+        "out_of_scope"
+      ],
+      "reply": "Complaints about how your personal information is processed can be sent to PW's Grievance Redressal Officer at grievance.officer@pw.live, with the subject line \"Attention: Grievance Redressal Officer\" [AC-6]. You can also call +91-7406346660 or +91-8448982616, or write to Noida One, 1st Floor, Industrial Area, Sector 62, Noida, UP 201309 [AC-6]. If a complaint isn't resolved through support, you can also write to support@pw.live with your ticket details [CT-5].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "other",
+            "confidence": 0.85
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "en",
+        "summary": "Student asks who the grievance officer is for data privacy complaints at PW; privacy matter, general information request."
+      },
+      "error": null,
+      "cost_usd": 0.020662,
+      "latency_s": 6.412106250063516
+    },
+    {
+      "id": "dev-44",
+      "split": "dev",
+      "channel": "whatsapp",
+      "language": "hinglish",
+      "text": "jee mains ka admit card kaha milega? app me nahi dikh raha",
+      "categories": [
+        "other"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": true,
+      "note": "Admit cards are on the official site (AD-6).",
+      "pred_categories": [
+        "other"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.85,
+      "reasons": [
+        "Category 'other' is outside the knowledge base"
+      ],
+      "codes": [
+        "out_of_scope"
+      ],
+      "reply": "Hi! JEE Mains ka admit card PW ki taraf se issue nahi hota, aur mere paas diye gaye help sections me iski jaankari nahi hai, isliye main yahan guess nahi karungi. Ek support agent is par aapko follow up karega [CT-3]. Aap chahein to PW app ke \"Contact us\" option se ya 07406346660 / 08448982616 par call karke bhi apna issue raise kar sakte hain [CT-1].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "other",
+            "confidence": 0.85
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "hinglish",
+        "summary": "Student asks where to find the JEE Mains admit card and says it is not visible in the app; PW does not run this exam, so it is an exam-registration query handled as other."
+      },
+      "error": null,
+      "cost_usd": 0.02074,
+      "latency_s": 8.170144000032451
+    },
+    {
+      "id": "dev-45",
+      "split": "dev",
+      "channel": "whatsapp",
+      "language": "hinglish",
+      "text": "sir electrostatics me gauss law ka use kab karte hai? thoda samjha do",
+      "categories": [
+        "academic_doubt"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": false,
+      "note": "Subject doubt (AD-1).",
+      "pred_categories": [
+        "academic_doubt"
+      ],
+      "pred_escalate": false,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.97,
+      "reasons": [],
+      "codes": [],
+      "reply": "Physics ke concept ya doubt ko support team solve nahi karti, isliye main Gauss law explain nahi kar sakta/sakti. [AD-1] Is doubt ke liye PW app me AI Guru use karo, jahan tum question type kar sakte ho, bol sakte ho ya photo upload kar sakte ho, Hindi, English ya Hinglish me. [AD-1] Agar AI ka answer clear na lage, to usse unhelpful mark karke zyada detail ke saath dobara pucho, ya apne batch ke doubt support se teacher ko dikhao. [AD-3] Agar live class chal rahi ho, to class ke doubt option se bhi pooch sakte ho, Smart Doubt Engine turant jawab deta hai. [AD-2]",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "academic_doubt",
+            "confidence": 0.97
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "hinglish",
+        "summary": "Student asks when Gauss law is used in electrostatics and wants a simple explanation (physics doubt)."
+      },
+      "error": null,
+      "cost_usd": 0.011822,
+      "latency_s": 6.720500833063852
+    },
+    {
+      "id": "dev-46",
+      "split": "dev",
+      "channel": "whatsapp",
+      "language": "en",
+      "text": "video stuck at 0:00, just a loading circle, on all lectures",
+      "categories": [
+        "technical"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": false,
+      "note": "Playback fix (TS-2).",
+      "pred_categories": [
+        "technical"
+      ],
+      "pred_escalate": false,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.97,
+      "reasons": [],
+      "codes": [],
+      "reply": "Sorry about the trouble, a loading circle on every lecture is frustrating. Please try lowering the video quality from the player settings or switching on Low Data Mode, which uses much less data per lecture [TS-2]. Also close other apps that are using the internet and update the PW app to the latest version [TS-2]. If it still doesn't play, you can download the lecture on Wi-Fi and watch it offline, which also avoids buffering [TS-2]. If the problem continues after these steps, you can use the \"Contact us\" option inside the PW app, which is the fastest way to raise an issue [CT-1].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "technical",
+            "confidence": 0.97
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "en",
+        "summary": "Student reports videos stuck at 0:00 with a endless loading circle on all lectures; video playback issue with a help-article fix."
+      },
+      "error": null,
+      "cost_usd": 0.01116,
+      "latency_s": 7.192595083964989
+    },
+    {
+      "id": "dev-47",
+      "split": "dev",
+      "channel": "whatsapp",
+      "language": "en",
+      "text": "Test Pass JEE result is not showing my rank for yesterday's test",
+      "categories": [
+        "technical"
+      ],
+      "needs_human_action": true,
+      "at_risk": false,
+      "should_escalate": true,
+      "note": "Support checks the attempt (AD-7).",
+      "pred_categories": [
+        "other",
+        "technical"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.2,
+      "reasons": [
+        "Category 'other' is outside the knowledge base",
+        "Low confidence (0.20 < 0.70)"
+      ],
+      "codes": [
+        "out_of_scope",
+        "low_confidence"
+      ],
+      "reply": "Sorry that your rank isn't showing for yesterday's test. The help sections I have don't explain why a rank might not appear in the result, so a support agent will follow up on this [CT-3]. If the test was interrupted by a technical problem, please share the test name, batch, and the date and time of your attempt so the support team can check whether the attempt was recorded [TS-5]. For a quicker response, you can also use the \"Contact us\" option inside the PW app [CT-1].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "technical",
+            "confidence": 0.55
+          },
+          {
+            "category": "other",
+            "confidence": 0.2
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "en",
+        "summary": "Student says the rank is not showing in the Test Pass JEE result for yesterday's test; likely a result/rank display issue in the test section, which may need checking if it persists."
+      },
+      "error": null,
+      "cost_usd": 0.022233999999999997,
+      "latency_s": 5.983517375017982
+    },
+    {
+      "id": "dev-48",
+      "split": "dev",
+      "channel": "form",
+      "language": "en",
+      "text": "Issue type: Payment\nDescription: Paid twice for the Lakshya NEET batch, two debits of 3,499 on my card.",
+      "categories": [
+        "payment",
+        "refund"
+      ],
+      "needs_human_action": true,
+      "at_risk": false,
+      "should_escalate": true,
+      "note": "Duplicate charge (RF-3).",
+      "pred_categories": [
+        "payment",
+        "refund"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": false,
+      "pred_needs_human": true,
+      "min_confidence": 0.9,
+      "reasons": [
+        "Needs account/payment action: Duplicate charge of 3,499 on the Lakshya NEET batch needs payment lookup and a refund of the extra payment."
+      ],
+      "codes": [
+        "needs_action"
+      ],
+      "reply": "I'm sorry about the double charge, that must be worrying. If the same order was paid twice, the extra payment is returned to the original payment method once the support team has verified both transactions, which usually takes 5–7 working days after verification, depending on the bank [RF-3]. Please share both transaction IDs (UTR/reference numbers) or payment screenshots, plus your registered mobile number [RF-3]. A support agent will review your request and reply with a decision, as duplicate-charge requests are never decided automatically [RF-4]. You can also raise this through \"Contact us\" in the PW app, which is the fastest way [CT-1].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "payment",
+            "confidence": 0.95
+          },
+          {
+            "category": "refund",
+            "confidence": 0.9
+          }
+        ],
+        "needs_human_action": true,
+        "needs_human_reason": "Duplicate charge of 3,499 on the Lakshya NEET batch needs payment lookup and a refund of the extra payment.",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "en",
+        "summary": "Student was charged twice (3,499 each) on card for the Lakshya NEET batch and needs the duplicate payment refunded."
+      },
+      "error": null,
+      "cost_usd": 0.01481,
+      "latency_s": 6.25873241701629
+    },
+    {
+      "id": "dev-49",
+      "split": "dev",
+      "channel": "email",
+      "language": "en",
+      "text": "Hello, my batch validity says 'till NEET 2026' but the exam got postponed. Will my access continue?",
+      "categories": [
+        "batch_access"
+      ],
+      "needs_human_action": true,
+      "at_risk": false,
+      "should_escalate": true,
+      "note": "Extension is reviewed by support (BA-2).",
+      "pred_categories": [
+        "batch_access"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": false,
+      "pred_needs_human": true,
+      "min_confidence": 0.93,
+      "reasons": [
+        "Needs account/payment action: Student asks whether access can continue past the batch's stated expiry, which is a validity extension request needing an agent to check the batch and account."
+      ],
+      "codes": [
+        "needs_action"
+      ],
+      "reply": "Thanks for asking about this. Your batch's validity is the date shown on its batch page, and after it expires the content can no longer be opened [BA-2]. Validity is not extended automatically, and extension requests are reviewed by the support team [BA-2]. I can't promise an extension, but a support agent will follow up on your request about the postponed exam [CT-3]. You can also raise it through the \"Contact us\" option in the PW app, which is the fastest way to report an issue [CT-1].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "batch_access",
+            "confidence": 0.93
+          }
+        ],
+        "needs_human_action": true,
+        "needs_human_reason": "Student asks whether access can continue past the batch's stated expiry, which is a validity extension request needing an agent to check the batch and account.",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "en",
+        "summary": "Student's batch validity ends at 'NEET 2026' but the exam was postponed; asks if access will continue (validity extension query)."
+      },
+      "error": null,
+      "cost_usd": 0.013238,
+      "latency_s": 8.72341058391612
+    },
+    {
+      "id": "dev-50",
+      "split": "dev",
+      "channel": "whatsapp",
+      "language": "hinglish",
+      "text": "coupon code apply nahi ho raha checkout pe, invalid bol raha hai",
+      "categories": [
+        "payment"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": false,
+      "note": "Coupon validity (PY-4).",
+      "pred_categories": [
+        "payment"
+      ],
+      "pred_escalate": false,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.95,
+      "reasons": [],
+      "codes": [],
+      "reply": "Coupon apply na hone se pareshani hui hogi, samajh sakta hoon. Coupon ko payment page par pay karne se pehle \"Apply coupon\" se lagana hota hai, aur paid order mein baad mein coupon add nahi ho sakta [PY-4]. Har coupon ki apni validity aur eligible batches hoti hain, isliye check karein ki aapka coupon is batch ke liye valid hai aur expire nahi hua hai [PY-4]. Agar in sab ke baad bhi \"invalid\" aa raha hai, to is baare mein hamare paas aur jaankari nahi hai, isliye ek support agent aapse follow up karega [CT-3]. Aap jaldi help ke liye PW app ke \"Contact us\" option se bhi coupon code aur batch ka naam bhej sakte hain [CT-1].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "payment",
+            "confidence": 0.95
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "hinglish",
+        "summary": "Student says the coupon code shows as invalid at checkout and cannot be applied."
+      },
+      "error": null,
+      "cost_usd": 0.014904,
+      "latency_s": 10.218760250951163
+    },
+    {
+      "id": "dev-51",
+      "split": "dev",
+      "channel": "whatsapp",
+      "language": "hi",
+      "text": "मुझे फिजिक्स में न्यूटन का तीसरा नियम समझ नहीं आ रहा, कोई आसान उदाहरण बताइए?",
+      "categories": [
+        "academic_doubt"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": false,
+      "note": "Subject doubt in Hindi: route to AI Guru (AD-1).",
+      "pred_categories": [
+        "academic_doubt"
+      ],
+      "pred_escalate": false,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.97,
+      "reasons": [],
+      "codes": [],
+      "reply": "आप फिजिक्स की अवधारणा समझने की कोशिश कर रहे हैं, यह बहुत अच्छी बात है। सपोर्ट टीम विषय के सवाल हल नहीं करती, इसलिए न्यूटन के तीसरे नियम का उदाहरण आपको AI Guru से सबसे जल्दी मिलेगा। [AD-1] PW ऐप में AI Guru पर आप सवाल टाइप कर सकते हैं, बोलकर पूछ सकते हैं या फोटो अपलोड कर सकते हैं, हिंदी में भी। [AD-1] अगर जवाब साफ़ न लगे, तो उसे अनहेल्पफुल मार्क करके ज़्यादा विवरण के साथ दोबारा पूछें या अपने बैच के डाउट सपोर्ट से पूछें। [AD-3] लाइव क्लास के दौरान हों तो क्लास के डाउट विकल्प से भी पूछ सकते हैं। [AD-2]",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "academic_doubt",
+            "confidence": 0.97
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "hi",
+        "summary": "Student asks for a simple example to understand Newton's third law of motion in Physics."
+      },
+      "error": null,
+      "cost_usd": 0.012754000000000001,
+      "latency_s": 9.321897792047821
+    },
+    {
+      "id": "dev-52",
+      "split": "dev",
+      "channel": "whatsapp",
+      "language": "en",
+      "text": "how do I ask a doubt during the live class? I can't find the option",
+      "categories": [
+        "academic_doubt"
+      ],
+      "needs_human_action": false,
+      "at_risk": false,
+      "should_escalate": false,
+      "note": "Doubts in live class (AD-2).",
+      "pred_categories": [
+        "academic_doubt"
+      ],
+      "pred_escalate": false,
+      "pred_at_risk": false,
+      "pred_needs_human": false,
+      "min_confidence": 0.9,
+      "reasons": [],
+      "codes": [],
+      "reply": "Happy to help! During a live class, you can post your doubt through the doubt option inside the class, and the Smart Doubt Engine will answer it instantly with text or short video explanations [AD-2]. If you still can't find the option, please use the \"Contact us\" option in the PW app, which is the fastest way to raise an issue [CT-1]. For subject questions outside the live class, you can also type, speak or upload a photo of your problem to AI Guru in the PW app [AD-1].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "academic_doubt",
+            "confidence": 0.9
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "en",
+        "summary": "Student asks how to ask a doubt during a live class and cannot find the option; a help article on doubt-asking should answer this."
+      },
+      "error": null,
+      "cost_usd": 0.010700000000000001,
+      "latency_s": 4.912149959069211
+    },
+    {
+      "id": "dev-53",
+      "split": "dev",
+      "channel": "whatsapp",
+      "language": "hinglish",
+      "text": "BAKWAAS app hai, 3 din se video nahi chal raha, paisa barbaad. refund do warna review me sab likhunga",
+      "categories": [
+        "technical",
+        "refund"
+      ],
+      "needs_human_action": true,
+      "at_risk": true,
+      "should_escalate": true,
+      "note": "Refund request; angry, public-review threat.",
+      "pred_categories": [
+        "refund",
+        "technical"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": true,
+      "pred_needs_human": true,
+      "min_confidence": 0.85,
+      "reasons": [
+        "Student at risk: Student is angry (caps, 'BAKWAAS'), says the problem has lasted 3 days, and threatens to post negative reviews.",
+        "Needs account/payment action: Student is explicitly requesting a refund, which needs an agent to review the account and payment."
+      ],
+      "codes": [
+        "at_risk",
+        "needs_action"
+      ],
+      "reply": "Aapko 3 din se video nahi chal raha, ye sach me frustrating hai, aur main aapki pareshani samajhta hoon. Pehle ye try karein: player settings me video quality kam karein ya Low Data Mode on karein, dusre internet use karne wale apps band karein aur PW app ko latest version par update karein [TS-2]. Lecture ko Wi-Fi par download karke offline dekhne se bhi buffering nahi hoti [TS-2]. Refund ke bare me: online batch kharidne ke baad non-refundable hota hai, sirf galti se kharide gaye batch, payment errors ya damaged book orders jaise exceptions hain [RF-1]. Refund request ko support agent khud review karta hai aur decision ke saath reply karta hai, isliye ek support agent aapki request par follow up karega [RF-4][CT-3].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "technical",
+            "confidence": 0.9
+          },
+          {
+            "category": "refund",
+            "confidence": 0.85
+          }
+        ],
+        "needs_human_action": true,
+        "needs_human_reason": "Student is explicitly requesting a refund, which needs an agent to review the account and payment.",
+        "at_risk": true,
+        "at_risk_reason": "Student is angry (caps, 'BAKWAAS'), says the problem has lasted 3 days, and threatens to post negative reviews.",
+        "language": "hinglish",
+        "summary": "Student says videos haven't played for 3 days, demands a refund and threatens to write negative reviews."
+      },
+      "error": null,
+      "cost_usd": 0.015988,
+      "latency_s": 10.771833166014403
+    },
+    {
+      "id": "dev-54",
+      "split": "dev",
+      "channel": "email",
+      "language": "en",
+      "text": "I have been writing to you for two weeks about my blocked account. If this is not solved today I will file a complaint with the consumer forum.",
+      "categories": [
+        "batch_access"
+      ],
+      "needs_human_action": true,
+      "at_risk": true,
+      "should_escalate": true,
+      "note": "Blocked account (BA-3); repeated, legal threat.",
+      "pred_categories": [
+        "batch_access"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": true,
+      "pred_needs_human": true,
+      "min_confidence": 0.95,
+      "reasons": [
+        "Student at risk: Student reports a repeated unresolved complaint over two weeks and threatens to file a consumer forum complaint.",
+        "Needs account/payment action: Account is blocked and needs an agent to review and unblock it; the issue is repeated and unresolved for two weeks."
+      ],
+      "codes": [
+        "at_risk",
+        "needs_action"
+      ],
+      "reply": "I'm sorry you've been waiting two weeks with your account blocked; that's really frustrating. A blocked account needs a support agent to handle it personally, so an agent will follow up on your case [CT-3]. A blocked account can only be restored by the support team after verifying your registered mobile number and order details [BA-3]. I can't promise it will be fixed today, as I have no confirmed timeline. If it isn't resolved through support, you can write to support@pw.live with your ticket details [CT-5].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "batch_access",
+            "confidence": 0.95
+          }
+        ],
+        "needs_human_action": true,
+        "needs_human_reason": "Account is blocked and needs an agent to review and unblock it; the issue is repeated and unresolved for two weeks.",
+        "at_risk": true,
+        "at_risk_reason": "Student reports a repeated unresolved complaint over two weeks and threatens to file a consumer forum complaint.",
+        "language": "en",
+        "summary": "Student's account has been blocked for two weeks despite repeated complaints; threatens consumer forum complaint if not resolved today."
+      },
+      "error": null,
+      "cost_usd": 0.014988000000000001,
+      "latency_s": 5.889759165991563
+    },
+    {
+      "id": "dev-55",
+      "split": "dev",
+      "channel": "whatsapp",
+      "language": "hinglish",
+      "text": "sab log mujhse bahut expect karte hai, main thak gaya hu, kuch accha nahi lagta",
+      "categories": [
+        "other"
+      ],
+      "needs_human_action": false,
+      "at_risk": true,
+      "should_escalate": true,
+      "note": "Distress (CT-4).",
+      "pred_categories": [
+        "other"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": true,
+      "pred_needs_human": false,
+      "min_confidence": 0.9,
+      "reasons": [
+        "Student at risk: Student shows distress: feels exhausted under pressure from everyone's expectations and says nothing feels good.",
+        "Category 'other' is outside the knowledge base"
+      ],
+      "codes": [
+        "at_risk",
+        "out_of_scope"
+      ],
+      "reply": "Aapne jo share kiya, woh sunke mujhe bahut accha laga ki aapne baat kahi; itna thak jaana aur kuch accha na lagna sach mein bhaari hota hai, aur aap akele nahi ho. Ek support agent personally aur priority par aapse reach out karega [CT-4]. Agar aap abhi bahut stressed ya hopeless feel kar rahe ho, toh Tele-MANAS ki free mental-health helpline 14416 (ya 1-800-891-4416) par 24x7 baat kar sakte ho [CT-4]. Agar aap unsafe feel karte ho ya emergency hai, toh turant 112 par call karein [CT-4]. Hamari team aapki baat personally sambhalegi [CT-3].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "other",
+            "confidence": 0.9
+          }
+        ],
+        "needs_human_action": false,
+        "needs_human_reason": "",
+        "at_risk": true,
+        "at_risk_reason": "Student shows distress: feels exhausted under pressure from everyone's expectations and says nothing feels good.",
+        "language": "hinglish",
+        "summary": "Student expresses emotional distress and exhaustion from others' expectations, with no specific service issue raised; handle with empathy."
+      },
+      "error": null,
+      "cost_usd": 0.022014,
+      "latency_s": 6.518937291984912
+    },
+    {
+      "id": "dev-56",
+      "split": "dev",
+      "channel": "whatsapp",
+      "language": "hi",
+      "text": "मैंने दो बार पेमेंट कर दिया, दोनों बार पैसे कट गए। एक वापस कर दो।",
+      "categories": [
+        "payment",
+        "refund"
+      ],
+      "needs_human_action": true,
+      "at_risk": false,
+      "should_escalate": true,
+      "note": "Duplicate charge in Hindi (RF-3).",
+      "pred_categories": [
+        "payment",
+        "refund"
+      ],
+      "pred_escalate": true,
+      "pred_at_risk": false,
+      "pred_needs_human": true,
+      "min_confidence": 0.9,
+      "reasons": [
+        "Needs account/payment action: Duplicate charge: payment records must be checked and the extra amount refunded."
+      ],
+      "codes": [
+        "needs_action"
+      ],
+      "reply": "आपको हुई परेशानी के लिए हमें खेद है। अगर एक ही ऑर्डर का पेमेंट दो बार हुआ है, तो सपोर्ट टीम दोनों ट्रांज़ैक्शन verify करती है, और उसके बाद अतिरिक्त राशि original payment method में लौटा दी जाती है; verification के बाद इसमें आमतौर पर बैंक के हिसाब से 5–7 कार्य दिवस लगते हैं [RF-3]. कृपया दोनों ट्रांज़ैक्शन ID (UTR/UPI reference number) या पेमेंट के screenshots और अपना registered मोबाइल नंबर शेयर करें [RF-3]. आपकी रिक्वेस्ट को एक सपोर्ट एजेंट खुद देखेगा, यह अपने-आप तय नहीं होती, और वह आपके ऑर्डर की जांच करके जवाब देगा [RF-4][CT-3]. PW का लक्ष्य सपोर्ट क्वेरी को 7 दिनों के भीतर हल करना है [RF-4].",
+      "citation_issues": [],
+      "classification": {
+        "issues": [
+          {
+            "category": "payment",
+            "confidence": 0.9
+          },
+          {
+            "category": "refund",
+            "confidence": 0.9
+          }
+        ],
+        "needs_human_action": true,
+        "needs_human_reason": "Duplicate charge: payment records must be checked and the extra amount refunded.",
+        "at_risk": false,
+        "at_risk_reason": "",
+        "language": "hi",
+        "summary": "Student paid twice and was charged both times; requests a refund of the extra payment."
+      },
+      "error": null,
+      "cost_usd": 0.016346,
+      "latency_s": 7.521009250020143
+    }
+  ]
+}
