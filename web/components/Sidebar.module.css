@@ -1,0 +1,77 @@
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100dvh;
+  width: var(--sidebar-w);
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s6);
+  padding: var(--s5) var(--s3);
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+}
+
+.brand { display: flex; align-items: center; gap: 10px; padding: 0 var(--s2); color: var(--text); text-decoration: none; }
+.brandText { display: grid; line-height: 1.15; }
+.name { font-size: var(--text-lg); font-weight: 800; letter-spacing: -0.02em; }
+.tagline { font-size: var(--text-xs); color: var(--text-3); font-weight: 500; }
+
+.nav { display: grid; gap: 2px; }
+.link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 38px;
+  padding: 0 var(--s3);
+  border-radius: var(--radius);
+  color: var(--text-2);
+  font-weight: 600;
+  font-size: var(--text-md);
+  text-decoration: none;
+  transition: background 150ms var(--ease), color 150ms var(--ease);
+}
+.link:hover { background: var(--hover); color: var(--text); }
+.active, .active:hover { background: var(--primary-50); color: var(--primary); }
+.badge {
+  margin-left: auto; min-width: 22px; height: 20px; padding: 0 6px;
+  display: grid; place-items: center;
+  border-radius: 9999px; background: var(--primary); color: #fff;
+  font-style: normal; font-size: 11px; font-weight: 700;
+}
+.urgent {
+  display: flex; align-items: center; gap: 8px;
+  margin: calc(var(--s4) * -1) 0 0; padding: 6px var(--s3);
+  border-radius: var(--radius); color: var(--error); font-size: var(--text-sm); font-weight: 600; text-decoration: none;
+}
+.urgent:hover { background: var(--error-bg); }
+.urgentDot { width: 8px; height: 8px; border-radius: 50%; background: var(--error); }
+
+.foot { margin-top: auto; display: grid; gap: var(--s4); padding: 0 var(--s2); }
+.status { margin: 0; display: grid; gap: var(--s3); padding: var(--s3); border: 1px solid var(--border); border-radius: var(--radius); }
+.status dt { font-size: var(--text-xs); color: var(--text-3); }
+.status dd { margin: 0; font-weight: 700; font-size: var(--text-sm); }
+.status dd a { text-decoration: none; }
+.note { font-size: var(--text-xs); color: var(--warning); background: var(--warning-bg); border-radius: var(--radius-sm); padding: 6px 8px; line-height: 1.4; }
+.offline { color: var(--error); font-weight: 700; font-size: var(--text-sm); }
+.loading { height: 96px; }
+.built { font-size: var(--text-xs); color: var(--text-3); }
+
+@media (max-width: 1320px) {
+  .sidebar { width: 72px; padding: var(--s4) var(--s2); align-items: center; }
+  .brandText, .link span, .foot, .urgent { display: none; }
+  .link { position: relative; justify-content: center; padding: 0; width: 44px; }
+  .badge { position: absolute; top: 2px; right: -4px; min-width: 18px; height: 16px; font-size: 10px; }
+}
+@media (max-width: 760px) {
+  .sidebar {
+    position: fixed; inset: auto 0 0 0; top: auto; height: 60px; width: 100%;
+    flex-direction: row; justify-content: center; gap: 0; padding: 0 var(--s3);
+    border-right: 0; border-top: 1px solid var(--border); z-index: 20;
+  }
+  .brand { display: none; }
+  .nav { grid-auto-flow: column; gap: var(--s2); width: 100%; justify-content: space-around; }
+  .link { flex-direction: column; gap: 2px; height: 52px; width: auto; padding: 0 var(--s3); }
+  .link span { display: block; font-size: 11px; }
+  .badge { position: absolute; top: 4px; right: 4px; }
+}

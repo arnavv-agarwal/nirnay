@@ -1,0 +1,50 @@
+.wrap { padding: var(--s6); overflow-y: auto; }
+.card { max-width: 720px; margin: 0 auto; padding: var(--s6); display: grid; gap: var(--s4); background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); box-shadow: var(--shadow-2); }
+.head { display: flex; justify-content: space-between; gap: var(--s4); }
+.title { font-size: var(--text-xl); margin-bottom: 4px; }
+.lede { color: var(--text-3); }
+
+.row { display: grid; grid-template-columns: 1fr auto; gap: var(--s4); }
+.field { display: grid; gap: 6px; margin: 0; padding: 0; border: 0; min-width: 0; }
+.label { font-size: var(--text-sm); font-weight: 600; color: var(--text-2); }
+.optional { font-weight: 400; color: var(--text-3); }
+
+.input, .textarea {
+  width: 100%;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition: border-color 150ms var(--ease), box-shadow 150ms var(--ease);
+}
+.input { height: 38px; padding: 0 var(--s3); }
+.textarea { padding: var(--s3); resize: vertical; line-height: 1.6; font-size: var(--text-base); }
+.input:hover, .textarea:hover { border-color: var(--border-hover); }
+.input:focus, .textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px var(--primary-50); }
+.input::placeholder, .textarea::placeholder { color: var(--text-3); }
+
+.segmented { display: inline-flex; padding: 3px; gap: 2px; border: 1px solid var(--border-strong); border-radius: var(--radius); background: var(--canvas); }
+.segmented label { display: inline-flex; align-items: center; height: 30px; padding: 0 12px; border-radius: var(--radius-sm); font-size: var(--text-sm); font-weight: 600; color: var(--text-2); cursor: pointer; }
+.segmented label:has(input:focus-visible) { outline: 2px solid var(--primary); outline-offset: 1px; }
+.segmented input { position: absolute; opacity: 0; pointer-events: none; }
+.segOn { background: var(--surface); color: var(--primary) !important; box-shadow: var(--shadow-1); }
+
+.examples { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.example {
+  max-width: 100%; padding: 4px 10px;
+  border: 1px solid var(--border); border-radius: 9999px; background: var(--surface);
+  font-size: var(--text-xs); color: var(--text-2); cursor: pointer; text-align: left;
+}
+.example:hover:not(:disabled) { border-color: var(--primary-100); background: var(--primary-50); color: var(--primary-600); }
+
+.error { color: var(--error); font-weight: 600; font-size: var(--text-sm); }
+.actions { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: var(--s2); }
+/* While the AI works: say what is happening and roughly how long it takes. */
+.wait { flex: 1 1 260px; font-size: var(--text-sm); color: var(--text-2); }
+.spin { animation: spin 900ms linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media (max-width: 760px) {
+  .wrap { padding: var(--s3); }
+  .card { padding: var(--s4); }
+  .row { grid-template-columns: 1fr; }
+}

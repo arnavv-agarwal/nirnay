@@ -1,0 +1,133 @@
+/* Nirnay design tokens: PW's own design system, taken from pw.live's production CSS
+   (--primary-color scale, --grey-color scale, semantic success/error/warning). */
+
+:root {
+  /* PW purple (primary) */
+  --primary: #5a4bda;
+  --primary-600: #4437b8;
+  --primary-700: #312596;
+  --primary-200: #b2a9ff;
+  --primary-100: #d2ccff;
+  --primary-50: #f1efff;
+  --primary-25: #f8f7ff;
+
+  /* Neutrals */
+  --text: #1b2124;
+  --text-2: #3d3d3d;
+  --text-3: #5e6166;          /* PW grey-700: captions, meta (6.1:1 on white) */
+  --border: #eaecef;          /* PW grey-10 */
+  --border-strong: #d9dce1;   /* PW grey-100 */
+  --border-hover: #b5bbc5;    /* PW grey-400: hovered inputs */
+  --surface: #ffffff;
+  --canvas: #f8f8f8;          /* PW grey-6 */
+  --hover: #f4f5f7;
+
+  /* Semantic (PW's own) */
+  --error: #bf2734;   --error-bg: #fee7e9;   --error-border: #f3c4c8;
+  --warning: #9f741f; --warning-bg: #fff6e5; --warning-border: #f4d392;  /* amber text uses PW warning-700 for contrast */
+  --success: #1b7938; --success-bg: #dff1e4; --success-border: #adcfb7;
+  --info: #037cbf;    --info-bg: #f1f5fe;
+
+  /* Chart series (validated for colourblind separation; never reused as status) */
+  --series-1: #5a4bda;
+  --series-2: #037cbf;
+  --series-3: #ec4a0a;
+
+  /* Type: PW's product face */
+  --font: var(--font-reddit), var(--font-deva), system-ui, -apple-system, sans-serif;
+  --text-xs: 0.75rem;    /* 12 */
+  --text-sm: 0.8125rem;  /* 13 */
+  --text-md: 0.875rem;   /* 14: dense tool body */
+  --text-base: 0.9375rem;/* 15: reading text (messages, replies) */
+  --text-lg: 1.0625rem;  /* 17 */
+  --text-xl: 1.25rem;    /* 20 */
+  --text-2xl: 1.5rem;    /* 24 */
+
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 20px; --s6: 24px; --s8: 32px; --s10: 40px;
+
+  --radius: 8px;         /* PW's default */
+  --radius-sm: 6px;
+  --radius-lg: 12px;
+  --shadow-1: 0 1px 2px rgba(27, 33, 36, 0.06);
+  --shadow-2: 0 4px 16px -4px rgba(27, 33, 36, 0.12), 0 1px 3px rgba(27, 33, 36, 0.06);
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --sidebar-w: 232px;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: var(--text-md);
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+  caret-color: var(--primary);
+}
+
+h1, h2, h3, h4 { margin: 0; font-weight: 700; letter-spacing: -0.01em; text-wrap: balance; }
+p { margin: 0; }
+
+a { color: var(--primary); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { color: var(--primary-600); }
+
+::selection { background: var(--primary-100); color: var(--text); }
+:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 4px; }
+
+* { scrollbar-width: thin; scrollbar-color: var(--border-strong) transparent; }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 10px; border: 3px solid transparent; background-clip: padding-box; }
+
+button, textarea, input, select { font: inherit; color: inherit; }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+/* Buttons: PW's vocabulary. Filled purple = primary, outlined purple = secondary. */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: var(--s2);
+  height: 36px; padding: 0 var(--s4);
+  border: 1px solid var(--border-strong); border-radius: var(--radius);
+  background: var(--surface); color: var(--text);
+  font-weight: 600; font-size: var(--text-sm); cursor: pointer; white-space: nowrap;
+  transition: background 150ms var(--ease), border-color 150ms var(--ease), color 150ms var(--ease);
+}
+.btn:hover:not(:disabled) { background: var(--hover); }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-primary { background: var(--primary); border-color: var(--primary); color: #fff; }
+.btn-primary:hover:not(:disabled) { background: var(--primary-600); border-color: var(--primary-600); }
+.btn-outline { border-color: var(--primary); color: var(--primary); }
+.btn-outline:hover:not(:disabled) { background: var(--primary-50); }
+.btn-ghost { border-color: transparent; background: transparent; color: var(--text-2); }
+.btn-ghost:hover:not(:disabled) { background: var(--hover); }
+.btn-sm { height: 30px; padding: 0 var(--s3); font-size: var(--text-xs); }
+.kbd {
+  padding: 1px 5px; border-radius: 4px; font-size: 11px; font-weight: 600;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* Card surface used by panels. */
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); }
+
+.skeleton {
+  background: linear-gradient(90deg, var(--hover) 0%, var(--border) 50%, var(--hover) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s linear infinite;
+  border-radius: var(--radius-sm);
+}
+@keyframes shimmer { to { background-position: -200% 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+/* App shell: sidebar + main area. */
+.app-shell { display: flex; min-height: 100dvh; }
+.app-main { flex: 1; min-width: 0; }
+@media (max-width: 760px) { .app-main { padding-bottom: 60px; } }
