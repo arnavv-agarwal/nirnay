@@ -40,18 +40,18 @@ export default function InboxPage() {
   const [sortChoice, setSortChoice] = useState<Sort | null>(null);   // null: the queue's own default
   const [filters, setFilters] = useState<Filters>(NO_FILTERS);
 
-  const load = useCallback(
-    () =>
-      Promise.all([api.tickets(), api.kb()]).then(
-        ([ts, kb]) => {
-          setTickets(ts);
-          setSections(Object.fromEntries(kb.map((s) => [s.id, s])));
-          setLoadError(null);
-        },
-        (e: Error) => setLoadError(e.message),
-      ),
-    [],
-  );
+  // Like the background check: a list asked for before the agent's last change is stale.
+  const load = useCallback(() => {
+    const asked = Date.now();
+    return Promise.all([api.tickets(), api.kb()]).then(
+      ([ts, kb]) => {
+        if (asked >= changedAt.current) setTickets(ts);
+        setSections(Object.fromEntries(kb.map((s) => [s.id, s])));
+        setLoadError(null);
+      },
+      (e: Error) => setLoadError(e.message),
+    );
+  }, []);
 
   // Keep the remembered list in step with what the agent changed (sent, corrected, reopened).
   useEffect(() => { if (tickets) remember("/api/tickets", tickets); }, [tickets]);
