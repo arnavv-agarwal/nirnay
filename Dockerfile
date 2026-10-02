@@ -1,8 +1,8 @@
-# The Nirnay API in a container, as run on Render (or Hugging Face Spaces). The web app is
+# The Nirnay API in a container, as run on Render. The web app is
 # deployed separately (Vercel) and calls this API. See DEPLOY.md.
 FROM python:3.12-slim
 
-# Spaces run the container as user 1000.
+# Runs as an unprivileged user.
 RUN useradd --create-home --uid 1000 nirnay
 WORKDIR /app
 
@@ -19,6 +19,6 @@ USER nirnay
 # The inbox database starts fresh from the demo tickets on every restart.
 ENV NIRNAY_DB=/tmp/nirnay.db \
     PYTHONUNBUFFERED=1
-# Render sets $PORT; Hugging Face Spaces expects 7860.
+# Render sets $PORT; 7860 when run locally.
 EXPOSE 7860
 CMD ["sh", "-c", "uvicorn server.app:app --host 0.0.0.0 --port ${PORT:-7860} --proxy-headers --forwarded-allow-ips '*'"]

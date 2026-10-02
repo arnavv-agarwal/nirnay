@@ -4,8 +4,6 @@ __pycache__/
 *.pyc
 .DS_Store
 data/nirnay.db
-.impeccable/config.local.json
-.impeccable/review/
-.impeccable/build/
+.impeccable/
 node_modules/
 .pytest_cache/

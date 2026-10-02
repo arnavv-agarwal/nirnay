@@ -31,7 +31,3 @@ Optional settings (Environment tab): `NIRNAY_DAILY_AI_CALLS` (default 100) and `
 - Inbox loads with the demo tickets; Quality shows the evaluation runs; Knowledge base lists 81 articles.
 - A new ticket is triaged with the AI in about 10 seconds; "Use Nirnay's draft" fills the reply; send → the next ticket opens, with Undo.
 - Phone width: bottom tab bar, list and ticket as separate screens.
-
-## Alternative: Hugging Face Spaces
-
-Since July 2026 Hugging Face runs Docker Spaces only on its paid PRO plan. With PRO: create a Docker Space (`nirnay-api`, Blank, CPU basic), add the secret `ANTHROPIC_API_KEY`, and push with `deploy/push_space.sh <username>/nirnay-api` (a write token is the password). The same Dockerfile listens on port 7860 there.
