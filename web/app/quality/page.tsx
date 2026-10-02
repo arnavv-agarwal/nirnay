@@ -13,7 +13,7 @@ import styles from "./quality.module.css";
 const SETS = [
   { id: "test", label: "Held-out test set", note: "Tickets never used while tuning prompts" },
   { id: "dev", label: "Tuning set", note: "Tickets used to tune prompts" },
-  { id: "blind", label: "Blind set", note: "Written by someone who never saw the prompts" },
+  { id: "blind", label: "Blind set", note: "Written separately, without seeing the prompts" },
 ];
 const runPath = (name: string) => `/api/eval/runs/${encodeURIComponent(name)}`;
 const SET_NAME: Record<string, string> = { test: "held-out test set", dev: "tuning set", blind: "blind set" };
@@ -294,7 +294,7 @@ export default function QualityPage() {
               <h2 id="caveat" className={styles.panelTitle}>Read before trusting these numbers</h2>
               <ul className={styles.caveats}>
                 <li>The tickets are synthetic, written to mirror public PW complaint themes, and labelled with a written guide.</li>
-                <li>The same person wrote the tuning and held-out tickets, the prompts and the keyword lists, so those scores are likely optimistic. The blind set, written by someone who never saw the prompts, is the harder test: see Ticket set.</li>
+                <li>The tuning and held-out tickets, the prompts and the keyword lists come from the same source, so those scores are likely optimistic. The blind set, written separately without seeing the prompts, is the harder test: see Ticket set.</li>
                 <li>{n} tickets is a small sample: one ticket moves accuracy by {pct(1 / Math.max(1, n))}.</li>
               </ul>
             </section>

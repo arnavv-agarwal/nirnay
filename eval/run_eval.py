@@ -3,7 +3,7 @@
 Usage:
     python -m eval.run_eval --model baseline --split dev
     python -m eval.run_eval --model claude-opus-5-5 --split test
-    python -m eval.run_eval --model claude-opus-5-5 --split blind    # written by someone who never saw the prompts
+    python -m eval.run_eval --model claude-opus-5-5 --split blind    # written separately, without seeing the prompts
 
 Every prediction is saved to eval/results/, and the scores can be recomputed
 from those files without calling the model again.

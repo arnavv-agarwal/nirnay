@@ -83,10 +83,10 @@ Prompts were tuned only on 56 tuning tickets, then frozen; the 100 held-out tick
 | Routing, held-out (100) | 78% | 93% | 92% | **96%** |
 | Missed escalations, held-out | 15 | 2 | 3 | **2** |
 | Upset students caught, held-out | 6/10 | 10/10 | 10/10 | **10/10** |
-| **Routing, blind set (15, written by someone who never saw the prompts)** | 67% | 80% | 67% | **73%** |
+| **Routing, blind set (15, written by me without seeing the prompts)** | 67% | 80% | 67% | **73%** |
 | Robustness checks (injection, gibberish, distress…) | 8/9 | 9/9 | 9/9 | **9/9** |
 
-**Read the two lines together: 96% on our own tickets, 73% on someone else's.** Most of the gap is one disagreement about what "upset" means: our guide means anger, threats, repeated complaints or distress; the blind author also counts urgency and pleading.
+**Read the two lines together: 96% on tickets from the same source as the prompts, 73% on blind ones.** Most of the gap is one disagreement about what "upset" means: our guide means anger, threats, repeated complaints or distress; the blind author also counts urgency and pleading.
 
 **Reply quality** (a second model checking Opus's 100 held-out drafts against their sources): 93% of factual claims supported, 1.5% unsupported, 100% in the student's language, no reply promising money. Checked against a person grading 20 of the same replies by hand: the judge was stricter on 11 and never more lenient, so 93% is a cautious figure; the person would send 18 of 20 as written and 2 after edits. It also found that 4 of 33 automatic replies promised "an agent will follow up" when no agent will see them; the same happened on the live demo. Fixed after the evaluation in plain code, without touching the frozen prompts: an automatic reply loses any sentence promising a follow-up before it is sent (4 → 0 held-out, 2 → 0 blind; routing unchanged).
 
