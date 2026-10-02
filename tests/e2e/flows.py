@@ -144,19 +144,27 @@ with sync_playwright() as p:
     def late_list():
         # The inbox's first load is read before the agent acts but arrives after: it mustn't undo the act.
         held = []
-        page.route("**/api/tickets", lambda route: held.append((route, route.fetch())) if route.request.method == "GET" else route.continue_())
+        page.route("**/api/tickets", lambda route: held.append(route) if route.request.method == "GET" else route.continue_())
         page.get_by_role("link", name="Inbox").click()
+        for _ in range(50):
+            if held:
+                break
+            page.wait_for_timeout(100)
+        assert held, "the inbox didn't load its list"
+        stale = [(route, route.fetch()) for route in held]   # read now, before the agent acts
         page.get_by_role("tab", name="Auto-resolved").click()
         page.locator("ol li button[class*=row]").first.click()
         page.get_by_role("button", name="Should a person handle this? Reopen it").first.click()
         expect(page.get_by_role("status").filter(has_text="is back in Needs you")).to_be_visible()
-        assert held, "the inbox didn't load its list"
-        for route, response in held:
+        for route, response in stale:
             route.fulfill(response=response)
         page.unroute("**/api/tickets")
         page.wait_for_timeout(1000)
         expect(page.locator("aside").get_by_text("An agent reopened Nirnay's automatic reply")).to_be_visible()
-    check("A list that arrives late doesn't undo the agent's change", late_list)
+    # Holding a request mid-flight is reliable only against the local app (it fails on the old
+    # code, passes on the fix); over the live site's network the held request itself misbehaves.
+    if BASE.startswith("http://localhost"):
+        check("A list that arrives late doesn't undo the agent's change", late_list)
 
     def knowledge():
         page.get_by_role("link", name="Knowledge base").click()
